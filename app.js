@@ -338,6 +338,9 @@ const handleMessage = (sender_psid, received_message) => {
       case "hi":
           hiReply(sender_psid);
         break;
+      case "hospital"
+          hospitalAppointment(sender_psid);
+        break;
       case "mingalarbar":
           greetInMyanmar(sender_psid);
         break;
@@ -496,10 +499,39 @@ function webviewTest(sender_psid){
 }
 
 
+/**************
+start hospital
+**************/
+const hospitalAppointment = (sender_psid) => {
+   let response1 = {"text": "Welcome to ABC Hospital"};
+   let response2 = {
+    "text": "Please select department",
+    "quick_replies":[
+            {
+              "content_type":"text",
+              "title":"General Surgery",
+              "payload":"department:General Surgery",              
+            },{
+              "content_type":"text",
+              "title":"ENT",
+              "payload":"department:ENT",             
+            },{
+              "content_type":"text",
+              "title":"Dermatology",
+              "payload":"department:Dermatology", 
+            }
+
+    ]
+  };
+
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2);
+  });
+}
 
 
 const hiReply =(sender_psid) => {
-  let response = {"text": "You sent hi message"};
+  let response = {"text": "Welcome to STTK Hospital. How may I help you."};
   callSend(sender_psid, response);
 }
 
