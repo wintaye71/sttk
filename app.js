@@ -495,7 +495,7 @@ const handleMessage = (sender_psid, received_message) => {
 
       switch(user_message) { 
       case "hi":
-          hiReply(sender_psid);
+          hospitalAppointment(sender_psid);
         break;
       case "hospital":
           hospitalAppointment(sender_psid);
@@ -679,9 +679,9 @@ function webviewTest(sender_psid){
 start hospital
 **************/
 const hospitalAppointment = (sender_psid) => {
-   let response1 = {"text": "Welcome to ABC Hospital"};
+   let response1 = {"text": "Welcome to STTK Hospital. How may I help you?"};
    let response2 = {
-    "text": "Please select department",
+    "text": "Which area are you looking for the hospital in?",
     "quick_replies":[
             {
               "content_type":"text",
@@ -689,12 +689,40 @@ const hospitalAppointment = (sender_psid) => {
               "payload":"department:General Surgery",              
             },{
               "content_type":"text",
-              "title":"ENT",
-              "payload":"department:ENT",             
+              "title":"Ear Nose Throat",
+              "payload":"department:Ear Nose Throat",             
             },{
               "content_type":"text",
-              "title":"Dermatology",
-              "payload":"department:Dermatology", 
+              "title":"General Medicine",
+              "payload":"department:General Medicine", 
+            },{
+              "content_type":"text",
+              "title":"Hepatology",
+              "payload":"department:Hepatology", 
+            },{
+              "content_type":"text",
+              "title":"Neurology",
+              "payload":"department:Neurology", 
+            },{
+              "content_type":"text",
+              "title":"Obstetrics",
+              "payload":"department:Obstetrics", 
+            },{
+              "content_type":"text",
+              "title":"Ophthalmology",
+              "payload":"department:Ophthalmology", 
+            },{
+              "content_type":"text",
+              "title":"Orthopedic",
+              "payload":"department:Orthopedic", 
+            },{
+              "content_type":"text",
+              "title":"Paediatrics",
+              "payload":"department:Paediatrics", 
+            },{
+              "content_type":"text",
+              "title":"Respiratory",
+              "payload":"department:Respiratory", 
             }
 
     ]
