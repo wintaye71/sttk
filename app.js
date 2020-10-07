@@ -741,25 +741,25 @@ const showDoctor = (sender_psid) => {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "James Smith",
-            "subtitle": "General Surgeon",
-            "image_url":"https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg",                       
+            "title": "Dr. Khin Mg Htwe",
+            "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
+            "image_url":"https://drive.google.com/file/d/1c9-EciMK10zGv30cY1WSrVgE_MYs7E4z/view?usp=sharing",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "James Smith",
-                  "payload": "Doctor:James Smith",
+                  "title": "Dr. Khin Mg Htwe",
+                  "payload": "Doctor:Dr. Khin Mg Htwe",
                 },               
               ],
           },{
-            "title": "Kenneth Martinez",
-            "subtitle": "General Surgeon",
-            "image_url":"https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg",                       
+            "title": "Dr. Wunna Tun",
+            "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
+            "image_url":"https://drive.google.com/file/d/1c9-EciMK10zGv30cY1WSrVgE_MYs7E4z/view?usp=sharing",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "Kenneth Martinez",
-                  "payload": "Doctor:Kenneth Martinez",
+                  "title": "Dr. Wunna Tun",
+                  "payload": "Doctor:Dr. Wunna Tun",
                 },               
               ],
           },{
