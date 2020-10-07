@@ -416,13 +416,13 @@ function handleQuickReply(sender_psid, received_message) {
     let dept = received_message.slice(11);
     userInputs[user_id].department = dept;
     switch(dept){
-      case "Cardiac Surgery":
+      case "cardiac surgery":
         showCardiacSurgeryDoctor(sender_psid);
       break;
-      case "Ear Nose Throat":
+      case "ear nose throat":
         showEarNoseThroatDoctor(sender_psid);
       break;
-      case "General Medicine":
+      case "general medicine":
         showGeneralMedicineDoctor(sender_psid);
       break;
       default:
