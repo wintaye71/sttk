@@ -744,6 +744,7 @@ const showDoctor = (sender_psid) => {
             "title": "Dr. Khin Mg Htwe",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120842625_124651686053838_8909573143840260608_n.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=I2ffl85BCrQAX_sDdlF&_nc_ht=scontent.fmdl5-1.fna&oh=9036cf823b6c1767023084205d5bcfd2&oe=5FA2470A",                       
+            "webview_height_ratio": "compact",
             "buttons": [
                 {
                   "type": "postback",
@@ -755,6 +756,7 @@ const showDoctor = (sender_psid) => {
             "title": "Dr. Wunna Tun",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120842625_124651686053838_8909573143840260608_n.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=I2ffl85BCrQAX_sDdlF&_nc_ht=scontent.fmdl5-1.fna&oh=9036cf823b6c1767023084205d5bcfd2&oe=5FA2470A",                       
+            "webview_height_ratio": "full",
             "buttons": [
                 {
                   "type": "postback",
