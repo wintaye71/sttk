@@ -27,7 +27,7 @@ const bot_questions = {
   "q1": "please enter date (yyyy-mm-dd)",
   "q2": "please enter time (hh:mm)",
   "q3": "please enter full name",
-  "q4": "please enter gender",
+  "q4": "please select gender",
   "q5": "please enter phone number",
   "q6": "please enter email",
   "q7": "please leave a message"
@@ -405,13 +405,27 @@ function handleQuickReply(sender_psid, received_message) {
 
   received_message = received_message.toLowerCase();
 
-  if(received_message.startsWith("visit:")){
+  if(received_message.startsWith("gender:")){
+    let gender = received_message.slice(7);
+    console.log('GENDER ENTERED',gender);
+    userInputs[user_id].gender = gender;    
+    current_question = 'q5';
+    botQuestions(current_question, sender_psid);
+     
+  }else if(received_message.startsWith("visit:")){
     let visit = received_message.slice(6);
     
     userInputs[user_id].visit = visit;
     
-    current_question = 'q1';
-    botQuestions(current_question, sender_psid);
+    switch(visit){
+      case "first time":
+        current_question = 'q1';
+        botQuestions(current_question, sender_psid);
+        break;
+      case "follow up":
+        botQuestions(current_question, sender_psid);
+        break;
+    }
   }else if(received_message.startsWith("department:")){
     let dept = received_message.slice(11);
     userInputs[user_id].department = dept;
@@ -427,9 +441,7 @@ function handleQuickReply(sender_psid, received_message) {
       break;
       default:
         showGeneralMedicineDoctor(sender_psid);
-    }
-    
-  
+    } 
   }else{
 
       switch(received_message) {                
@@ -925,7 +937,20 @@ const botQuestions = (current_question, sender_psid) => {
     let response = {"text": bot_questions.q3};
     callSend(sender_psid, response);
   }else if(current_question == 'q4'){
-    let response = {"text": bot_questions.q4};
+    let response = {
+    "text": bot_questions.q4,
+    "quick_replies":[
+            {
+              "content_type":"text",
+              "title":"Male",
+              "payload":"gender:male",              
+            },{
+              "content_type":"text",
+              "title":"Female",
+              "payload":"gender:female",             
+            }
+      ]
+    };
     callSend(sender_psid, response);
   }else if(current_question == 'q5'){
     let response = {"text": bot_questions.q5};
