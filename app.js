@@ -743,8 +743,7 @@ const showDoctor = (sender_psid) => {
           "elements": [{
             "title": "Dr. Khin Mg Htwe",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120842625_124651686053838_8909573143840260608_n.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=I2ffl85BCrQAX_sDdlF&_nc_ht=scontent.fmdl5-1.fna&oh=9036cf823b6c1767023084205d5bcfd2&oe=5FA2470A",                       
-            "webview_height_ratio": "compact",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120847819_124656499386690_7251404457338345160_n.jpg?_nc_cat=103&_nc_sid=730e14&_nc_ohc=tQjKld-Ev-cAX8AGhT0&_nc_ht=scontent.fmdl5-1.fna&oh=097900a90d5899e98eb22d7cb27b4332&oe=5FA343D7",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -755,8 +754,7 @@ const showDoctor = (sender_psid) => {
           },{
             "title": "Dr. Wunna Tun",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120842625_124651686053838_8909573143840260608_n.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=I2ffl85BCrQAX_sDdlF&_nc_ht=scontent.fmdl5-1.fna&oh=9036cf823b6c1767023084205d5bcfd2&oe=5FA2470A",                       
-            "webview_height_ratio": "full",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120847819_124656499386690_7251404457338345160_n.jpg?_nc_cat=103&_nc_sid=730e14&_nc_ohc=tQjKld-Ev-cAX8AGhT0&_nc_ht=scontent.fmdl5-1.fna&oh=097900a90d5899e98eb22d7cb27b4332&oe=5FA343D7",                       
             "buttons": [
                 {
                   "type": "postback",
