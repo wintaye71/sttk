@@ -415,7 +415,21 @@ function handleQuickReply(sender_psid, received_message) {
   }else if(received_message.startsWith("department:")){
     let dept = received_message.slice(11);
     userInputs[user_id].department = dept;
-    showDoctor(sender_psid);
+    switch(dept){
+      case "Cardiac Surgery":
+        showCardiacSurgeryDoctor(sender_psid);
+      break;
+      case "Ear Nose Throat":
+        showEarNoseThroatDoctor(sender_psid);
+      break;
+      case "General Medicine":
+        showGeneralMedicineDoctor(sender_psid);
+      break;
+      default:
+        showGeneralMedicineDoctor(sender_psid);
+    }
+    
+  
   }else{
 
       switch(received_message) {                
@@ -685,8 +699,8 @@ const hospitalAppointment = (sender_psid) => {
     "quick_replies":[
             {
               "content_type":"text",
-              "title":"General Surgery",
-              "payload":"department:General Surgery",              
+              "title":"Cardiac Surgery",
+              "payload":"department:Cardiac Surgery",              
             },{
               "content_type":"text",
               "title":"Ear Nose Throat",
@@ -734,7 +748,7 @@ const hospitalAppointment = (sender_psid) => {
 }
 
 
-const showDoctor = (sender_psid) => {
+const showCardiacSurgeryDoctor = (sender_psid) => {
     let response = {
       "attachment": {
         "type": "template",
@@ -762,15 +776,56 @@ const showDoctor = (sender_psid) => {
                   "payload": "Doctor:Dr. Wunna Tun",
                 },               
               ],
-          },{
-            "title": "Barbara Young",
-            "subtitle": "General Surgeon",
-            "image_url":"https://cdn.iconscout.com/icon/free/png-512/doctor-567-1118047.png",                       
+          }
+
+          ]
+        }
+      }
+    }
+
+  
+  callSend(sender_psid, response);
+
+}
+
+
+const showEarNoseThroatDoctor = (sender_psid) => {
+    let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Dr. Khin Khin Phyu",
+            "subtitle": "M.B.B.S., M.Med.Sc(ORL)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "Barbara Young",
-                  "payload": "Doctor:Barbara Young",
+                  "title": "Dr. Khin Khin Phyu",
+                  "payload": "Doctor:Dr. Khin Khin Phyu",
+                },               
+              ],
+          },{
+            "title": "Dr. Moe Thidar Lin",
+            "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Moe Thidar Lin",
+                  "payload": "Doctor:Dr. Moe Thidar Lin",
+                },               
+              ],
+          },{
+            "title": "Dr. Cho Mar Tin",
+            "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Cho Mar Tin",
+                  "payload": "Doctor:Dr. Cho Mar Tin",
                 },               
               ],
           }
@@ -784,6 +839,60 @@ const showDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 
 }
+
+
+const showGeneralMedicineDoctor = (sender_psid) => {
+    let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Dr. Ma Ma Gyi",
+            "subtitle": "M.B.B.S., MRCP(UK), FRCP(Edin), FACTM(Aus)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Ma Ma Gyi",
+                  "payload": "Doctor:Dr. Ma Ma Gyi",
+                },               
+              ],
+          },{
+            "title": "Dr. U Myat Chit",
+            "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), DTM&H (Landon)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. U Myat Chit",
+                  "payload": "Doctor:Dr. U Myat Chit",
+                },               
+              ],
+          },{
+            "title": "Dr. Tin Htut",
+            "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Tin Htut",
+                  "payload": "Doctor:Dr. Tin Htut",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+  
+  callSend(sender_psid, response);
+
+}
+
+
 
 const firstOrFollowUp = (sender_psid) => {
 
