@@ -716,7 +716,7 @@ const userChoice = (sender_psid) => {
           "elements": [{
             "title": "Appointment Registration",
             "subtitle": "Make your appointment",
-            "image_url":"./image/1.jpg",                       
+            "image_url":"../image/1.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
