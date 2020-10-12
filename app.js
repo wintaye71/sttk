@@ -803,9 +803,8 @@ const userChoice = (sender_psid) => {
 
 }
 
-const hospitalAppointment = (sender_psid) => {
-   
-   let response2 = {
+const hospitalAppointment = (sender_psid) => {   
+   let response1 = {
     "text": "Which area are you looking for the hospital in?",
     "quick_replies":[
             {
@@ -853,9 +852,7 @@ const hospitalAppointment = (sender_psid) => {
     ]
   };
 
-  callSend(sender_psid, response1).then(()=>{
-    return callSend(sender_psid, response2);
-  });
+  callSend(sender_psid, response1);
 }
 
 
