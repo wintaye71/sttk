@@ -716,7 +716,7 @@ const userChoice = (sender_psid) => {
           "elements": [{
             "title": "Appointment Registration",
             "subtitle": "Make your appointment",
-            "image_url":"https://www.facebook.com/STTK-Hospital-116640603521613/photos/pcb.126778862507787/126778732507800/",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121036098_126778739174466_5835875011183166003_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGJLJ-dr1_C0GfqoXUjGIuQZ2JXc21xcDxnYldzbXFwPM3BjMDilL7cgJUMK2JX1EhrvvGfNsXtRGtPVfK8C_eg&_nc_ohc=mMPMl3CDXEIAX8ezfqs&_nc_ht=scontent.fmdl5-1.fna&oh=d6521d654d25628d65cdac6399c00922&oe=5FAB47C2",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -727,7 +727,7 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Consultation",
             "subtitle": "Consult your doctor while you stay safe at home",
-            "image_url":"https://www.facebook.com/STTK-Hospital-116640603521613/photos/pcb.126778862507787/126778705841136/",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121528981_126778709174469_1863127189882769269_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEJpzFOAPyJnxu8d7lyp-2GUyjZ5VAgUN9TKNnlUCBQ35ViVXYmukjiFhYzdnhSzlSMfoI3lJUViwfZR0nXQlZ1&_nc_ohc=f806KAJ7w8MAX_oiJy1&_nc_ht=scontent.fmdl5-1.fna&oh=0088a5345035384ced05c33a3cff9a92&oe=5FAA8B88",                       
             "buttons": [
                 {
                   "type": "postback",
