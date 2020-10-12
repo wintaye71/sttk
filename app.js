@@ -799,7 +799,9 @@ const userChoice = (sender_psid) => {
     }
 
   
-  callSend(sender_psid, response2);
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2);
+  });
 
 }
 
