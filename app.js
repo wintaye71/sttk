@@ -4,6 +4,10 @@ const APP_URL = process.env.APP_URL;
 
 //new text
 
+// read the CSV file
+csvStrData = fs.readFileSync("DoctorList.csv"); // read the csv file
+csvStrArray = CSVToArray(csvStrData, ','); // pass this array for conversion to stringArray
+
 // Imports dependencies and set up http server
 const 
   { uuid } = require('uuidv4'),
@@ -602,9 +606,30 @@ const handlePostback = (sender_psid, received_postback) => {
   let payload = received_postback.payload;
 
   console.log('BUTTON PAYLOAD', payload);
-
-  
-  if(payload.startsWith("Doctor:")){
+  if(payload.startsWith("choice:")){    
+    let user_choice = payload.slice(7);
+    console.log('USER CHOICE IS: ', user_choice);
+    switch(user_choice) {        
+      case "Registration":
+          hospitalAppointment(sender_psid);
+        break;
+      case "Consultation":
+          showButtonReplyNo(sender_psid);
+        break; 
+      case "Ambulance":
+          showButtonReplyNo(sender_psid);
+        break; 
+      case "Emergency":
+          showButtonReplyNo(sender_psid);
+        break; 
+      case "Location":
+          showButtonReplyNo(sender_psid);
+        break;                      
+      default:
+          defaultReply(sender_psid);
+    } 
+    
+  }else if(payload.startsWith("Doctor:")){
     let doctor_name = payload.slice(7);
     console.log('SELECTED DOCTOR IS: ', doctor_name);
     userInputs[user_id].doctor = doctor_name;
