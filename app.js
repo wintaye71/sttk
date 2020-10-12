@@ -4,9 +4,7 @@ const APP_URL = process.env.APP_URL;
 
 //new text
 
-// read the CSV file
-csvStrData = fs.readFileSync("DoctorList.csv"); // read the csv file
-csvStrArray = CSVToArray(csvStrData, ','); // pass this array for conversion to stringArray
+
 
 // Imports dependencies and set up http server
 const 
