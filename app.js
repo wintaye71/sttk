@@ -716,7 +716,7 @@ const userChoice = (sender_psid) => {
           "elements": [{
             "title": "Appointment Registration",
             "subtitle": "Make your appointment",
-            "image_url":"/image/1.jpg",                       
+            "image_url":"https://www.facebook.com/STTK-Hospital-116640603521613/photos/pcb.126778862507787/126778732507800/",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -727,7 +727,7 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Consultation",
             "subtitle": "Consult your doctor while you stay safe at home",
-            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/2.jpg",                       
+            "image_url":"https://www.facebook.com/STTK-Hospital-116640603521613/photos/pcb.126778862507787/126778705841136/",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -738,7 +738,7 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Ambulance Service",
             "subtitle": "Ambulance Service saving lives in emergency",
-            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/3.jpg",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121484185_126778755841131_7970236345950236603_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_eui2=AeGjl9jHjLiJ6mucv2f0z0Qt-hh2skjCVIn6GHaySMJUiY8Ic_cgdUpKztft_jpiR7EganvEBKwxFhviU2pe0pzq&_nc_ohc=zsuEne1xD9AAX8meKkI&_nc_ht=scontent.fmdl5-1.fna&oh=b735ab8e9b9921dd887ebf06f36dae1f&oe=5FA8FCFF",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -749,7 +749,7 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Emergency Phone No",
             "subtitle": "If someone is seriously ill or injuried and their life is at risk, call this phone no.",
-            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/4.jpg",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121156660_126778782507795_5830426397101751088_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeH-mRw-NnQ_-M1yol6uKmULbMv1LhSsXUZsy_UuFKxdRqL_1R-Qj5ufkxKnWW1A2ez9sNB4xstnnHJKGCr77BCX&_nc_ohc=nZ1We7ESsIwAX_9i81i&_nc_ht=scontent.fmdl5-1.fna&oh=1300fb851c8d7219ccb4989629412ac3&oe=5FA989B4",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -760,7 +760,7 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Location",
             "subtitle": "Location of STTK hospital",
-            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/5.jpg",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121061542_126778809174459_4622794888164854258_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeGJcHUXigj1Dp9cUmiuW4q81-bISxA0827X5shLEDTzbohn5yRT4A8LR4npiwwDsCbRq965JyYwiSInC_UHHpcX&_nc_ohc=2WQE-NbxqscAX9hWL4P&_nc_ht=scontent.fmdl5-1.fna&oh=3633736016b9405684802c2aa9663d19&oe=5FA879E9",                       
             "buttons": [
                 {
                   "type": "postback",
