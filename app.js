@@ -776,9 +776,10 @@ const userChoice = (sender_psid) => {
     }
 
   
-  callSend(sender_psid, response);
+  callSend(sender_psid, response2);
 
 }
+
 const hospitalAppointment = (sender_psid) => {
    
    let response2 = {
