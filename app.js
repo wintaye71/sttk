@@ -789,7 +789,7 @@ const userChoice = (sender_psid) => {
               "url": "https://www.google.com/maps/place/Sitta+Thukha/@22.0235931,96.4621906,18.62z/data=!4m5!3m4!1s0x30cc9e9b3d092cdf:0xb1bac5f6278b5b8c!8m2!3d22.0238096!4d96.4622194",
               "webview_height_ratio": "tall",
             },
-            "buttons": [
+            /*"buttons": [
                 {
                 "type":"web_url",
                 "url":"https://petersfancybrownhats.com",
@@ -800,7 +800,7 @@ const userChoice = (sender_psid) => {
                   "title": "Locate at",
                   "payload": "choice:Location",
                 },               
-              ],
+              ],*/
           }
 
           ]
