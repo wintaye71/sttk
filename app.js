@@ -1020,17 +1020,17 @@ const showGeneralMedicineDoctor = (sender_psid) => {
 }
 
 const receptionPhoneNo = (sender_psid) => {
-  let response = {"text": "(T) 09111222333"};
-    callSend(sender_psid, response);
+  let response = {"text": "You can contact STTK Reception Desk.\r\nReception Phone No: 09111222333"};
+  callSend(sender_psid, response);
 }
 
 const ambulancePhoneNo = (sender_psid) => {
-  let response = {"text": "(T) 0911223344"};
+  let response = {"text": "You can contact STTK's Ambulance.\r\nAmbulance Phone No: 0911223344"};
     callSend(sender_psid, response);
 }
 
 const emergencyPhoneNo = (sender_psid) => {
-  let response = {"text": "(T) 09123123123"};
+  let response = {"text": "You can contact STTK's Emergency Department.\r\nEmergency Phone No:  09123123123"};
     callSend(sender_psid, response);
 }
 
