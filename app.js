@@ -439,6 +439,7 @@ function handleQuickReply(sender_psid, received_message) {
       case "general medicine":
         showGeneralMedicineDoctor(sender_psid);
       break;
+      
       default:
         showGeneralMedicineDoctor(sender_psid);
     } 
@@ -520,8 +521,8 @@ const handleMessage = (sender_psid, received_message) => {
       user_message = user_message.toLowerCase(); 
 
       switch(user_message) { 
-      case "hi":
-          hospitalAppointment(sender_psid);
+        case "hi":
+          userChoice(sender_psid);
         break;
       case "hospital":
           hospitalAppointment(sender_psid);
@@ -704,8 +705,82 @@ function webviewTest(sender_psid){
 /**************
 start hospital
 **************/
+
+const userChoice = (sender_psid) => {
+  let response1 = {"text": "Welcome to STTK Hospital. How may I help you?"};
+  let response2 = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Appointment Registration",
+            "subtitle": "Make your appointment",
+            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/1.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Registration",
+                  "payload": "choice:Registration",
+                },               
+              ],
+          },{
+            "title": "Consultation",
+            "subtitle": "Consult your doctor while you stay safe at home",
+            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/2.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Consultation",
+                  "payload": "choice:Consultation",
+                },               
+              ],
+          },{
+            "title": "Ambulance Service",
+            "subtitle": "Ambulance Service saving lives in emergency",
+            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/3.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Ambulance Service",
+                  "payload": "choice:Ambulance",
+                },               
+              ],
+          },{
+            "title": "Emergency Phone No",
+            "subtitle": "If someone is seriously ill or injuried and their life is at risk, call this phone no.",
+            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/4.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Emergency",
+                  "payload": "choice:Emergency",
+                },               
+              ],
+          },{
+            "title": "Location",
+            "subtitle": "Location of STTK hospital",
+            "image_url":"https://github.com/wintaye71/sttk/blob/master/image/5.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Locate at",
+                  "payload": "choice:Location",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+  
+  callSend(sender_psid, response);
+
+}
 const hospitalAppointment = (sender_psid) => {
-   let response1 = {"text": "Welcome to STTK Hospital. How may I help you?"};
+   
    let response2 = {
     "text": "Which area are you looking for the hospital in?",
     "quick_replies":[
