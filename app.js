@@ -784,7 +784,17 @@ const userChoice = (sender_psid) => {
             "title": "Location",
             "subtitle": "Location of STTK hospital",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121061542_126778809174459_4622794888164854258_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeGJcHUXigj1Dp9cUmiuW4q81-bISxA0827X5shLEDTzbohn5yRT4A8LR4npiwwDsCbRq965JyYwiSInC_UHHpcX&_nc_ohc=2WQE-NbxqscAX9hWL4P&_nc_ht=scontent.fmdl5-1.fna&oh=3633736016b9405684802c2aa9663d19&oe=5FA879E9",                       
+            "default_action": {
+              "type": "web_url",
+              "url": "https://www.google.com/maps/place/Sitta+Thukha/@22.0235931,96.4621906,18.62z/data=!4m5!3m4!1s0x30cc9e9b3d092cdf:0xb1bac5f6278b5b8c!8m2!3d22.0238096!4d96.4622194",
+              "webview_height_ratio": "tall",
+            },
             "buttons": [
+                {
+                "type":"web_url",
+                "url":"https://petersfancybrownhats.com",
+                "title":"View Location"
+              },
                 {
                   "type": "postback",
                   "title": "Locate at",
