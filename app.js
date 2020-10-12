@@ -597,9 +597,7 @@ const handleAttachments = (sender_psid, attachments) => {
 /*********************************************
 Function to handle when user click button
 **********************************************/
-const handlePostback = (sender_psid, received_postback) => { 
-
-  
+const handlePostback = (sender_psid, received_postback) => {  
 
   let payload = received_postback.payload;
 
@@ -614,15 +612,15 @@ const handlePostback = (sender_psid, received_postback) => {
       case "Consultation":
           showButtonReplyNo(sender_psid);
         break; 
+      case "Reception":
+          receptionPhoneNo(sender_psid);
+        break;
       case "Ambulance":
-          showButtonReplyNo(sender_psid);
+          ambulancePhoneNo(sender_psid);
         break; 
       case "Emergency":
-          showButtonReplyNo(sender_psid);
-        break; 
-      case "Location":
-          showButtonReplyNo(sender_psid);
-        break;                      
+          emergencyPhoneNo(sender_psid);
+        break;                         
       default:
           defaultReply(sender_psid);
     } 
@@ -759,6 +757,17 @@ const userChoice = (sender_psid) => {
                 },               
               ],
           },{
+            "title": "Reception Desk",
+            "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121484185_126778755841131_7970236345950236603_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_eui2=AeGjl9jHjLiJ6mucv2f0z0Qt-hh2skjCVIn6GHaySMJUiY8Ic_cgdUpKztft_jpiR7EganvEBKwxFhviU2pe0pzq&_nc_ohc=zsuEne1xD9AAX8meKkI&_nc_ht=scontent.fmdl5-1.fna&oh=b735ab8e9b9921dd887ebf06f36dae1f&oe=5FA8FCFF",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Reception",
+                  "payload": "choice:Reception",
+                },               
+              ],
+          },{
             "title": "Ambulance Service",
             "subtitle": "Ambulance Service saving lives in emergency",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121484185_126778755841131_7970236345950236603_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_eui2=AeGjl9jHjLiJ6mucv2f0z0Qt-hh2skjCVIn6GHaySMJUiY8Ic_cgdUpKztft_jpiR7EganvEBKwxFhviU2pe0pzq&_nc_ohc=zsuEne1xD9AAX8meKkI&_nc_ht=scontent.fmdl5-1.fna&oh=b735ab8e9b9921dd887ebf06f36dae1f&oe=5FA8FCFF",                       
@@ -781,7 +790,7 @@ const userChoice = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Location",
+            "title": "Locate @",
             "subtitle": "Location of STTK hospital",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121061542_126778809174459_4622794888164854258_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeGJcHUXigj1Dp9cUmiuW4q81-bISxA0827X5shLEDTzbohn5yRT4A8LR4npiwwDsCbRq965JyYwiSInC_UHHpcX&_nc_ohc=2WQE-NbxqscAX9hWL4P&_nc_ht=scontent.fmdl5-1.fna&oh=3633736016b9405684802c2aa9663d19&oe=5FA879E9",                       
             "default_action": {
@@ -901,9 +910,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
           ]
         }
       }
-    }
-
-  
+    }  
   callSend(sender_psid, response);
 
 }
@@ -1012,7 +1019,20 @@ const showGeneralMedicineDoctor = (sender_psid) => {
 
 }
 
+const receptionPhoneNo = (sender_psid) => {
+  let response = {"text": "(T) 09111222333"};
+    callSend(sender_psid, response);
+}
 
+const ambulancePhoneNo = (sender_psid) => {
+  let response = {"text": "(T) 0911223344"};
+    callSend(sender_psid, response);
+}
+
+const emergencyPhoneNo = (sender_psid) => {
+  let response = {"text": "(T) 09123123123"};
+    callSend(sender_psid, response);
+}
 
 const firstOrFollowUp = (sender_psid) => {
 
