@@ -759,11 +759,11 @@ const userChoice = (sender_psid) => {
           },{
             "title": "Reception Desk",
             "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121484185_126778755841131_7970236345950236603_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_eui2=AeGjl9jHjLiJ6mucv2f0z0Qt-hh2skjCVIn6GHaySMJUiY8Ic_cgdUpKztft_jpiR7EganvEBKwxFhviU2pe0pzq&_nc_ohc=zsuEne1xD9AAX8meKkI&_nc_ht=scontent.fmdl5-1.fna&oh=b735ab8e9b9921dd887ebf06f36dae1f&oe=5FA8FCFF",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121093629_126910549161285_647069814399212966_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeEiO3JG8YiR9IbHBak-8RPOso8rNEjKNyiyjys0SMo3KDQ-0lcKOf7merGqs0vFytjGpZUL4gL7c9H4IuggX2wq&_nc_ohc=FYTze-sIKqgAX-aMNPg&_nc_ht=scontent.fmdl5-1.fna&oh=957c30b47df0fa3ccdf8e774d1d5a1bc&oe=5FAACB39",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "Reception",
+                  "title": "Reception Desk",
                   "payload": "choice:Reception",
                 },               
               ],
@@ -780,7 +780,7 @@ const userChoice = (sender_psid) => {
               ],
           },{
             "title": "Emergency Phone No",
-            "subtitle": "If someone is seriously ill or injuried and their life is at risk, call this phone no.",
+            "subtitle": "If someone is seriously ill or injuried, call this phone no.",
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121156660_126778782507795_5830426397101751088_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeH-mRw-NnQ_-M1yol6uKmULbMv1LhSsXUZsy_UuFKxdRqL_1R-Qj5ufkxKnWW1A2ez9sNB4xstnnHJKGCr77BCX&_nc_ohc=nZ1We7ESsIwAX_9i81i&_nc_ht=scontent.fmdl5-1.fna&oh=1300fb851c8d7219ccb4989629412ac3&oe=5FA989B4",                       
             "buttons": [
                 {
