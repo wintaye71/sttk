@@ -312,7 +312,7 @@ END Gallery Page
 //webview test
 app.get('/webview/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
-    res.render('webview.ejs',{title:"Hello!! from WebView", sender_id:sender_id});
+    res.render('webview.ejs',{title:"Welcome to Consultation", sender_id:sender_id});
 });
 
 app.post('/webview',upload.single('file'),function(req,res){
@@ -705,11 +705,11 @@ function webviewTest(sender_psid){
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "Click to open webview?",                       
+            "title": "Consult your doctor while you stay safe at home",                       
             "buttons": [              
               {
                 "type": "web_url",
-                "title": "webview",
+                "title": "Consultation",
                 "url":APP_URL+"webview/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
@@ -796,7 +796,7 @@ const userChoice = (sender_psid) => {
             "default_action": {
               "type": "web_url",
               "url": "https://www.google.com/maps/place/Sitta+Thukha/@22.0235931,96.4621906,18.62z/data=!4m5!3m4!1s0x30cc9e9b3d092cdf:0xb1bac5f6278b5b8c!8m2!3d22.0238096!4d96.4622194",
-              "webview_height_ratio": "tall",
+              "webview_height_ratio": "full",
             },
             /*"buttons": [
                 {
@@ -1020,7 +1020,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
 }
 
 const receptionPhoneNo = (sender_psid) => {
-  let response = {"text": "You can contact STTK Reception Desk.\r\nReception Phone No: 09111222333"};
+  let response = {"text": "You can contact STTK's Reception Desk.\r\nReception Phone No: 09111222333"};
   callSend(sender_psid, response);
 }
 
