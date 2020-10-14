@@ -1077,6 +1077,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
 }
 
 const showHepatologyDoctor = (sender_psid) => {
+    console.log('showHepatologyDoctor');
     let response = {
       "attachment": {
         "type": "template",
@@ -1125,6 +1126,7 @@ const showHepatologyDoctor = (sender_psid) => {
 }
 
 const showNeurologyDoctor = (sender_psid) => {
+  console.log('showNeurologyDoctor ');
     let response = {
       "attachment": {
         "type": "template",
@@ -1173,6 +1175,7 @@ const showNeurologyDoctor = (sender_psid) => {
 }
 
 const showObstetricsDoctor = (sender_psid) => {
+  console.log('showObstetricsDoctor ');
     let response = {
       "attachment": {
         "type": "template",
@@ -1221,6 +1224,7 @@ const showObstetricsDoctor = (sender_psid) => {
 }
 
 const showOphthalmologyDoctor = (sender_psid) => {
+  console.log('showOphthalmologyDoctor ');
     let response = {
       "attachment": {
         "type": "template",
@@ -1269,6 +1273,7 @@ const showOphthalmologyDoctor = (sender_psid) => {
 }
 
 const showOrthopedicDoctor = (sender_psid) => {
+  console.log('showOphthalmologyDoctor ');
     let response = {
       "attachment": {
         "type": "template",
@@ -1317,6 +1322,7 @@ const showOrthopedicDoctor = (sender_psid) => {
 }
 
 const showPaediatricsDoctor = (sender_psid) => {
+  console.log('showPaediatricsDoctor ');
     let response = {
       "attachment": {
         "type": "template",
@@ -1365,6 +1371,7 @@ const showPaediatricsDoctor = (sender_psid) => {
 }
 
 const showRespiratoryDoctor = (sender_psid) => {
+   console.log('showRespiratoryDoctor ');
     let response = {
       "attachment": {
         "type": "template",
