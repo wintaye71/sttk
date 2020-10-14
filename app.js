@@ -445,27 +445,7 @@ function handleQuickReply(sender_psid, received_message) {
       case "general medicine":
         showGeneralMedicineDoctor(sender_psid);
       break;
-      case "hepatology":
-        showHepatologyDoctor(sender_psid);
-      break;
-      case "neurology":
-        showNeurologyDoctor(sender_psid);
-      break;
-      case "obstetrics":
-        showObstetricsDoctor(sender_psid);
-      break;
-      case "ophthalmology":
-        showOphthalmologyDoctor(sender_psid);
-      break;
-      case "orthopedic":
-        showOrthopedicDoctor(sender_psid);
-      break;
-      case "paediatrics":
-        showPaediatricsDoctor(sender_psid);
-      break;
-      case "respiratory":
-        showRespiratoryDoctor(sender_psid);
-      break;
+      
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
       break;
