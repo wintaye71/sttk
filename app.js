@@ -445,7 +445,7 @@ function handleQuickReply(sender_psid, received_message) {
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
       break;
-      case "gm consult"
+      case "gm consult":
         showGMDoctorConsult(sender_psid);
       break;
       default:
