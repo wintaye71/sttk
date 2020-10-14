@@ -446,7 +446,7 @@ function handleQuickReply(sender_psid, received_message) {
         showPsychiatryDoctor(sender_psid);
       break;
       case "general medicine 2"
-        showGeneralMedicineDoctor2(sender_psid);
+        showGeneralMedicineDoctorConsult(sender_psid);
       break;
       default:
         showGeneralMedicineDoctor(sender_psid);
@@ -629,8 +629,7 @@ const handlePostback = (sender_psid, received_postback) => {
         break;                         
       default:
           defaultReply(sender_psid);
-    } 
-    
+    }     
   }else if(payload.startsWith("Doctor:")){
     let doctor_name = payload.slice(7);
     console.log('SELECTED DOCTOR IS: ', doctor_name);
@@ -644,7 +643,6 @@ const handlePostback = (sender_psid, received_postback) => {
     console.log('TEST', userInputs);
     firstOrFollowUp(sender_psid);
   }else{
-
       switch(payload) {        
       case "yes":
           showButtonReplyYes(sender_psid);
@@ -723,7 +721,7 @@ function webviewTest(sender_psid){
                 "type": "web_url",
                 "title": "Consultation",
                 "url":APP_URL+"webview/"+sender_psid,
-                 "webview_height_ratio": "full",
+                "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
               
@@ -1059,9 +1057,11 @@ const showPsychiatryDoctor = (sender_psid) => {
             "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
             "buttons": [
                 {
-                  "type": "postback",
+                  "type": "web_url",
                   "title": "Dr. Phyu Sin Win",
-                  "payload": "ConsultDoctor:Dr. Phyu Sin Win",
+                  "url":APP_URL+"webview/"+sender_psid,
+                  "webview_height_ratio": "full",
+                  "messenger_extensions": true,
                 },               
               ],
           },{
@@ -1086,7 +1086,7 @@ const showPsychiatryDoctor = (sender_psid) => {
 }
 
 
-const showGeneralMedicineDoctor2 = (sender_psid) => {
+const showGeneralMedicineDoctorConsult = (sender_psid) => {
     let response = {
       "attachment": {
         "type": "template",
