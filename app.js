@@ -441,7 +441,13 @@ function handleQuickReply(sender_psid, received_message) {
       case "general medicine":
         showGeneralMedicineDoctor(sender_psid);
       break;
-      
+
+      case "psychiatry":
+        showPsychiatryDoctor(sender_psid);
+      break;
+      case "general medicine 2"
+        showGeneralMedicineDoctor2(sender_psid);
+      break;
       default:
         showGeneralMedicineDoctor(sender_psid);
     } 
@@ -610,7 +616,7 @@ const handlePostback = (sender_psid, received_postback) => {
           hospitalAppointment(sender_psid);
         break;
       case "Consultation":
-          showButtonReplyNo(sender_psid);
+          consultationAppointment(sender_psid);
         break; 
       case "Reception":
           receptionPhoneNo(sender_psid);
@@ -627,6 +633,12 @@ const handlePostback = (sender_psid, received_postback) => {
     
   }else if(payload.startsWith("Doctor:")){
     let doctor_name = payload.slice(7);
+    console.log('SELECTED DOCTOR IS: ', doctor_name);
+    userInputs[user_id].doctor = doctor_name;
+    console.log('TEST', userInputs);
+    firstOrFollowUp(sender_psid);
+  }else if(payload.startsWith("ConsultDoctor:")){
+    let doctor_name = payload.slice(14);
     console.log('SELECTED DOCTOR IS: ', doctor_name);
     userInputs[user_id].doctor = doctor_name;
     console.log('TEST', userInputs);
@@ -876,6 +888,24 @@ const hospitalAppointment = (sender_psid) => {
   callSend(sender_psid, response1);
 }
 
+const consultationAppointment = (sender_psid) => {   
+   let response1 = {
+    "text": "Which area are you looking for the hospital to consult?",
+    "quick_replies":[
+            {
+              "content_type":"text",
+              "title":"Psychiatry",
+              "payload":"department:Psychiatry",              
+            },{
+              "content_type":"text",
+              "title":"General Medicine",
+              "payload":"department:General Medicine 2",             
+            }
+    ]
+  };
+  callSend(sender_psid, response1);
+}
+
 
 const showCardiacSurgeryDoctor = (sender_psid) => {
     let response = {
@@ -1012,9 +1042,84 @@ const showGeneralMedicineDoctor = (sender_psid) => {
           ]
         }
       }
-    }
+    }  
+  callSend(sender_psid, response);
 
-  
+}
+
+const showPsychiatryDoctor = (sender_psid) => {
+    let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Dr. Phyu Sin Win",
+            "subtitle": "M.B.B.S., M.Med.Sc(Mental Health)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Phyu Sin Win",
+                  "payload": "ConsultDoctor:Dr. Phyu Sin Win",
+                },               
+              ],
+          },{
+            "title": "Dr. Cho Nwe Zin",
+            "subtitle": "M.B.B.S., M.Med.Sc(Psy)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Cho Nwe Zin",
+                  "payload": "ConsultDoctor:Dr. Cho Nwe Zin",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }  
+  callSend(sender_psid, response);
+
+}
+
+
+const showGeneralMedicineDoctor2 = (sender_psid) => {
+    let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Dr. Kyaw Thu",
+            "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), MRCP(UK)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Kyaw Thu",
+                  "payload": "ConsultDoctor:Dr. Kyaw Thu",
+                },               
+              ],
+          },{
+            "title": "Dr. Maung Oo",
+            "subtitle": "M.B.B.S., M.Med.Sc(Int:Med)",
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Dr. Maung Oo",
+                  "payload": "ConsultDoctor:Dr. Maung Oo",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }  
   callSend(sender_psid, response);
 
 }
