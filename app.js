@@ -1059,7 +1059,7 @@ const showPsychiatryDoctor = (sender_psid) => {
                 {
                   "type": "web_url",
                   "title": "Dr. Phyu Sin Win",
-                  "url":APP_URL+"consult/"+sender_psid,
+                  "url": APP_URL+"webview/"+sender_psid,
                   "webview_height_ratio": "full",
                   "messenger_extensions": true,
                 },               
