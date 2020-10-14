@@ -312,8 +312,10 @@ END Gallery Page
 //webview test
 app.get('/webview/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
-    res.render('consultation.ejs',{title:"Welcome to Consultation", sender_id:sender_id});
+    res.render('webview.ejs',{title:"Welcome to Consultation", sender_id:sender_id});
 });
+
+
 
 app.post('/webview',upload.single('file'),function(req,res){
        
