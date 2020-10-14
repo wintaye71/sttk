@@ -1076,8 +1076,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showHepatologyDoctor = (sender_psid) => {
-    
+const showHepatologyDoctor = (sender_psid) => {    
     let response = {
       "attachment": {
         "type": "template",
@@ -1125,8 +1124,7 @@ const showHepatologyDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showNeurologyDoctor = (sender_psid) => {
-  
+const showNeurologyDoctor = (sender_psid) => {  
     let response = {
       "attachment": {
         "type": "template",
@@ -1174,8 +1172,7 @@ const showNeurologyDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showObstetricsDoctor = (sender_psid) => {
-  
+const showObstetricsDoctor = (sender_psid) => {  
     let response = {
       "attachment": {
         "type": "template",
@@ -1271,8 +1268,7 @@ const showOphthalmologyDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showOrthopedicDoctor = (sender_psid) => {
-  
+const showOrthopedicDoctor = (sender_psid) => {  
     let response = {
       "attachment": {
         "type": "template",
@@ -1320,8 +1316,7 @@ const showOrthopedicDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showPaediatricsDoctor = (sender_psid) => {
-  
+const showPaediatricsDoctor = (sender_psid) => {  
     let response = {
       "attachment": {
         "type": "template",
@@ -1369,8 +1364,7 @@ const showPaediatricsDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const showRespiratoryDoctor = (sender_psid) => {
-   
+const showRespiratoryDoctor = (sender_psid) => {   
     let response = {
       "attachment": {
         "type": "template",
