@@ -445,8 +445,8 @@ function handleQuickReply(sender_psid, received_message) {
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
       break;
-      case "general medicine 2"
-        showGeneralMedicineDoctorConsult(sender_psid);
+      case "gm consult"
+        showGMDoctorConsult(sender_psid);
       break;
       default:
         showGeneralMedicineDoctor(sender_psid);
@@ -897,7 +897,7 @@ const consultationAppointment = (sender_psid) => {
             },{
               "content_type":"text",
               "title":"General Medicine",
-              "payload":"department:General Medicine 2",             
+              "payload":"department:GM Consult",             
             }
     ]
   };
@@ -1086,7 +1086,7 @@ const showPsychiatryDoctor = (sender_psid) => {
 }
 
 
-const showGeneralMedicineDoctorConsult = (sender_psid) => {
+const showGMDoctorConsult = (sender_psid) => {
     let response = {
       "attachment": {
         "type": "template",
