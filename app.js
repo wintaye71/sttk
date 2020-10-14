@@ -914,7 +914,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
           "elements": [{
             "title": "Dr. Khin Mg Htwe",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120847819_124656499386690_7251404457338345160_n.jpg?_nc_cat=103&_nc_sid=730e14&_nc_ohc=tQjKld-Ev-cAX8AGhT0&_nc_ht=scontent.fmdl5-1.fna&oh=097900a90d5899e98eb22d7cb27b4332&oe=5FA343D7",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121078844_127539629098377_5968833237798495569_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeGTQDVPDD5kfrCdAach037wR5RUQxIclqhHlFRDEhyWqOpqZ7eOFSj6oPJzAa_4zLaVQXvH4Ebnri-xLYk7F35Y&_nc_ohc=PS-LO3uJu5MAX_fYWMs&_nc_ht=scontent.fmdl5-1.fna&oh=d3da5df8725117fa8add1a4c732a44d2&oe=5FABC74E",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -925,7 +925,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
           },{
             "title": "Dr. Wunna Tun",
             "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120847819_124656499386690_7251404457338345160_n.jpg?_nc_cat=103&_nc_sid=730e14&_nc_ohc=tQjKld-Ev-cAX8AGhT0&_nc_ht=scontent.fmdl5-1.fna&oh=097900a90d5899e98eb22d7cb27b4332&oe=5FA343D7",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121078844_127539629098377_5968833237798495569_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeGTQDVPDD5kfrCdAach037wR5RUQxIclqhHlFRDEhyWqOpqZ7eOFSj6oPJzAa_4zLaVQXvH4Ebnri-xLYk7F35Y&_nc_ohc=PS-LO3uJu5MAX_fYWMs&_nc_ht=scontent.fmdl5-1.fna&oh=d3da5df8725117fa8add1a4c732a44d2&oe=5FABC74E",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -953,7 +953,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
           "elements": [{
             "title": "Dr. Khin Khin Phyu",
             "subtitle": "M.B.B.S., M.Med.Sc(ORL)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -964,7 +964,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
           },{
             "title": "Dr. Moe Thidar Lin",
             "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -975,7 +975,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
           },{
             "title": "Dr. Cho Mar Tin",
             "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120825976_124656536053353_4606560839581239973_n.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=PADvtw_4MU0AX_tdsS8&_nc_ht=scontent.fmdl5-1.fna&oh=3efe09d40f38bff5a1426d76833cc9e7&oe=5FA326A5",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1005,7 +1005,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
           "elements": [{
             "title": "Dr. Ma Ma Gyi",
             "subtitle": "M.B.B.S., MRCP(UK), FRCP(Edin), FACTM(Aus)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1016,7 +1016,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
           },{
             "title": "Dr. U Myat Chit",
             "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), DTM&H (Landon)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1027,7 +1027,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
           },{
             "title": "Dr. Tin Htut",
             "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1054,7 +1054,7 @@ const showPsychiatryDoctor = (sender_psid) => {
           "elements": [{
             "title": "Dr. Phyu Sin Win",
             "subtitle": "M.B.B.S., M.Med.Sc(Mental Health)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121175169_127539895765017_5222472204305763753_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_eui2=AeEEwLc2ht843K3wLgtEstCCXajrfRKauaJdqOt9Epq5ohsNYEzSw4TeC2VdX-0lWWqzeJAbWC2nIpwQN-tA9PGa&_nc_ohc=q5YaFWn0NDAAX-jS54e&_nc_ht=scontent.fmdl5-1.fna&oh=753d41a065f6fb78742a3c198475914c&oe=5FAB3427",                       
             "buttons": [
                 {
                   "type": "web_url",
@@ -1067,7 +1067,7 @@ const showPsychiatryDoctor = (sender_psid) => {
           },{
             "title": "Dr. Cho Nwe Zin",
             "subtitle": "M.B.B.S., M.Med.Sc(Psy)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121175169_127539895765017_5222472204305763753_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_eui2=AeEEwLc2ht843K3wLgtEstCCXajrfRKauaJdqOt9Epq5ohsNYEzSw4TeC2VdX-0lWWqzeJAbWC2nIpwQN-tA9PGa&_nc_ohc=q5YaFWn0NDAAX-jS54e&_nc_ht=scontent.fmdl5-1.fna&oh=753d41a065f6fb78742a3c198475914c&oe=5FAB3427",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1095,7 +1095,7 @@ const showGMDoctorConsult = (sender_psid) => {
           "elements": [{
             "title": "Dr. Kyaw Thu",
             "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), MRCP(UK)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1106,7 +1106,7 @@ const showGMDoctorConsult = (sender_psid) => {
           },{
             "title": "Dr. Maung Oo",
             "subtitle": "M.B.B.S., M.Med.Sc(Int:Med)",
-            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/120844978_124656509386689_7980613141642585756_n.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=mzfndvLWCTgAX_55bwv&_nc_ht=scontent.fmdl5-1.fna&oh=b1711bc80c1fc937202d5cfe513ae03f&oe=5FA3C5E0",                       
+            "image_url":"https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",                       
             "buttons": [
                 {
                   "type": "postback",
