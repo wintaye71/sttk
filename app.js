@@ -448,6 +448,9 @@ function handleQuickReply(sender_psid, received_message) {
       case "hepatology":
         showHepatologyDoctor(sender_psid);
         break;
+      case "neurology":
+        showNeurologyDoctor(sender_psid);
+        break;
 
 
       case "psychiatry":
@@ -1095,6 +1098,55 @@ const showHepatologyDoctor = (sender_psid) => {
               "type": "postback",
               "title": "Dr. Win Ei Ei",
               "payload": "Doctor:Dr. Win Ei Ei",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+
+const showNeurologyDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Myint Oo",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK), FRCP",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Myint Oo",
+              "payload": "Doctor:Dr. Myint Oo",
+            },
+          ],
+        }, {
+          "title": "Dr. Moe Moe Zaw",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK), Dr. Med.Sc (Neurology)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Moe Moe Zaw",
+              "payload": "Doctor:Dr. Moe Moe Zaw",
+            },
+          ],
+        }, {
+          "title": "Dr. Kyi Kyi Maw",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Kyi Kyi Maw",
+              "payload": "Doctor:Dr. Kyi Kyi Maw",
             },
           ],
         }
