@@ -323,6 +323,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
   let name = req.body.name;
   let email = req.body.email;
+
   let img_url = "";
   let sender = req.body.sender;
 
@@ -664,10 +665,11 @@ const handlePostback = (sender_psid, received_postback) => {
     firstOrFollowUp(sender_psid);
   } else if (payload.startsWith("ConsultDoctor:")) {
     let doctor_name = payload.slice(14);
+    selectedDoc = doctor_name;
     console.log('SELECTED DOCTOR IS: ', doctor_name);
-    userInputs[user_id].doctor = doctor_name;
+    //userInputs[user_id].doctor = doctor_name;
     console.log('TEST', userInputs);
-    firstOrFollowUp(sender_psid);
+    fillConsultationForm(sender_psid);
   } else {
     switch (payload) {
       case "yes":
@@ -1455,6 +1457,8 @@ const showPsychiatryDoctor = (sender_psid) => {
     }
   }
   callSend(sender_psid, response);
+  selectedDept = "Psychiatry";
+
 
 }
 
@@ -1530,6 +1534,32 @@ const firstOrFollowUp = (sender_psid) => {
   };
   callSend(sender_psid, response);
 
+}
+
+const fillConsultationForm = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "What questions would you like to ask your doctor? Please tell the condition that you suffers.",
+          "buttons": [
+            {
+              "type": "web_url",
+              "title": "Consult",
+              "url": APP_URL + "webview/" + sender_psid,
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+
+          ],
+        }]
+      }
+    }
+  }
+  callSendAPI(sender_psid, response);
 }
 
 const botQuestions = (current_question, sender_psid) => {
