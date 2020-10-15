@@ -314,13 +314,14 @@ END Gallery Page
 //webview test
 app.get('/webview/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
-  res.render('consultation.ejs', { title: "Consultation", sender_id: sender_id });
+  res.render('consultation.ejs', { title: "Consultation", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
 });
 
 
 
 app.post('/webview', upload.single('file'), function (req, res) {
-
+  let doctor = selectedDoc;
+  let department = selectedDept;
   let name = req.body.name;
   let email = req.body.email;
 
@@ -436,6 +437,7 @@ function handleQuickReply(sender_psid, received_message) {
   } else if (received_message.startsWith("department:")) {
     let dept = received_message.slice(11);
     userInputs[user_id].department = dept;
+    selectedDept = dept;
     switch (dept) {
       case "cardiac surgery":
         showCardiacSurgeryDoctor(sender_psid);
@@ -1432,11 +1434,9 @@ const showPsychiatryDoctor = (sender_psid) => {
           "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121175169_127539895765017_5222472204305763753_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_eui2=AeEEwLc2ht843K3wLgtEstCCXajrfRKauaJdqOt9Epq5ohsNYEzSw4TeC2VdX-0lWWqzeJAbWC2nIpwQN-tA9PGa&_nc_ohc=q5YaFWn0NDAAX-jS54e&_nc_ht=scontent.fmdl5-1.fna&oh=753d41a065f6fb78742a3c198475914c&oe=5FAB3427",
           "buttons": [
             {
-              "type": "web_url",
+              "type": "postback",
               "title": "Dr. Phyu Sin Win",
-              "url": APP_URL + "webview/" + sender_psid,
-              "webview_height_ratio": "full",
-              "messenger_extensions": true,
+              "payload": "ConsultDoctor:Dr. Phyu Sin Win",
             },
           ],
         }, {
@@ -1544,7 +1544,7 @@ const fillConsultationForm = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-          "title": "What questions would you like to ask your doctor? Please tell the condition that you suffers.",
+          "title": "What questions would you like to ask your doctor? Please tell the conditions.",
           "buttons": [
             {
               "type": "web_url",
