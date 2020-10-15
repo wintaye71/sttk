@@ -457,6 +457,16 @@ function handleQuickReply(sender_psid, received_message) {
       case "ophthalmology":
         showOphthalmologyDoctor(sender_psid);
         break;
+      case "orthopedic":
+        showOrthopedicDoctor(sender_psid);
+        break;
+      case "paediatrics":
+        showPaediatricsDoctor(sender_psid);
+        break;
+      case "respiratory":
+        showRespiratoryDoctor(sender_psid);
+        break;
+
 
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
@@ -1248,6 +1258,150 @@ const showOphthalmologyDoctor = (sender_psid) => {
               "type": "postback",
               "title": "Dr. Amy Aung",
               "payload": "Doctor:Dr. Amy Aung",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const showOrthopedicDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Khaing Soe Tun",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ortho)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Khaing Soe Tun",
+              "payload": "Doctor:Dr. Khaing Soe Tun",
+            },
+          ],
+        }, {
+          "title": "Dr. Nay Myo Tun",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ortho), Dr. Med. Sc, F.I.C.S (Ortho)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Nay Myo Tun",
+              "payload": "Doctor:Dr. Nay Myo Tun",
+            },
+          ],
+        }, {
+          "title": "Dr. Nay Tun",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ortho)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Nay Tun",
+              "payload": "Doctor:Dr. Nay Tun",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const showPaediatricsDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Thida",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Paed;), MRCP (UK), FRCP (CH), Dr. Med. Sc (Paed;), Dip. Med. Ed",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Thida",
+              "payload": "Doctor:Dr. Thida",
+            },
+          ],
+        }, {
+          "title": "Dr. Nwet Nwet Tin",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Paed;)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Nwet Nwet Tin",
+              "payload": "Doctor:Dr. Nwet Nwet Tin",
+            },
+          ],
+        }, {
+          "title": "Dr. Moh Moh Thwe",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Paed;), MRCPCH (UK)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Moh Moh Thwe",
+              "payload": "Doctor:Dr. Moh Moh Thwe",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const showRespiratoryDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Aye Win Satt",
+          "subtitle": "M.B.,B.S. MRCP (UK), FRCP(Edin), Dr. Med. Sc(Respiratory Medicine), FCCP (USA)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Aye Win Satt",
+              "payload": "Doctor:Dr. Aye Win Satt",
+            },
+          ],
+        }, {
+          "title": "Dr. Yin Mon Thant",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Int: Med), MRCP, FRCP, Dr. Med. Sc (Respiratory Medicine)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Yin Mon Thant",
+              "payload": "Doctor:Dr. Yin Mon Thant",
+            },
+          ],
+        }, {
+          "title": "Dr. Twe Tar Oo",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Int: Med), Dr. Med. Sc (Respiratory Medicine)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Twe Tar Oo",
+              "payload": "Doctor:Dr. Twe Tar Oo",
             },
           ],
         }
