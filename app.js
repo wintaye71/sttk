@@ -362,6 +362,25 @@ app.post('/webview', upload.single('file'), function (req, res) {
       console.error(error);
     });
   }else{
+    db.collection('consult').add({
+      name: name,
+      gender: gender,
+      phone: phone,
+      email: email,
+      doctor: doctor,
+      department: department,
+      date: selecteddate,
+      time: selectedtime,
+      message: message,
+      image: img_url,
+      referene: reference,
+      status: status
+    }).then(success => {
+      console.log("DATA SAVED")
+      thankyouReply(sender, name, img_url);
+    }).catch(error => {
+      console.log(error);
+    });
 
   }
 
