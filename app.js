@@ -451,7 +451,12 @@ function handleQuickReply(sender_psid, received_message) {
       case "neurology":
         showNeurologyDoctor(sender_psid);
         break;
-
+      case "obstetrics":
+        showObstetricsDoctor(sender_psid);
+        break;
+      case "ophthalmology":
+        showOphthalmologyDoctor(sender_psid);
+        break;
 
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
@@ -1157,6 +1162,105 @@ const showNeurologyDoctor = (sender_psid) => {
   }
   callSend(sender_psid, response);
 }
+
+const showObstetricsDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Myint Myint Aye",
+          "subtitle": "M.B.,B.S. M.Med.Sc (OG), MRCOG (UK)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Myint Myint Aye",
+              "payload": "Doctor:Dr. Myint Myint Aye",
+            },
+          ],
+        }, {
+          "title": "Dr. Myint Thet Mon",
+          "subtitle": "M.B.,B.S. M.Med.Sc (OG), Dip. Med.Sc(OG) Dr. Med.Sc (OG)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Myint Thet Mon",
+              "payload": "Doctor:Dr. Myint Thet Mon",
+            },
+          ],
+        }, {
+          "title": "Dr. Kyi Kyi Myint",
+          "subtitle": "M.B.,B.S. M.Med.Sc (OG)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Kyi Kyi Myint",
+              "payload": "Doctor:Dr. Kyi Kyi Myint",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const showOphthalmologyDoctor = (sender_psid) => {
+  let response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Dr. Thin Kyu Aye",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ophth), D.C.E.H (London), F.L.C.S (Ophth), F.A.C.S (USA)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Thin Kyu Aye",
+              "payload": "Doctor:Dr. Thin Kyu Aye",
+            },
+          ],
+        }, {
+          "title": "Dr. Sandar Myint",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ophth)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Sandar Myint",
+              "payload": "Doctor:Dr. Sandar Myint",
+            },
+          ],
+        }, {
+          "title": "Dr. Amy Aung",
+          "subtitle": "M.B.,B.S. M.Med.Sc (Ophth)",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Dr. Amy Aung",
+              "payload": "Doctor:Dr. Amy Aung",
+            },
+          ],
+        }
+
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+
+
 
 
 
