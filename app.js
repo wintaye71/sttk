@@ -322,23 +322,36 @@ app.get('/webview/:sender_id', function (req, res) {
 app.post('/webview', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
   let department = selectedDept;
+  let selecteddate = req.body.date;
+  let selectedtime = req.body.time;  
   let name = req.body.name;
+  let gender = req.body.gender;
+  let phone = req.body.phone;
   let email = req.body.email;
-
+  let message = req.body.message;
   let img_url = "";
   let sender = req.body.sender;
+  let reference = generateRandom(6);
+  let status = "pending";
 
   console.log("REQ FILE:", req.file);
-
-
 
   let file = req.file;
   if (file) {
     uploadImageToStorage(file).then((img_url) => {
-      db.collection('webview').add({
+      db.collection('consult').add({
         name: name,
+        gender: gender,
+        phone: phone,
         email: email,
-        image: img_url
+        doctor: doctor,
+        department: department,
+        date: selecteddate,
+        time: selectedtime,
+        message: message,
+        image: img_url,
+        referene: reference,
+        status: status
       }).then(success => {
         console.log("DATA SAVED")
         thankyouReply(sender, name, img_url);
@@ -348,6 +361,8 @@ app.post('/webview', upload.single('file'), function (req, res) {
     }).catch((error) => {
       console.error(error);
     });
+  }else{
+
   }
 
 

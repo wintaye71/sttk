@@ -41,11 +41,11 @@
         <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webview/">
             <div class="w3-session">
                 <label for="name">Doctor</label>
-                <input type="text" class="w3-input w3-border" name="doctor" value="<%= doctor %>"><br>
+                <input type="text" class="w3-input w3-border" name="doctor" value="<%= doctor %>" readonly><br>
             </div>
             <div class="w3-session">
                 <label for="name">Department</label>
-                <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= dept %>"><br>
+                <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= dept %>" readonly><br>
             </div>
             <div class="w3-session">
                 <label for="name">Date</label>
@@ -60,10 +60,10 @@
                 <input type="text" class="w3-input w3-border" id="name" name="name" placeholder="Enter your full name"><br>
             </div>
             <div class="w3-session">
-                Gender: <br>
-                <input type="radio" class="w3-radio" id="male" name="gender" value="M">
+                Gender <br>
+                <input type="radio" class="w3-radio" id="male" name="gender" value="Male">
                 <label for="male">Male</label>
-                <input type="radio" class="w3-radio" id="female" name="gender" value="F">
+                <input type="radio" class="w3-radio" id="female" name="gender" value="Female">
                 <label for="female">Female</label><br><br>
             </div>
             <div class="w3-session">
@@ -82,7 +82,7 @@
             </div>
             <div class="w3-session">
                 <label for="image">Image</label>
-                <input type="file" name="file" />
+                <input type="file" name="file" /><br>
             </div>
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>">
             <input type="submit" value="Submit">
