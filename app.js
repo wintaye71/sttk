@@ -323,7 +323,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
   let department = selectedDept;
   let selecteddate = req.body.date;
-  let selectedtime = req.body.time;  
+  let selectedtime = req.body.time;
   let name = req.body.name;
   let gender = req.body.gender;
   let phone = req.body.phone;
@@ -361,7 +361,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
     }).catch((error) => {
       console.error(error);
     });
-  }else{
+  } else {
     db.collection('consult').add({
       name: name,
       gender: gender,
@@ -376,8 +376,12 @@ app.post('/webview', upload.single('file'), function (req, res) {
       referene: reference,
       status: status
     }).then(success => {
-      console.log("DATA SAVED")
-      thankyouReply(sender, name, img_url);
+      console.log('DATA SAVED', success);
+      let text = "Thank you. We have received your message to consult." + "\u000A";
+      text += " We wil reply you to confirm soon" + "\u000A";
+      text += "Your booking reference number is:" + reference;
+      let response = { "text": text };
+      callSend(sender_psid, response);
     }).catch(error => {
       console.log(error);
     });
