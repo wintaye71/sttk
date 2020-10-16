@@ -74,18 +74,18 @@
         </div>
         <div class="w3-session">
           <label for="name">Message</label>
-          <textarea name="message" rows="4" cols="50"><%= data.message %></textarea> <br>
+          <textarea name="message" class="w3-input w3-border" rows="4" cols="50"><%= data.message %></textarea> <br>
         </div>
         <div class="w3-session">
           <label for="status">Status:</label>
-          <select name="status" id="status">
+          <select name="status" class="w3-select" id="status">
             <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
             <option value="confirm" <%if(data.status == "confirm"){%> <%="selected"%> <%}%> >Confirm</option>           
           </select>  <br> 
         </div>
         <div class="w3-session">
           <label for="name">Comment</label>
-          <textarea name="comment" rows="4" cols="50"></textarea>   <br>   
+          <textarea name="comment" class="w3-input w3-border" rows="4" cols="50"></textarea>   <br>   
         </div>
 
   
