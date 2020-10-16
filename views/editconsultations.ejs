@@ -39,53 +39,53 @@
       <form id="form" method="post" action="../updateconsultation">
         <div class="w3-session">
           <label for="name">Name</label>
-          <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>">
+          <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>"><br>
         </div>
         <div class="w3-session">
           <label for="name">Phone</label>
-          <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>">
+          <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>"><br>
         </div>
         <div class="w3-session">
           <label for="email">Email</label>
-          <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>">
+          <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>"><br>
         </div>
         <div class="w3-session">
           Gender<br>
           <input type="radio" id="male" name="gender" value="Male" <%if(data.gender == "Male"){%> <%="checked"%> <%}%>>
           <label for="male">Male</label>
           <input type="radio" id="female" name="gender" value="Female" <%if(data.gender == "Female"){%> <%="checked"%> <%}%>>
-          <label for="female">Female</label><br>  
+          <label for="female">Female</label><br>  <br>
         </div>
         <div class="w3-session">
           <label for="name">Doctor</label>
-          <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>">
+          <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>"> <br>
         </div>
         <div class="w3-session">
           <label for="name">Department</label>
-          <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>">
+          <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>"> <br>
         </div>
         <div class="w3-session">
           <label for="name">Date</label>
-          <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>">
+          <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>"> <br>
         </div>
         <div class="w3-session">
           <label for="name">Time</label>
-          <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>">
+          <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>"> <br>
         </div>
         <div class="w3-session">
           <label for="name">Message</label>
-          <textarea name="message" rows="4" cols="50"><%= data.message %></textarea>
+          <textarea name="message" rows="4" cols="50"><%= data.message %></textarea> <br>
         </div>
         <div class="w3-session">
           <label for="status">Status:</label>
           <select name="status" id="status">
             <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
             <option value="confirm" <%if(data.status == "confirm"){%> <%="selected"%> <%}%> >Confirm</option>           
-          </select>   
+          </select>  <br> 
         </div>
         <div class="w3-session">
           <label for="name">Comment</label>
-          <textarea name="comment" rows="4" cols="50"></textarea>      
+          <textarea name="comment" rows="4" cols="50"></textarea>   <br>   
         </div>
 
   
