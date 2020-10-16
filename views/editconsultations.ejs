@@ -51,9 +51,9 @@
         </div>
         <div class="w3-session">
           Gender<br>
-          <input type="radio" id="male" name="gender" value="Male" <%if(data.gender == "Male"){%> <%="checked"%> <%}%>>
+          <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(data.gender == "Male"){%> <%="checked"%> <%}%>>
           <label for="male">Male</label>
-          <input type="radio" id="female" name="gender" value="Female" <%if(data.gender == "Female"){%> <%="checked"%> <%}%>>
+          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(data.gender == "Female"){%> <%="checked"%> <%}%>>
           <label for="female">Female</label><br>  <br>
         </div>
         <div class="w3-session">
@@ -91,6 +91,7 @@
   
         <input type="hidden"  name="doc_id" value="<%= data.doc_id %>">
         <input type="hidden" name="reference" value="<%= data.reference %>">
+        <input type="hidden" name="image" value="<%= data.image %>">
         <input type="submit" value="Submit">
       </form>
     </div>
