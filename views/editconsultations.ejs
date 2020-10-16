@@ -33,86 +33,68 @@
     };
   </script>
   <div class="w3-content w3-padding-large w3-margin-top" id="portfolio">
-  <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
-    <h3>Edit Consultation</h3>
+    <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+      <h3>Edit Consultation</h3>
 
-    <form id="form" method="post" action="../updateconsultation">
-      <div class="w3-session">
-        <label for="name">Name</label>
-        <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>">
-      </div>
-      <div class="w3-session">
-        <label for="name">Phone</label>
-        <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>">
-      </div>
-      <div class="w3-session">
-        <label for="email">Email</label>
-        <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>">
-      </div>
-      <div class="w3-session">
-        Gender:
-        <input type="radio" id="male" name="gender" value="M" <%if(data.gender == "M"){%> <%="checked"%> <%}%>
-    >
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="F"
-    <%if(data.gender == "F"){%> <%="checked"%> <%}%>
-    >
-    <label for="female">Female</label><br>  
-  </div>
-  <div class="w3-session">
-    <label for="name">Doctor</label>
-    <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>">
-      </div>
-      <div class="w3-session">
-        <label for="name">Department</label>
-        <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>">
-      </div>
-      <div class="w3-session">
-        Visit:
-        <input type="w3-radio" name="visit" value="first time" <%if(data.visit == 'first time' ){%> <%="checked"%> <%}%>
-    >
-    <label for="male">First Time</label>
-    <input type="w3-radio" name="vist" value="follow up"
-    <%if(data.visit == 'follow up'){%> <%="checked"%> <%}%>
-    >
-    <label for="female">Follow Up</label><br>     
-  </div>
-  <div class="w3-session">
-    <label for="name">Date</label>
-    <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>">
-      </div>
-      <div class="w3-session">
-        <label for="name">Time</label>
-        <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>">
-      </div>
-      <div class="w3-session">
-        <label for="name">Message</label>
-        <textarea name="message" rows="4" cols="50"><%= data.message %></textarea>
-
-      </div>
-      <div class="w3-session">
-        <label for="status">Status:</label>
-        <select name="status" id="status">
-          <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%>
-    >Pending</option>
-    <option value="confirm"
-    <%if(data.status == "confirm"){%> <%="selected"%> <%}%>
-    >Confirm</option>
-   
-  </select>   
-  </div>
-  <div class="w3-session">
-    <label for="name">Comment</label>
-    <textarea name="comment" rows="4" cols="50"></textarea>      
-  </div>
+      <form id="form" method="post" action="../updateconsultation">
+        <div class="w3-session">
+          <label for="name">Name</label>
+          <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>">
+        </div>
+        <div class="w3-session">
+          <label for="name">Phone</label>
+          <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>">
+        </div>
+        <div class="w3-session">
+          <label for="email">Email</label>
+          <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>">
+        </div>
+        <div class="w3-session">
+          Gender<br>
+          <input type="radio" id="male" name="gender" value="Male" <%if(data.gender == "Male"){%> <%="checked"%> <%}%>>
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" <%if(data.gender == "Female"){%> <%="checked"%> <%}%>>
+          <label for="female">Female</label><br>  
+        </div>
+        <div class="w3-session">
+          <label for="name">Doctor</label>
+          <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>">
+        </div>
+        <div class="w3-session">
+          <label for="name">Department</label>
+          <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>">
+        </div>
+        <div class="w3-session">
+          <label for="name">Date</label>
+          <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>">
+        </div>
+        <div class="w3-session">
+          <label for="name">Time</label>
+          <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>">
+        </div>
+        <div class="w3-session">
+          <label for="name">Message</label>
+          <textarea name="message" rows="4" cols="50"><%= data.message %></textarea>
+        </div>
+        <div class="w3-session">
+          <label for="status">Status:</label>
+          <select name="status" id="status">
+            <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
+            <option value="confirm" <%if(data.status == "confirm"){%> <%="selected"%> <%}%> >Confirm</option>           
+          </select>   
+        </div>
+        <div class="w3-session">
+          <label for="name">Comment</label>
+          <textarea name="comment" rows="4" cols="50"></textarea>      
+        </div>
 
   
   <input type="hidden"  name="doc_id" value="<%= data.doc_id %>">
-            <input type="hidden" name="ref" value="<%= data.ref %>">
-            <input type="submit" value="Submit">
-    </form>
+              <input type="hidden" name="ref" value="<%= data.ref %>">
+              <input type="submit" value="Submit">
+      </form>
+    </div>
   </div>
-</div>
 
   <script>
 
