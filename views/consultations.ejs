@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Consultations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Consultation List</h1>
+
+
+    <div style="overflow-x:auto;">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>EMail</th>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Message</th>
+                <th>Reference</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+
+            <% data.forEach(function(consultation){ %>
+            <tr>
+
+                <td><%= consultation.name %></td>
+                <td><%= consultation.phone %></td>
+                <td><%= consultation.email %></td>
+                <td><%= consultation.gender %></td>
+                <td><%= consultation.doctor %></td>
+                <td><%= consultation.department %></td>
+                <td><%= consultation.visit %></td>
+                <td><%= consultation.date %></td>
+                <td><%= consultation.time %></td>
+                <td><%= consultation.message %></td>
+                <td><%= consultation.ref %></td>
+                <td><%= consultation.status %></td>
+                <td><a href="updateconsultation/<%= consultation.doc_id %>">Edit</a> | Delete</td>
+            </tr>
+            <% }); %>
+
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

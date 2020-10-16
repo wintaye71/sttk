@@ -225,6 +225,84 @@ app.post('/admin/updateappointment', function (req, res) {
 });
 
 /*********************************************
+Consultations
+**********************************************/
+app.get('/admin/consultations', async function (req, res) {
+
+  const consultRef = db.collection('consult');
+  const snapshot = await consultRef.get();
+
+  if (snapshot.empty) {
+    res.send('no data');
+  }
+
+  let data = [];
+
+  snapshot.forEach(doc => {
+    let consult = {};
+    consult = doc.data();
+    consult.doc_id = doc.id;
+
+    data.push(consult);
+
+  });
+
+  console.log('DATA:', data);
+
+  res.render('consultations.ejs', { data: data });
+
+});
+
+app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
+  let doc_id = req.params.doc_id;
+
+  const consultRef = db.collection('consult').doc(doc_id);
+  const doc = await consultRef.get();
+  if (!doc.exists) {
+    console.log('No such document!');
+  } else {
+    console.log('Document data:', doc.data());
+    let data = doc.data();
+    data.doc_id = doc.id;
+
+    console.log('Document data:', data);
+    res.render('editconsultions.ejs', { data: data });
+  }
+
+});
+
+
+app.post('/admin/updateconsultation', function (req, res) {
+  console.log('REQ:', req.body);
+
+
+
+  let data = {
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    gender: req.body.gender,
+    doctor: req.body.doctor,
+    department: req.body.department,
+    visit: req.body.visit,
+    date: req.body.date,
+    time: req.body.time,
+    message: req.body.message,
+    status: req.body.status,
+    doc_id: req.body.doc_id,
+    ref: req.body.ref,
+    comment: req.body.comment
+  }
+
+  db.collection('consult').doc(req.body.doc_id)
+    .update(data).then(() => {
+      res.redirect('/admin/consultations');
+    }).catch((err) => console.log('ERROR:', error));
+
+});
+
+
+/*********************************************
 Gallery page
 **********************************************/
 app.get('/showimages/:sender_id/', function (req, res) {
@@ -314,7 +392,7 @@ END Gallery Page
 //webview test
 app.get('/webview/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
-  res.render('consultation.ejs', { title: "Consultation", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
+  res.render('consultationwebview.ejs', { title: "Consultation", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
 });
 
 
@@ -378,8 +456,8 @@ app.post('/webview', upload.single('file'), function (req, res) {
     }).then(success => {
       console.log('DATA SAVED', success);
       let text = "Thank you. We have received your message to consult." + "\u000A";
-      text += " We wil reply you to confirm soon" + "\u000A";
-      text += "Your booking reference number is:" + reference;
+      text += "We wil reply you to confirm soon" + "\u000A";
+      text += "Your booking reference number is: " + reference;
       let response = { "text": text };
       callSend(sender, response);
     }).catch(error => {
