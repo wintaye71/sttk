@@ -550,6 +550,7 @@ function handleQuickReply(sender_psid, received_message) {
         botQuestions(current_question, sender_psid);
         break;
       case "follow up":
+        current_question = 'q1';
         botQuestions(current_question, sender_psid);
         break;
     }
