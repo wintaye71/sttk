@@ -435,8 +435,9 @@ app.post('/webview', upload.single('file'), function (req, res) {
         let text = "Thank you. We have received your message to consult." + "\u000A";
         text += "We wil reply you to confirm soon" + "\u000A";
         text += "Your booking reference number is: " + reference;
-        let response = { "text": text };
-        callSend(sender, response);
+        //let response = { "text": text };
+        //callSend(sender, response);
+        showConsultationReply(sender, text);
       }).catch(error => {
         console.log(error);
       });
@@ -462,21 +463,19 @@ app.post('/webview', upload.single('file'), function (req, res) {
       let text = "Thank you. We have received your message to consult." + "\u000A";
       text += "We wil reply you to confirm soon" + "\u000A";
       text += "Your booking reference number is: " + reference;
-      let response = { "text": text };
-      callSend(sender, response);
+      showConsultationReply(sender, text);
     }).catch(error => {
       console.log(error);
     });
 
   }
 
-
-
-
-
-
-
 });
+
+const showConsultationReply =(sender_psid, replyText) => {
+  let response = { "text": replyText };
+  callSend(sender_psid, response);
+}
 
 //Set up Get Started Button. To run one time
 //eg https://fbstarter.herokuapp.com/setgsbutton
