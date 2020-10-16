@@ -604,7 +604,7 @@ function handleQuickReply(sender_psid, received_message) {
         showGMDoctorConsult(sender_psid);
         break;
       default:
-        showGeneralMedicineDoctor(sender_psid);
+        showGMDoctorConsult(sender_psid);
     }
   } 
   else {
