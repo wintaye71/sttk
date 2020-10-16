@@ -1,158 +1,137 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Edit Appointment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
   <script>
-      (function(d, s, id){
+    (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); 
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s);
       js.id = id;
       js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
 
-    const APP_ID = 628101627852748;    
+    const APP_ID = 628101627852748;
     var senderID = "";
-    
-    window.extAsyncInit = function() {
-        MessengerExtensions.getContext(APP_ID, 
-          function success(thread_context){
-           senderID = thread_context.psid;
-          },
-          function error(err){
-            console.log(err);
-          }
-        );        
+
+    window.extAsyncInit = function () {
+      MessengerExtensions.getContext(APP_ID,
+        function success(thread_context) {
+          senderID = thread_context.psid;
+        },
+        function error(err) {
+          console.log(err);
+        }
+      );
     };
   </script>
-  
- 
 
-  <form id="form" method="post" action="../updateappointment">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" name="name" value="<%= data.name %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Phone</label>
-    <input type="text" class="form-control" name="phone" value="<%= data.phone %>">    
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" name="email" value="<%= data.email %>">
-  </div>
-  <div class="form-group">
-    Gender: 
-    <input type="radio" id="male" name="gender" value="M" 
-    <%if(data.gender == "M"){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="F"
-    <%if(data.gender == "F"){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="female">Female</label><br>  
-  </div>
-  <div class="form-group">
-    <label for="name">Doctor</label>
-    <input type="text" class="form-control" name="doctor" value="<%= data.doctor %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Department</label>
-    <input type="text" class="form-control" id="department" name="department" value="<%= data.department %>">    
-  </div>
-  <div class="form-group">
-    Visit: 
-    <input type="radio" name="visit" value="first time" 
-    <%if(data.visit == 'first time' ){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="male">First Time</label>
-    <input type="radio" name="vist" value="follow up"
-    <%if(data.visit == 'follow up'){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="female">Follow Up</label><br>     
-  </div>
-  <div class="form-group">
-    <label for="name">Date</label>
-    <input type="text" class="form-control" name="date" value="<%= data.date %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Time</label>
-    <input type="text" class="form-control" name="time" value="<%= data.time %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Message</label>
-    <textarea name="message" rows="4" cols="50"><%= data.message %></textarea>
-      
-  </div>
-  <div class="form-group">
-    <label for="status">Status:</label>
-  <select name="status" id="status">    
-    <option value="pending"
-    <%if(data.status == "pending"){%>
-        <%="selected"%>
-    <%}%>
-    >Pending</option>
-    <option value="confirm"
-    <%if(data.status == "confirm"){%>
-        <%="selected"%>
-    <%}%>
-    >Confirm</option>
-   
-  </select>   
-  </div>
-  <div class="form-group">
-    <label for="name">Comment</label>
-    <textarea name="comment" rows="4" cols="50"></textarea>      
-  </div>
+  <div class="w3-content w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+    <h3>Confirm Appointment</h3>
+
+
+    <form id="form" method="post" action="../updateappointment">
+      <div class="w3-session">
+        <label for="name">Name</label>
+        <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>"> <br>
+      </div>
+      <div class="w3-session">
+        <label for="name">Phone</label>
+        <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>"> <br>
+      </div>
+      <div class="w3-session">
+        <label for="email">Email</label>
+        <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>"> <br>
+      </div>
+      <div class="w3-session">
+        Gender <br>
+        <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(data.gender == "M"){%> <%="checked"%> <%}%> >
+          <label for="male">Male</label>
+          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(data.gender == "F"){%> <%="checked"%> <%}%> >
+          <label for="female">Female</label><br>  
+        </div>
+      <div class="w3-session"> <br>
+        <label for="name">Doctor</label>
+        <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>"> <br>
+      </div>
+      <div class="w3-session">
+        <label for="name">Department</label>
+        <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>">
+      </div>
+      <div class="w3-session">
+        Visit <br>
+        <input type="radio" class="w3-radio" name="visit" value="first time" <%if(data.visit == 'first time' ){%> <%="checked"%> <%}%> >
+        <label for="male">First Time</label>
+        <input type="radio" class="w3-radio" name="vist" value="follow up" <%if(data.visit == 'follow up'){%> <%="checked"%> <%}%>>
+        <label for="female">Follow Up</label><br>     
+      </div>
+      <div class="w3-session">
+        <label for="name">Date</label>
+        <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>"><br>
+      </div>
+      <div class="w3-session">
+        <label for="name">Time</label>
+        <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>"> <br>
+      </div>
+      <div class="w3-session">
+        <label for="name">Message</label>
+        <textarea name="message" class="w3-input w3-border" rows="4" cols="50"><%= data.message %></textarea> <br>
+
+      </div>
+      <div class="w3-session">
+        <label for="status">Status</label>
+        <select name="status" class="w3-select" id="status">
+          <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
+          <option value="confirm" <%if(data.status == "confirm"){%> <%="selected"%> <%}%> >Confirm</option>
+        </select>    
+      </div><br>
+      <div class="w3-session">
+        <label for="name">Comment</label>
+        <textarea name="comment" class="w3-input w3-border" rows="4" cols="50"></textarea>      
+      </div>
 
   
-  <input type="hidden"  name="doc_id" value="<%= data.doc_id %>">
-  <input type="hidden"  name="ref" value="<%= data.ref %>">
-  <input type="submit" value="Submit"> 
-  </form>
+      <input type="hidden" name="doc_id" value="<%= data.doc_id %>">
+      <input type="hidden" name="ref" value="<%= data.ref %>">
+      <input type="submit" value="Submit">
+    </form>
+</div>
 
 
-  
-  <script>
-      
-   
+    <script>
+
+
       const windowShut = () => {
-   
-          MessengerExtensions.requestCloseBrowser(function success() {
-          console.log("success");          
+
+        MessengerExtensions.requestCloseBrowser(function success() {
+          console.log("success");
         }, function error(err) {
           console.log(err);
         });
-        }
-      
-      document.getElementById("form").addEventListener("submit", windowShut);       
+      }
+
+      document.getElementById("form").addEventListener("submit", windowShut);
 
       /*
       const postFormData = (data) => {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://fbstarterbot.herokuapp.com/webview/", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(data)); 
+        xhr.send(JSON.stringify(data));
       } */
 
-     
 
-  </script>
 
-  </body>
+    </script>
+
+</body>
 
 </html>
