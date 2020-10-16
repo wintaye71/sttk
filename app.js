@@ -266,7 +266,7 @@ app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
     data.doc_id = doc.id;
 
     console.log('Document data:', data);
-    res.render('editconsultions.ejs', { data: data });
+    res.render('editconsultations.ejs', { data: data });
   }
 
 });
@@ -274,9 +274,6 @@ app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
 
 app.post('/admin/updateconsultation', function (req, res) {
   console.log('REQ:', req.body);
-
-
-
   let data = {
     name: req.body.name,
     phone: req.body.phone,
