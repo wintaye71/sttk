@@ -431,8 +431,12 @@ app.post('/webview', upload.single('file'), function (req, res) {
         reference: reference,
         status: status
       }).then(success => {
-        console.log("DATA SAVED")
-        thankyouReply(sender, name, img_url);
+        console.log('DATA SAVED', success);
+        let text = "Thank you. We have received your message to consult." + "\u000A";
+        text += "We wil reply you to confirm soon" + "\u000A";
+        text += "Your booking reference number is: " + reference;
+        let response = { "text": text };
+        callSend(sender, response);
       }).catch(error => {
         console.log(error);
       });
@@ -451,7 +455,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
       time: selectedtime,
       message: message,
       image: img_url,
-      referene: reference,
+      reference: reference,
       status: status
     }).then(success => {
       console.log('DATA SAVED', success);
@@ -584,19 +588,26 @@ function handleQuickReply(sender_psid, received_message) {
         break;
       case "respiratory":
         showRespiratoryDoctor(sender_psid);
-        break;
-
-
+        break;      
+      default:
+        showGeneralMedicineDoctor(sender_psid);
+    }
+  }else if (received_message.startsWith("depart:")) {
+    let dept = received_message.slice(7);
+    userInputs[user_id].department = dept;
+    selectedDept = dept;
+    switch (dept) {
       case "psychiatry":
         showPsychiatryDoctor(sender_psid);
         break;
-      case "gm consult":
+      case "general medicine":
         showGMDoctorConsult(sender_psid);
         break;
       default:
         showGeneralMedicineDoctor(sender_psid);
     }
-  } else {
+  } 
+  else {
 
     switch (received_message) {
       case "on":
@@ -1038,11 +1049,11 @@ const consultationAppointment = (sender_psid) => {
       {
         "content_type": "text",
         "title": "Psychiatry",
-        "payload": "department:Psychiatry",
+        "payload": "depart:Psychiatry",
       }, {
         "content_type": "text",
         "title": "General Medicine",
-        "payload": "department:GM Consult",
+        "payload": "depart:General Medicine",
       }
     ]
   };
