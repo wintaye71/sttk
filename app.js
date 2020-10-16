@@ -287,7 +287,7 @@ app.post('/admin/updateconsultation', function (req, res) {
     message: req.body.message,
     status: req.body.status,
     doc_id: req.body.doc_id,
-    ref: req.body.ref,
+    reference: req.body.reference,
     comment: req.body.comment
   }
 
