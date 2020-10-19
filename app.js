@@ -152,7 +152,7 @@ app.post('/test', function (req, res) {
 
 app.get('/admin/appointments', async function (req, res) {
 
-  const appointmentsRef = db.collection('appointments');
+  const appointmentsRef = db.collection('appointments').orderBy['created_on','desc'];
   const snapshot = await appointmentsRef.get();
 
   if (snapshot.empty) {
@@ -1763,6 +1763,7 @@ const saveAppointment = (arg, sender_psid) => {
   let data = arg;
   data.ref = generateRandom(6);
   data.status = "pending";
+  data.created_on = new Date();
   db.collection('appointments').add(data).then((success) => {
     console.log('SAVED', success);
     let text = "Thank you. We have received your appointment." + "\u000A";
