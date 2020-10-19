@@ -152,7 +152,7 @@ app.post('/test', function (req, res) {
 
 app.get('/admin/appointments', async function (req, res) {
 
-  const appointmentsRef = db.collection('appointments').orderBy['created_on','desc'];
+  const appointmentsRef = db.collection('appointments').orderBy('created_on','desc');
   const snapshot = await appointmentsRef.get();
 
   if (snapshot.empty) {
