@@ -229,7 +229,7 @@ Consultations
 **********************************************/
 app.get('/admin/consultations', async function (req, res) {
 
-  const consultRef = db.collection('consult');
+  const consultRef = db.collection('consult').orderBy('created_on','desc');
   const snapshot = await consultRef.get();
 
   if (snapshot.empty) {
@@ -408,6 +408,8 @@ app.post('/webview', upload.single('file'), function (req, res) {
   let sender = req.body.sender;
   let reference = generateRandom(6);
   let status = "pending";
+  let created_on = new Date();
+  data.created_on = new Date();
 
   console.log("REQ FILE:", req.file);
 
@@ -425,6 +427,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
         time: selectedtime,
         message: message,
         image: img_url,
+        created_on: created_on,
         reference: reference,
         status: status
       }).then(success => {
