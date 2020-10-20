@@ -44,7 +44,7 @@ let userInputs = [];
 let selectedDoc = '';
 let selectedDept = '';
 
-const datepicker = require('js-datepicker');
+//const datepicker = require('js-datepicker');
 
 /*
 var storage = multer.diskStorage({
