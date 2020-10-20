@@ -26,13 +26,13 @@ app.use(body_parser.json());
 app.use(body_parser.urlencoded());
 
 const bot_questions = {
-  "q1": "please enter date (yyyy-mm-dd)",
-  "q2": "please enter time (hh:mm)",
-  "q3": "please enter full name",
-  "q4": "please select gender",
-  "q5": "please enter phone number",
-  "q6": "please enter email",
-  "q7": "please leave a message"
+  "q1": "Please enter date (yyyy-mm-dd)",
+  "q2": "Please enter time (hh:mm)",
+  "q3": "Please enter full name",
+  "q4": "Please select gender",
+  "q5": "Please enter phone number",
+  "q6": "Please enter email",
+  "q7": "Please leave a message"
 }
 
 let current_question = '';
@@ -43,6 +43,8 @@ let userInputs = [];
 
 let selectedDoc = '';
 let selectedDept = '';
+
+const datepicker = require('js-datepicker');
 
 /*
 var storage = multer.diskStorage({
@@ -67,6 +69,9 @@ const upload = multer({
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+
+app.set('trust proxy', 1);
+app.use(session({secret: 'effystonem'}));
 
 
 var firebaseConfig = {
@@ -149,6 +154,44 @@ app.post('/test', function (req, res) {
   let response = { "text": "You  click delete button" };
   callSend(sender_psid, response);
 });
+
+app.get('/login',function(req,res){    
+  sess = req.session;
+
+  if(sess.login){
+     res.send('You are already login. <a href="logout">logout</a>');
+  }else{
+    res.render('login.ejs');
+  } 
+  
+});
+
+
+app.get('/logout',function(req,res){ 
+  //sess = req.session;   
+  req.session.destroy(null);  
+  res.redirect('login');
+});
+
+app.post('/login',function(req,res){    
+  sess = req.session;
+
+  let username = req.body.username;
+  let password = req.body.password;
+
+  if(username == 'admin' && password == 'test123'){
+    sess.username = 'admin';
+    sess.login = true;
+    res.send('login successful');
+  }else{
+    res.send('login failed');
+  }   
+});
+
+app.get('/publicpage',function(req,res){    
+  res.render('publicpage.ejs');
+});
+
 
 app.get('/admin/appointments', async function (req, res) {
 
