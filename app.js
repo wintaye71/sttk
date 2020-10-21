@@ -24,6 +24,8 @@ const uuidv4 = uuid();
 
 app.use(body_parser.json());
 app.use(body_parser.urlencoded());
+app.set('trust proxy', 1);
+app.use(session({secret: 'effystonem'}));
 
 const bot_questions = {
   "q1": "Please enter date (yyyy-mm-dd)",
@@ -70,8 +72,7 @@ const upload = multer({
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-app.set('trust proxy', 1);
-app.use(session({secret: 'effystonem'}));
+
 
 
 var firebaseConfig = {
