@@ -255,8 +255,6 @@ app.get('/admin/updateappointment/:doc_id', async function (req, res) {
 app.post('/admin/updateappointment', function (req, res) {
   console.log('REQ:', req.body);
 
-
-
   let data = {
     name: req.body.name,
     phone: req.body.phone,
