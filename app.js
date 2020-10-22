@@ -205,6 +205,10 @@ app.get('/admin/home',function(req,res){
   res.render('home.ejs');
 });
 
+app.post('/admin/home',function(req,res){    
+  res.render('home.ejs');
+});
+
 
 
 app.get('/admin/appointments', async function (req, res) {
