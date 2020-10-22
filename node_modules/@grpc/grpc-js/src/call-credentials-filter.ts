@@ -15,11 +15,12 @@
  *
  */
 
-import { CallCredentials } from './call-credentials';
 import { Call } from './call-stream';
 import { Channel } from './channel';
 import { BaseFilter, Filter, FilterFactory } from './filter';
 import { Metadata } from './metadata';
+import { Status } from './constants';
+import { splitHostPort } from './uri-parser';
 
 export class CallCredentialsFilter extends BaseFilter implements Filter {
   private serviceUrl: string;
@@ -38,9 +39,10 @@ export class CallCredentialsFilter extends BaseFilter implements Filter {
     if (splitPath.length >= 2) {
       serviceName = splitPath[1];
     }
+    const hostname = splitHostPort(stream.getHost())?.host ?? 'localhost';
     /* Currently, call credentials are only allowed on HTTPS connections, so we
      * can assume that the scheme is "https" */
-    this.serviceUrl = `https://${stream.getHost()}/${serviceName}`;
+    this.serviceUrl = `https://${hostname}/${serviceName}`;
   }
 
   async sendMetadata(metadata: Promise<Metadata>): Promise<Metadata> {
@@ -50,6 +52,12 @@ export class CallCredentialsFilter extends BaseFilter implements Filter {
     });
     const resultMetadata = await metadata;
     resultMetadata.merge(await credsMetadata);
+    if (resultMetadata.get('authorization').length > 1) {
+      this.stream.cancelWithStatus(
+        Status.INTERNAL,
+        '"authorization" metadata cannot have multiple values'
+      );
+    }
     return resultMetadata;
   }
 }
