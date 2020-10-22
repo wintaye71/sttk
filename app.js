@@ -25,7 +25,12 @@ const session = require('express-session')
 app.use(body_parser.json());
 app.use(body_parser.urlencoded());
 app.set('trust proxy', 1);
-app.use(session({secret: 'effystonem'}));
+app.use(session({
+  secret: 'effystonem',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 
 const bot_questions = {
   "q1": "Please enter date (yyyy-mm-dd)",
