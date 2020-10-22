@@ -161,6 +161,7 @@ app.post('/test', function (req, res) {
   callSend(sender_psid, response);
 });
 
+var sess;
 app.get('/login',function(req,res){    
   sess = req.session;
 
