@@ -31,6 +31,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }));
+app.use( express.static( "images" ) );
 
 const bot_questions = {
   "q1": "Please enter date (yyyy-mm-dd)",
