@@ -190,6 +190,7 @@ app.post('/login',function(req,res){
   if(username == 'admin' && password == 'test123'){
     sess.username = 'admin';
     sess.login = true;
+    res.render('home.ejs');
     res.send('login successful');
   }else{
     res.send('login failed');
