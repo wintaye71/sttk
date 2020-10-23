@@ -750,13 +750,13 @@ const handleMessage = (sender_psid, received_message) => {
     userInputs[user_id].message = received_message.text;
     current_question = '';
     confirmAppointment(sender_psid);
-  } else if (selectedRegorCon == "registration") {
-    console.log('selectedRegorCon: Registration', received_message.text);
+  } else if (selectedRegorCon == "registration") {    
     updateReference = received_message.text;
+    console.log('Registration: updateReference:', received_message.text);
     checkRegistrationReferenceNumber(sender_psid);
-  } else if (selectedRegorCon == "consultation") {
-    console.log('selectedRegorCon: consultation', received_message.text);
+  } else if (selectedRegorCon == "consultation") {    
     updateReference = received_message.text;
+    console.log('Consultation: updateReference:', received_message.text);
     checkConsultationReferenceNumber(sender_psid);
   }
   else {
@@ -1898,6 +1898,7 @@ const saveAppointment = (arg, sender_psid) => {
 }
 
 let dataUpdate = [];
+/*
 async function getMultiple(db) {
   // [START get_multiple]
   const appointmentsRef = db.collection('appointments');
@@ -1917,6 +1918,27 @@ async function getMultiple(db) {
   });
   // [END get_multiple]
 }
+*/
+
+app.get('/', async function (req, res) {
+  const appointmentsRef = db.collection('appointments');
+  const snapshot = appointmentsRef.where('ref', '==', updateReference).get();
+  if (snapshot.empty) {
+    console.log('No matching documents.');
+    noDataRegistration(sender_psid);
+    return;
+  }
+
+  snapshot.forEach(doc => {
+    console.log(doc.id, '=>', doc.data());
+    let appointment = {};
+    appointment = doc.data();
+    appointment.doc_id = doc.id;
+    dataUpdate.push(appointment);
+  });
+
+});
+
 
 const checkRegistrationReferenceNumber = (sender_psid) => {
   /*
@@ -1952,7 +1974,7 @@ const checkRegistrationReferenceNumber = (sender_psid) => {
 
   res.render('appointments.ejs', { data: data });
   */
- getMultiple();
+ 
  dataUpdate.forEach(function (appointment) {
   if (appointment.status == 'confirm') {
     console.log('appointment.status:', appointment.status);
