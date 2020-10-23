@@ -1896,7 +1896,29 @@ const saveAppointment = (arg, sender_psid) => {
   });
 }
 
+let dataUpdate = [];
+async function getMultiple(db) {
+  // [START get_multiple]
+  const appointmentsRef = db.collection('appointments');
+  const snapshot = appointmentsRef.where('ref', '==', updateReference).get();
+  if (snapshot.empty) {
+    console.log('No matching documents.');
+    noDataRegistration(sender_psid);
+    return;
+  }
+
+  snapshot.forEach(doc => {
+    console.log(doc.id, '=>', doc.data());
+    let appointment = {};
+    appointment = doc.data();
+    appointment.doc_id = doc.id;
+    dataUpdate.push(appointment);
+  });
+  // [END get_multiple]
+}
+
 const checkRegistrationReferenceNumber = (sender_psid) => {
+  /*
   const appointmentsRef = db.collection('appointments');
   const snapshot = appointmentsRef.where('ref', '==', updateReference).get();
   //db.collection('appointments').where('ref', '==', updateReference).get();
@@ -1904,30 +1926,40 @@ const checkRegistrationReferenceNumber = (sender_psid) => {
   let data = [];
   if (snapshot.empty) {
     noDataRegistration(sender_psid);
-    console.log('DATA:', 'no data'); 
+    console.log('DATA:', 'no data');
   } else {
     snapshot.forEach(doc => {
       let appointment = {};
       appointment = doc.data();
       appointment.doc_id = doc.id;
-  
+
       data.push(appointment);
-  
-    });  
-    console.log('DATA:', data);    
-    data.forEach(function(appointment){
-      if(appointment.status == 'confirm'){
-        console.log('appointment.status:', appointment.status); 
+
+    });
+    console.log('DATA:', data);
+    data.forEach(function (appointment) {
+      if (appointment.status == 'confirm') {
+        console.log('appointment.status:', appointment.status);
         registrationConfirm(sender_psid);
-      }else{
-        console.log('appointment.status:', appointment.status); 
+      } else {
+        console.log('appointment.status:', appointment.status);
       }
     });
   }
 
-  
+
 
   res.render('appointments.ejs', { data: data });
+  */
+ 
+ dataUpdate.forEach(function (appointment) {
+  if (appointment.status == 'confirm') {
+    console.log('appointment.status:', appointment.status);
+    registrationConfirm(sender_psid);
+  } else {
+    console.log('appointment.status:', appointment.status);
+  }
+});
 }
 
 /**************
