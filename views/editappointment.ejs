@@ -6,90 +6,139 @@
   <title>Edit Appointment</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }
+
+    body,
+    html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .w3-wide {
+      letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-  <script>
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'Messenger'));
 
-    const APP_ID = 628101627852748;
-    var senderID = "";
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top w3-center">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+      <a href="https://sttk.herokuapp.com/admin/appointments" class="w3-bar-item w3-button w3-hide-small"><i
+          class="fa fa-user"></i> REGISTRATION</a>
+      <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button w3-hide-small"><i
+          class="fa fa-user"></i> CONSULTATION</a>
+      <a href="https://sttk.herokuapp.com/logout" class="w3-bar-item w3-button w3-hide-small"><i
+          class="fa fa-envelope"></i> LOGOUT</a>
 
-    window.extAsyncInit = function () {
-      MessengerExtensions.getContext(APP_ID,
-        function success(thread_context) {
-          senderID = thread_context.psid;
-        },
-        function error(err) {
-          console.log(err);
-        }
-      );
-    };
-  </script>
+      </a>
+    </div>
 
-  <div class="w3-content w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
-    <h3>Confirm Appointment</h3>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+      <a href="https://sttk.herokuapp.com/admin/appointments" class="w3-bar-item w3-button"
+        onclick="toggleFunction()">REGISTRATION</a>
+      <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button"
+        onclick="toggleFunction()">CONSULTATION</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">LOGOUT</a>
+
+    </div>
+  </div>
 
 
-    <form id="form" method="post" action="../updateappointment">
-      <div class="w3-session">
-        <label for="name">Name</label>
-        <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>"> <br>
-      </div>
-      <div class="w3-session">
-        <label for="name">Phone</label>
-        <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>"> <br>
-      </div>
-      <div class="w3-session">
-        <label for="email">Email</label>
-        <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>"> <br>
-      </div>
-      <div class="w3-session">
-        Gender <br>
-        <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(data.gender == "M"){%> <%="checked"%> <%}%> >
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">Registration and Consultation for STTK Hospital</h3>
+    <p class="w3-center"><em><b>Confirm Appointment</b></em></p>
+
+
+
+
+    <div class="w3-content w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+      <h3>Confirm Appointment</h3>
+
+
+      <form id="form" method="post" action="../updateappointment">
+        <div class="w3-session">
+          <label for="name">Name</label>
+          <input type="text" class="w3-input w3-border" name="name" value="<%= data.name %>"> <br>
+        </div>
+        <div class="w3-session">
+          <label for="name">Phone</label>
+          <input type="text" class="w3-input w3-border" name="phone" value="<%= data.phone %>"> <br>
+        </div>
+        <div class="w3-session">
+          <label for="email">Email</label>
+          <input type="email" class="w3-input w3-border" name="email" value="<%= data.email %>"> <br>
+        </div>
+        <div class="w3-session">
+          Gender <br>
+          <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(data.gender == "M"){%>
+            <%="checked"%> <%}%> >
           <label for="male">Male</label>
-          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(data.gender == "F"){%> <%="checked"%> <%}%> >
+          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(data.gender == "F"){%>
+            <%="checked"%> <%}%> >
           <label for="female">Female</label><br>  
         </div>
       <div class="w3-session"> <br>
         <label for="name">Doctor</label>
         <input type="text" class="w3-input w3-border" name="doctor" value="<%= data.doctor %>"> <br>
-      </div>
-      <div class="w3-session">
-        <label for="name">Department</label>
-        <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= data.department %>">
-      </div>
-      <div class="w3-session">
-        Visit <br>
-        <input type="radio" class="w3-radio" name="visit" value="first time" <%if(data.visit == 'first time' ){%> <%="checked"%> <%}%> >
+        </div>
+        <div class="w3-session">
+          <label for="name">Department</label>
+          <input type="text" class="w3-input w3-border" id="department" name="department"
+            value="<%= data.department %>">
+        </div>
+        <div class="w3-session">
+          Visit <br>
+          <input type="radio" class="w3-radio" name="visit" value="first time" <%if(data.visit == 'first time' ){%>
+            <%="checked"%> <%}%> >
         <label for="male">First Time</label>
-        <input type="radio" class="w3-radio" name="vist" value="follow up" <%if(data.visit == 'follow up'){%> <%="checked"%> <%}%>>
+        <input type="radio" class="w3-radio" name="vist" value="follow up" <%if(data.visit == 'follow up'){%>
+            <%="checked"%> <%}%>>
         <label for="female">Follow Up</label><br>     
       </div>
       <div class="w3-session">
         <label for="name">Date</label>
         <input type="text" class="w3-input w3-border" name="date" value="<%= data.date %>"><br>
-      </div>
-      <div class="w3-session">
-        <label for="name">Time</label>
-        <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>"> <br>
-      </div>
-      <div class="w3-session">
-        <label for="name">Message</label>
-        <textarea name="message" class="w3-input w3-border" rows="4" cols="50"><%= data.message %></textarea> <br>
+        </div>
+        <div class="w3-session">
+          <label for="name">Time</label>
+          <input type="text" class="w3-input w3-border" name="time" value="<%= data.time %>"> <br>
+        </div>
+        <div class="w3-session">
+          <label for="name">Message</label>
+          <textarea name="message" class="w3-input w3-border" rows="4" cols="50"><%= data.message %></textarea> <br>
 
-      </div>
-      <div class="w3-session">
-        <label for="status">Status</label>
-        <select name="status" class="w3-select" id="status">
-          <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
+        </div>
+        <div class="w3-session">
+          <label for="status">Status</label>
+          <select name="status" class="w3-select" id="status">
+            <option value="pending" <%if(data.status == "pending"){%> <%="selected"%> <%}%> >Pending</option>
           <option value="confirm" <%if(data.status == "confirm"){%> <%="selected"%> <%}%> >Confirm</option>
         </select>    
       </div><br>
@@ -100,15 +149,13 @@
 
   
       <input type="hidden" name="doc_id" value="<%= data.doc_id %>">
-      <input type="hidden" name="ref" value="<%= data.ref %>">
-      <input type="submit" value="Submit">
-    </form>
-</div>
+              <input type="hidden" name="ref" value="<%= data.ref %>">
+              <input type="submit" value="Submit">
+      </form>
+    </div>
 
 
     <script>
-
-
       const windowShut = () => {
 
         MessengerExtensions.requestCloseBrowser(function success() {
@@ -128,6 +175,29 @@
         xhr.send(JSON.stringify(data));
       } */
 
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'Messenger'));
+
+      const APP_ID = 628101627852748;
+      var senderID = "";
+
+      window.extAsyncInit = function () {
+        MessengerExtensions.getContext(APP_ID,
+          function success(thread_context) {
+            senderID = thread_context.psid;
+          },
+          function error(err) {
+            console.log(err);
+          }
+        );
+      };
 
 
     </script>
