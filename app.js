@@ -51,7 +51,8 @@ let userInputs = [];
 
 let selectedDoc = '';
 let selectedDept = '';
-let selectedREGorCon = '';
+let selectedRegorCon = '';
+let updateReference = '';
 
 //const datepicker = require('js-datepicker');
 
@@ -666,9 +667,9 @@ function handleQuickReply(sender_psid, received_message) {
         showGMDoctorConsult(sender_psid);
     }
   } else if (received_message.startsWith("update:")) {
-    let regcon = received_message.slice(7);   
-    selectedREGorCon = regcon;
-    switch (dept) {
+    let regcon = received_message.slice(7);
+    selectedRegorCon = regcon;
+    switch (regcon) {
       case "Registration":
         enterRegistrationReference(sender_psid);
         break;
@@ -747,8 +748,15 @@ const handleMessage = (sender_psid, received_message) => {
     console.log('MESSAGE ENTERED', received_message.text);
     userInputs[user_id].message = received_message.text;
     current_question = '';
-
     confirmAppointment(sender_psid);
+  } else if (selectedRegorCon == "Registration") {
+    console.log('selectedRegorCon: Registration', received_message.text);
+    updateReference = received_message.text;
+    checkRegistrationReferenceNumber(sender_psid);
+  } else if (selectedRegorCon == "Consultation") {
+    console.log('selectedRegorCon: consultation', received_message.text);
+    updateReference = received_message.text;
+    checkConsultationReferenceNumber(sender_psid);
   }
   else {
 
@@ -1009,7 +1017,7 @@ const userChoice = (sender_psid) => {
               "payload": "choice:Update Booking",
             },
           ],
-        },{
+        }, {
           "title": "Reception Desk",
           "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
           "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121093629_126910549161285_647069814399212966_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeEiO3JG8YiR9IbHBak-8RPOso8rNEjKNyiyjys0SMo3KDQ-0lcKOf7merGqs0vFytjGpZUL4gL7c9H4IuggX2wq&_nc_ohc=FYTze-sIKqgAX-aMNPg&_nc_ht=scontent.fmdl5-1.fna&oh=957c30b47df0fa3ccdf8e774d1d5a1bc&oe=5FAACB39",
@@ -1648,11 +1656,6 @@ const showRespiratoryDoctor = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-
-
-
-
-
 const showPsychiatryDoctor = (sender_psid) => {
   let response = {
     "attachment": {
@@ -1730,6 +1733,16 @@ const showGMDoctorConsult = (sender_psid) => {
   }
   callSend(sender_psid, response);
 
+}
+
+const enterRegistrationReference = (sender_psid) => {
+  let response = { "text": "Enter your booking reference number you want to update." };
+  callSend(sender_psid, response);
+}
+
+const enterConsultationReference = (sender_psid) => {
+  let response = { "text": "Enter your booking reference number you want to update." };
+  callSend(sender_psid, response);
 }
 
 const receptionPhoneNo = (sender_psid) => {
@@ -1883,11 +1896,62 @@ const saveAppointment = (arg, sender_psid) => {
   });
 }
 
+const checkRegistrationReferenceNumber = (sender_psid) => {
+  const appointmentsRef = db.collection('appointments');
+  const snapshot = await appointmentsRef.where('ref', '==', updateReference).get();
+
+  let data = [];
+  if (snapshot.empty) {
+    noDataRegistration(sender_psid);
+    console.log('DATA:', 'no data'); 
+  } else {
+    snapshot.forEach(doc => {
+      let appointment = {};
+      appointment = doc.data();
+      appointment.doc_id = doc.id;
+  
+      data.push(appointment);
+  
+    });  
+    console.log('DATA:', data);    
+    data.forEach(function(appointment){
+      if(appointment.status == 'confirm'){
+        console.log('appointment.status:', appointment.status); 
+        registrationConfirm(sender_psid);
+      }else{
+        console.log('appointment.status:', appointment.status); 
+      }
+    });
+  }
+
+  
+
+  res.render('appointments.ejs', { data: data });
+}
+
 /**************
 end hospital
 **************/
 
+const noDataRegistration = (sender_psid) => {
+  let response = { "text": "Your reference number is not in the appointment registration." };
+  callSend(sender_psid, response);
+}
 
+const noDataConsultation = (sender_psid) => {
+  let response = { "text": "Your reference number is not in the appointment consultation." };
+  callSend(sender_psid, response);
+}
+
+const registrationConfirm = (sender_psid) => {
+  let response = { "text": "Your reference number is already confirm in the appointment registration." };
+  callSend(sender_psid, response);
+}
+
+const registrationConfirm = (sender_psid) => {
+  let response = { "text": "Your reference number is already confirm in the appointment consultation." };
+  callSend(sender_psid, response);
+}
 
 
 const hiReply = (sender_psid) => {
