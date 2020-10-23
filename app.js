@@ -31,7 +31,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }));
-app.use( express.static( "images" ) );
+app.use(express.static("images"));
 
 const bot_questions = {
   "q1": "Please enter date (yyyy-mm-dd)",
@@ -51,6 +51,7 @@ let userInputs = [];
 
 let selectedDoc = '';
 let selectedDept = '';
+let selectedREGorCon = '';
 
 //const datepicker = require('js-datepicker');
 
@@ -163,45 +164,45 @@ app.post('/test', function (req, res) {
 });
 
 var sess;
-app.get('/login',function(req,res){    
+app.get('/login', function (req, res) {
   sess = req.session;
 
-  if(sess.login){
-     res.send('You are already login. <a href="logout">logout</a>');
-  }else{
+  if (sess.login) {
+    res.send('You are already login. <a href="logout">logout</a>');
+  } else {
     res.render('login.ejs');
-  } 
-  
+  }
+
 });
 
 
-app.get('/logout',function(req,res){ 
+app.get('/logout', function (req, res) {
   //sess = req.session;   
-  req.session.destroy(null);  
+  req.session.destroy(null);
   res.redirect('login');
 });
 
-app.post('/login',function(req,res){    
+app.post('/login', function (req, res) {
   sess = req.session;
 
   let username = req.body.username;
   let password = req.body.password;
 
-  if(username == 'admin' && password == 'test123'){
+  if (username == 'admin' && password == 'test123') {
     sess.username = 'admin';
     sess.login = true;
     res.render('home.ejs');
-   
-  }else{
+
+  } else {
     res.send('login failed');
-  }   
+  }
 });
 
-app.get('/publicpage',function(req,res){    
+app.get('/publicpage', function (req, res) {
   res.render('publicpage.ejs');
 });
 
-app.get('/home',function(req,res){    
+app.get('/home', function (req, res) {
   res.render('home.ejs');
 });
 
@@ -211,7 +212,7 @@ app.get('/home',function(req,res){
 
 app.get('/admin/appointments', async function (req, res) {
 
-  const appointmentsRef = db.collection('appointments').orderBy('created_on','desc');
+  const appointmentsRef = db.collection('appointments').orderBy('created_on', 'desc');
   const snapshot = await appointmentsRef.get();
 
   if (snapshot.empty) {
@@ -286,7 +287,7 @@ Consultations
 **********************************************/
 app.get('/admin/consultations', async function (req, res) {
 
-  const consultRef = db.collection('consult').orderBy('created_on','desc');
+  const consultRef = db.collection('consult').orderBy('created_on', 'desc');
   const snapshot = await consultRef.get();
 
   if (snapshot.empty) {
@@ -337,7 +338,7 @@ app.post('/admin/updateconsultation', function (req, res) {
     email: req.body.email,
     gender: req.body.gender,
     doctor: req.body.doctor,
-    department: req.body.department,    
+    department: req.body.department,
     date: req.body.date,
     time: req.body.time,
     message: req.body.message,
@@ -530,7 +531,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 });
 
-const showConsultationReply =(sender_psid, replyText) => {
+const showConsultationReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
   callSend(sender_psid, response);
 }
@@ -646,11 +647,11 @@ function handleQuickReply(sender_psid, received_message) {
         break;
       case "respiratory":
         showRespiratoryDoctor(sender_psid);
-        break;      
+        break;
       default:
         showGeneralMedicineDoctor(sender_psid);
     }
-  }else if (received_message.startsWith("depart:")) {
+  } else if (received_message.startsWith("depart:")) {
     let dept = received_message.slice(7);
     userInputs[user_id].department = dept;
     selectedDept = dept;
@@ -664,7 +665,20 @@ function handleQuickReply(sender_psid, received_message) {
       default:
         showGMDoctorConsult(sender_psid);
     }
-  } 
+  } else if (received_message.startsWith("update:")) {
+    let regcon = received_message.slice(7);   
+    selectedREGorCon = regcon;
+    switch (dept) {
+      case "Registration":
+        enterRegistrationReference(sender_psid);
+        break;
+      case "Consultation":
+        enterConsultationReference(sender_psid);
+        break;
+      default:
+        enterRegistrationReference(sender_psid);
+    }
+  }
   else {
 
     switch (received_message) {
@@ -832,6 +846,9 @@ const handlePostback = (sender_psid, received_postback) => {
       case "Consultation":
         consultationAppointment(sender_psid);
         break;
+      case "Update Booking":
+        updateBooking(sender_psid);
+        break;
       case "Reception":
         receptionPhoneNo(sender_psid);
         break;
@@ -982,6 +999,17 @@ const userChoice = (sender_psid) => {
             },
           ],
         }, {
+          "title": "Update Booking",
+          "subtitle": "You can update your booking.",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121528981_126778709174469_1863127189882769269_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEJpzFOAPyJnxu8d7lyp-2GUyjZ5VAgUN9TKNnlUCBQ35ViVXYmukjiFhYzdnhSzlSMfoI3lJUViwfZR0nXQlZ1&_nc_ohc=f806KAJ7w8MAX_oiJy1&_nc_ht=scontent.fmdl5-1.fna&oh=0088a5345035384ced05c33a3cff9a92&oe=5FAA8B88",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Update Booking",
+              "payload": "choice:Update Booking",
+            },
+          ],
+        },{
           "title": "Reception Desk",
           "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
           "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121093629_126910549161285_647069814399212966_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeEiO3JG8YiR9IbHBak-8RPOso8rNEjKNyiyjys0SMo3KDQ-0lcKOf7merGqs0vFytjGpZUL4gL7c9H4IuggX2wq&_nc_ohc=FYTze-sIKqgAX-aMNPg&_nc_ht=scontent.fmdl5-1.fna&oh=957c30b47df0fa3ccdf8e774d1d5a1bc&oe=5FAACB39",
@@ -1051,7 +1079,7 @@ const userChoice = (sender_psid) => {
 
 const hospitalAppointment = (sender_psid) => {
   let response1 = {
-    "text": "Which area are you looking for the hospital in?",
+    "text": "Which areas are you looking for the hospital in?",
     "quick_replies": [
       {
         "content_type": "text",
@@ -1102,7 +1130,7 @@ const hospitalAppointment = (sender_psid) => {
 
 const consultationAppointment = (sender_psid) => {
   let response1 = {
-    "text": "Which area are you looking for the hospital to consult?",
+    "text": "Which areas are you looking for the hospital to consult?",
     "quick_replies": [
       {
         "content_type": "text",
@@ -1112,6 +1140,24 @@ const consultationAppointment = (sender_psid) => {
         "content_type": "text",
         "title": "General Medicine",
         "payload": "depart:General Medicine",
+      }
+    ]
+  };
+  callSend(sender_psid, response1);
+}
+
+const updateBooking = (sender_psid) => {
+  let response1 = {
+    "text": "Which areas are you update: Registration or Consultation?",
+    "quick_replies": [
+      {
+        "content_type": "text",
+        "title": "Registration Update",
+        "payload": "update:Registration",
+      }, {
+        "content_type": "text",
+        "title": "Consultation Update",
+        "payload": "update:Consultation",
       }
     ]
   };
