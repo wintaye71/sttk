@@ -671,10 +671,10 @@ function handleQuickReply(sender_psid, received_message) {
     selectedRegorCon = regcon;
     console.log("Selected Regor Con",selectedRegorCon);
     switch (regcon) {
-      case "Registration":
+      case "registration":
         enterRegistrationReference(sender_psid);
         break;
-      case "Consultation":
+      case "consultation":
         enterConsultationReference(sender_psid);
         break;
       default:
@@ -750,11 +750,11 @@ const handleMessage = (sender_psid, received_message) => {
     userInputs[user_id].message = received_message.text;
     current_question = '';
     confirmAppointment(sender_psid);
-  } else if (selectedRegorCon == "Registration") {
+  } else if (selectedRegorCon == "registration") {
     console.log('selectedRegorCon: Registration', received_message.text);
     updateReference = received_message.text;
     checkRegistrationReferenceNumber(sender_psid);
-  } else if (selectedRegorCon == "Consultation") {
+  } else if (selectedRegorCon == "consultation") {
     console.log('selectedRegorCon: consultation', received_message.text);
     updateReference = received_message.text;
     checkConsultationReferenceNumber(sender_psid);
@@ -1952,7 +1952,7 @@ const checkRegistrationReferenceNumber = (sender_psid) => {
 
   res.render('appointments.ejs', { data: data });
   */
- 
+ getMultiple();
  dataUpdate.forEach(function (appointment) {
   if (appointment.status == 'confirm') {
     console.log('appointment.status:', appointment.status);
