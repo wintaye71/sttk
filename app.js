@@ -1981,7 +1981,7 @@ const registrationConfirm = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const registrationConfirm = (sender_psid) => {
+const consultationConfirm = (sender_psid) => {
   let response = { "text": "Your reference number is already confirm in the appointment consultation." };
   callSend(sender_psid, response);
 }
