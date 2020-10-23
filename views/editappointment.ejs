@@ -77,9 +77,9 @@
 
 
 
-
+<!--
     <div class="w3-content w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
-      <h3>Confirm Appointment</h3>
+    -->
 
 
       <form id="form" method="post" action="../updateappointment">
@@ -153,54 +153,54 @@
               <input type="submit" value="Submit">
       </form>
     </div>
+  </div>
+
+  <script>
+    const windowShut = () => {
+
+      MessengerExtensions.requestCloseBrowser(function success() {
+        console.log("success");
+      }, function error(err) {
+        console.log(err);
+      });
+    }
+
+    document.getElementById("form").addEventListener("submit", windowShut);
+
+    /*
+    const postFormData = (data) => {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://fbstarterbot.herokuapp.com/webview/", true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(data));
+    } */
 
 
-    <script>
-      const windowShut = () => {
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
 
-        MessengerExtensions.requestCloseBrowser(function success() {
-          console.log("success");
-        }, function error(err) {
+    const APP_ID = 628101627852748;
+    var senderID = "";
+
+    window.extAsyncInit = function () {
+      MessengerExtensions.getContext(APP_ID,
+        function success(thread_context) {
+          senderID = thread_context.psid;
+        },
+        function error(err) {
           console.log(err);
-        });
-      }
-
-      document.getElementById("form").addEventListener("submit", windowShut);
-
-      /*
-      const postFormData = (data) => {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://fbstarterbot.herokuapp.com/webview/", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(data));
-      } */
+        }
+      );
+    };
 
 
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'Messenger'));
-
-      const APP_ID = 628101627852748;
-      var senderID = "";
-
-      window.extAsyncInit = function () {
-        MessengerExtensions.getContext(APP_ID,
-          function success(thread_context) {
-            senderID = thread_context.psid;
-          },
-          function error(err) {
-            console.log(err);
-          }
-        );
-      };
-
-
-    </script>
+  </script>
 
 </body>
 
