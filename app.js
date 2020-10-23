@@ -669,6 +669,7 @@ function handleQuickReply(sender_psid, received_message) {
   } else if (received_message.startsWith("update:")) {
     let regcon = received_message.slice(7);
     selectedRegorCon = regcon;
+    console.log("Selected Regor Con",selectedRegorCon);
     switch (regcon) {
       case "Registration":
         enterRegistrationReference(sender_psid);
