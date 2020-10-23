@@ -1898,7 +1898,8 @@ const saveAppointment = (arg, sender_psid) => {
 
 const checkRegistrationReferenceNumber = (sender_psid) => {
   const appointmentsRef = db.collection('appointments');
-  const snapshot = await appointmentsRef.where('ref', '==', updateReference).get();
+  const snapshot = appointmentsRef.where('ref', '==', updateReference).get();
+  //db.collection('appointments').where('ref', '==', updateReference).get();
 
   let data = [];
   if (snapshot.empty) {
