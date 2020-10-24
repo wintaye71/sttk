@@ -451,9 +451,91 @@ app.get('/webview/:sender_id', function (req, res) {
   res.render('consultationwebview.ejs', { title: "Consultation", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
 });
 
-
-
 app.post('/webview', upload.single('file'), function (req, res) {
+  let doctor = selectedDoc;
+  let department = selectedDept;
+  let selecteddate = req.body.date;
+  let selectedtime = req.body.time;
+  let name = req.body.name;
+  let gender = req.body.gender;
+  let phone = req.body.phone;
+  let email = req.body.email;
+  let message = req.body.message;
+  let img_url = "";
+  let sender = req.body.sender;
+  let reference = generateRandom(6);
+  let status = "pending";
+  let created_on = new Date();
+  //data.created_on = new Date();
+
+  console.log("REQ FILE:", req.file);
+
+  let file = req.file;
+  if (file) {
+    uploadImageToStorage(file).then((img_url) => {
+      db.collection('consult').add({
+        name: name,
+        gender: gender,
+        phone: phone,
+        email: email,
+        doctor: doctor,
+        department: department,
+        date: selecteddate,
+        time: selectedtime,
+        message: message,
+        image: img_url,
+        created_on: created_on,
+        reference: reference,
+        status: status
+      }).then(success => {
+        console.log('DATA SAVED', success);
+        let text = "Thank you. We have received your message to consult." + "\u000A";
+        text += "We wil reply you to confirm soon" + "\u000A";
+        text += "Your booking reference number is: " + reference;
+        //let response = { "text": text };
+        //callSend(sender, response);
+        showConsultationReply(sender, text);
+      }).catch(error => {
+        console.log(error);
+      });
+    }).catch((error) => {
+      console.error(error);
+    });
+  } else {
+    db.collection('consult').add({
+      name: name,
+      gender: gender,
+      phone: phone,
+      email: email,
+      doctor: doctor,
+      department: department,
+      date: selecteddate,
+      time: selectedtime,
+      message: message,
+      image: img_url,
+      created_on: created_on,
+      reference: reference,
+      status: status
+    }).then(success => {
+      console.log('DATA SAVED', success);
+      let text = "Thank you. We have received your message to consult." + "\u000A";
+      text += "We wil reply you to confirm soon" + "\u000A";
+      text += "Your booking reference number is: " + reference;
+      showConsultationReply(sender, text);
+    }).catch(error => {
+      console.log(error);
+    });
+
+  }
+
+});
+
+app.get('/webviewupdatebooking/:sender_id', function (req, res) {
+  const sender_id = req.params.sender_id;
+  res.render('webviewupdateReg.ejs', { title: "Registration", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
+});
+
+app.post('/webviewupdatebooking', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
   let department = selectedDept;
   let selecteddate = req.body.date;
@@ -1795,6 +1877,32 @@ const fillConsultationForm = (sender_psid) => {
               "type": "web_url",
               "title": "Consult",
               "url": APP_URL + "webview/" + sender_psid,
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+
+          ],
+        }]
+      }
+    }
+  }
+  callSendAPI(sender_psid, response);
+}
+
+const checkRegistrationReference = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Enter your booking reference number you want to update.",
+          "buttons": [
+            {
+              "type": "web_url",
+              "title": "Check",
+              "url": APP_URL + "webviewupdatebooking/" + sender_psid,
               "webview_height_ratio": "full",
               "messenger_extensions": true,
             },
