@@ -754,7 +754,8 @@ function handleQuickReply(sender_psid, received_message) {
     console.log("Selected Regor Con",selectedRegorCon);
     switch (regcon) {
       case "registration":
-        enterRegistrationReference(sender_psid);
+        //enterRegistrationReference(sender_psid);
+        checkRegistrationReference(sender_psid);
         break;
       case "consultation":
         enterConsultationReference(sender_psid);
