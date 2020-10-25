@@ -561,6 +561,7 @@ app.post('/webview2', upload.single('file'), function (req, res) {
 
   db.collection('appointment').doc(req.body.doc_id)
     .update(data).then(() => {
+      console.log('Update Successful');
       updatesuccessful(req.body.sender_psid);
     }).catch((err) => console.log('ERROR:', error));
 
