@@ -284,7 +284,7 @@ app.post('/admin/updateappointment', function (req, res) {
 });
 
 let updateData = [];
-app.get('/admin/checkReferenceReg', async function (req, res) {
+app.post('/admin/checkReferenceReg', async function (req, res) {
   let name = req.body.name;
   let ref = req.body.ref;
   console.log('updateReference:', ref);
