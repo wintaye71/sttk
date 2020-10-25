@@ -287,6 +287,7 @@ let updateData = [];
 app.post('/admin/checkReferenceReg', async function (req, res) {
   let name = req.body.name;
   let ref = req.body.ref;
+  console.log('updateName:', name);
   console.log('updateReference:', ref);
   const appointmentsRef = db.collection('appointments');
   const snapshot = await appointmentsRef.where('ref','==',ref).get();
