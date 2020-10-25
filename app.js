@@ -282,7 +282,7 @@ app.post('/admin/updateappointment', function (req, res) {
     }).catch((err) => console.log('ERROR:', error));
 
 });
-s
+
 
 
 /*********************************************
