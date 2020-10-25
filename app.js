@@ -538,81 +538,26 @@ app.get('/webviewRegistrationPending/:sender_id', function (req, res) {
 });
 
 app.post('/webviewRegistrationPending', function (req, res) {
-  let doctor = selectedDoc;
-  let department = selectedDept;
-  let selecteddate = req.body.date;
-  let selectedtime = req.body.time;
-  let name = req.body.name;
-  let gender = req.body.gender;
-  let phone = req.body.phone;
-  let email = req.body.email;
-  let message = req.body.message;
-  let img_url = "";
-  let sender = req.body.sender;
-  let reference = generateRandom(6);
-  let status = "pending";
-  let created_on = new Date();
-  //data.created_on = new Date();
-  console.log("NAME:", name);
-  console.log("REQ FILE:", req.file);
-
-  let file = req.file;
-  if (file) {
-    uploadImageToStorage(file).then((img_url) => {
-      db.collection('consult').add({
-        name: name,
-        gender: gender,
-        phone: phone,
-        email: email,
-        doctor: doctor,
-        department: department,
-        date: selecteddate,
-        time: selectedtime,
-        message: message,
-        image: img_url,
-        created_on: created_on,
-        reference: reference,
-        status: status
-      }).then(success => {
-        console.log('DATA SAVED', success);
-        let text = "Thank you. We have received your message to consult." + "\u000A";
-        text += "We wil reply you to confirm soon" + "\u000A";
-        text += "Your booking reference number is: " + reference;
-        //let response = { "text": text };
-        //callSend(sender, response);
-        showConsultationReply(sender, text);
-      }).catch(error => {
-        console.log(error);
-      });
-    }).catch((error) => {
-      console.error(error);
-    });
-  } else {
-    db.collection('consult').add({
-      name: name,
-      gender: gender,
-      phone: phone,
-      email: email,
-      doctor: doctor,
-      department: department,
-      date: selecteddate,
-      time: selectedtime,
-      message: message,
-      image: img_url,
-      created_on: created_on,
-      reference: reference,
-      status: status
-    }).then(success => {
-      console.log('DATA SAVED', success);
-      let text = "Thank you. We have received your message to consult." + "\u000A";
-      text += "We wil reply you to confirm soon" + "\u000A";
-      text += "Your booking reference number is: " + reference;
-      showConsultationReply(sender, text);
-    }).catch(error => {
-      console.log(error);
-    });
-
+  console.log('REQ:', req.body);
+  let data = {
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    gender: req.body.gender,
+    doctor: req.body.doctor,
+    department: req.body.department,
+    date: req.body.date,
+    time: req.body.time,
+    message: req.body.message,    
+    status: req.body.status,
+    doc_id: req.body.doc_id,
+    reference: req.body.reference    
   }
+
+  db.collection('appointment').doc(req.body.doc_id)
+    .update(data).then(() => {
+      updatesuccessful(req.body.sender_psid);
+    }).catch((err) => console.log('ERROR:', error));
 
 });
 
@@ -1860,6 +1805,11 @@ const showGMDoctorConsult = (sender_psid) => {
   }
   callSend(sender_psid, response);
 
+}
+
+const updatesuccessful = (sender_psid) => {
+  let response = { "text": "Your booking is up to update." };
+  callSend(sender_psid, response);
 }
 
 const enterRegistrationReference = (sender_psid) => {

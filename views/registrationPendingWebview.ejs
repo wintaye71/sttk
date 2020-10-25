@@ -38,7 +38,7 @@
     <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
         <h3><%= title %></h3>
 
-        <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webview/">
+        <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webviewRegistrationPending/">
             <% updateData.forEach(function(appointment){ %>
             <div class="w3-session">
                 <label for="name">Doctor</label>
@@ -83,6 +83,9 @@
             </div>
             
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>"><br>
+            <input type="hidden"  name="doc_id" value="<%= appointment.doc_id %>">
+            <input type="hidden" name="reference" value="<%= appointment.reference %>">
+            <input type="hidden" name="status" value="<%= appointment.status %>">
             <input type="submit" value="Submit">
             <% }); %>
         </form>
