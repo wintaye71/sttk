@@ -631,10 +631,7 @@ const  registrationConfirmReply = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const  noDataRegistration = (sender_psid) => {
-  let response = { "text": "Your reference number is not in the appointment list." };
-  callSend(sender_psid, response);
-}
+
 
 const showConsultationReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
