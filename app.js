@@ -566,7 +566,7 @@ async function isValidBooking(refer) {
 
       });
       console.log('DATA:', updateData);
-      data.forEach(function (appointment) {
+      updateData.forEach(function (appointment) {
         if (appointment.status == 'confirm') {
           console.log('appointment.status:', appointment.status);
           registrationConfirm(sender_psid);
