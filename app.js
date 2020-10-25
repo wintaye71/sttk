@@ -534,7 +534,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 app.get('/webviewRegistrationPending/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
-  res.render('consultationwebview.ejs', { title: "Consultation", updateData: updateData, sender_id: sender_id });
+  res.render('registrationPendingWebview.ejs', { title: "Booking Update", updateData: updateData, sender_id: sender_id });
 });
 
 app.post('/webviewRegistrationPending', function (req, res) {
