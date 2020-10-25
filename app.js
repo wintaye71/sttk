@@ -557,7 +557,7 @@ app.post('/webview2', upload.single('file'), function (req, res) {
     message: req.body.message,    
     status: req.body.status,
     doc_id: req.body.doc_id,
-    reference: req.body.reference    
+    ref: req.body.ref    
   }
 
  
@@ -565,7 +565,9 @@ app.post('/webview2', upload.single('file'), function (req, res) {
   db.collection('appointments').doc(doc_id)
     .update(data).then(() => {
       console.log('Update Successful');
-      updatesuccessful(sender);
+      let text = "Your booking is successfully updated."
+      showupdatesuccessfulReply(sender, text);
+      
     }).catch(error => {
       console.log(error);
     });
@@ -614,6 +616,11 @@ async function isValidBooking(refer, sender_psid) {
 
 
 const showConsultationReply = (sender_psid, replyText) => {
+  let response = { "text": replyText };
+  callSend(sender_psid, response);
+}
+
+const showupdatesuccessfulReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
   callSend(sender_psid, response);
 }
@@ -1822,10 +1829,7 @@ const showGMDoctorConsult = (sender_psid) => {
 
 }
 
-const updatesuccessful = (sender_psid) => {
-  let response = { "text": "Your booking is up to update." };
-  callSend(sender_psid, response);
-}
+
 
 const enterRegistrationReference = (sender_psid) => {
   let response = { "text": "Enter your booking reference number you want to update." };
