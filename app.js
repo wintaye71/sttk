@@ -537,9 +537,10 @@ app.get('/webview2/:sender_id', function (req, res) {
   res.render('registrationPendingWebview.ejs', { title: "Booking Update", updateData: updateData, sender_id: sender_id });
 });
 
-app.post('/webview2', function (req, res) {
+app.post('/webview2', upload.single('file'), function (req, res) {
+  let name = req.body.name;
   console.log('REQ:', req.body);
-  console.log('REQ NAME:', req.body.name);
+  console.log('REQ NAME:', name);
   console.log('REQ DOC_ID:', req.body.doc_id);
   let data = {
     name: req.body.name,
