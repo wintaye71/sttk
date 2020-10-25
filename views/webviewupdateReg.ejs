@@ -41,11 +41,11 @@
         <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/admin/checkReferenceReg/">
             <div class="w3-session">
                 <label for="name">Name</label>
-                <input type="text" class="w3-input w3-border" name="patient" value="" ><br>
+                <input type="text" class="w3-input w3-border" name="patient" value="<%= name %>" ><br>
             </div>
             <div class="w3-session">
                 <label for="name">Reference Number</label>
-                <input type="text" class="w3-input w3-border" id="department" name="department" value="" ><br>
+                <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= ref %>" ><br>
             </div>            
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>"><br>
             <input type="submit" value="Check">
