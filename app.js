@@ -2125,8 +2125,7 @@ const checkConsultationReferenceNumber = (sender_psid) =>{
 
 let updateData2 = [];
 async function isValidBooking2(refer, sender_psid) {
-  try {
-    
+  try {   
     const consultRef = db.collection('consult');
     const snapshot = await consultRef.where('reference', '==', refer).get();
     if (snapshot.empty) {
@@ -2151,7 +2150,7 @@ async function isValidBooking2(refer, sender_psid) {
         } else {
           console.log('consult.status:', consult.status);
           consultationPending(sender_psid);
-          //res.render('editappointments.ejs', { data: data });
+          
           return;
         }
       });
