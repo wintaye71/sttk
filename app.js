@@ -532,12 +532,12 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 });
 
-app.get('/webviewupdatebooking/:sender_id',async function (req, res) {
+app.get('/webviewupdatebooking/:sender_id',function (req, res) {
   const sender_id = req.params.sender_id;
   res.render('webviewupdateReg.ejs', { title: "Registration", sender_id: sender_id });
 });
 
-app.post('/webviewupdatebooking', function (req, res) {
+app.post('/webviewupdatebooking',async function (req, res) {
   let name = req.body.name;
   let refer = req.body.refer;
   console.log('/webviewupdatebooking ---- updateName:', name);
