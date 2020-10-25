@@ -38,53 +38,53 @@
     <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
         <h3><%= title %></h3>
 
-        <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webview2/">
-            <% updateData.forEach(function(appointment){ %>
+        <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webview3/">
+            <% updateData.forEach(function(consult){ %>
             <div class="w3-session">
                 <label for="name">Doctor</label>
-                <input type="text" class="w3-input w3-border" name="doctor" value="<%= appointment.doctor %>" ><br>
+                <input type="text" class="w3-input w3-border" name="doctor" value="<%= consult.doctor %>" ><br>
             </div>
             <div class="w3-session">
                 <label for="name">Department</label>
-                <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= appointment.department %>" readonly><br>
+                <input type="text" class="w3-input w3-border" id="department" name="department" value="<%= consult.department %>" readonly><br>
             </div>
             <div class="w3-session">
                 <label for="name">Date</label>
-                <input type="date" class="w3-input w3-border" name="date" value="<%= appointment.date %>"><br>
+                <input type="date" class="w3-input w3-border" name="date" value="<%= consult.date %>"><br>
             </div>
             <div class="w3-session">
                 <label for="name">Time</label>
-                <input type="time" class="w3-input w3-border" name="time" value="<%= appointment.time %>"><br>
+                <input type="time" class="w3-input w3-border" name="time" value="<%= consult.time %>"><br>
             </div>
             <div class="w3-session">
                 <label for="name">Full Name</label>
-                <input type="text" class="w3-input w3-border" id="name" name="name" value="<%= appointment.name %>"><br>
+                <input type="text" class="w3-input w3-border" id="name" name="name" value="<%= consult.name %>"><br>
             </div>
             <div class="w3-session">
                 Gender <br>
-                <input type="radio" class="w3-radio" id="male" name="gender" value="male" <%if(appointment.gender == "male"){%> <%="checked"%> <%}%>>
+                <input type="radio" class="w3-radio" id="male" name="gender" value="male" <%if(consult.gender == "male"){%> <%="checked"%> <%}%>>
           <label for="male">Male</label>
-          <input type="radio" class="w3-radio" id="female" name="gender" value="female" <%if(appointment.gender == "female"){%> <%="checked"%> <%}%>>
+          <input type="radio" class="w3-radio" id="female" name="gender" value="female" <%if(consult.gender == "female"){%> <%="checked"%> <%}%>>
           <label for="female">Female</label><br>  <br>
             </div>
             <div class="w3-session">
                 <label for="name">Phone</label>
-                <input type="text" class="w3-input w3-border" name="phone" value="<%= appointment.phone %>"><br>
+                <input type="text" class="w3-input w3-border" name="phone" value="<%= consult.phone %>"><br>
             </div>
 
             <div class="w3-session">
                 <label for="email">Email</label>
-                <input type="email" class="w3-input w3-border" id="email" name="email" value="<%= appointment.email %>"><br>
+                <input type="email" class="w3-input w3-border" id="email" name="email" value="<%= consult.email %>"><br>
             </div>
             <div class="w3-session">
                 <label for="name">Message</label>
-                <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= appointment.message %></textarea><br>
+                <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= consult.message %></textarea><br>
             </div>
                         
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>"><br>
-            <input type="hidden"  name="doc_id" value="<%= appointment.doc_id %>">
-            <input type="hidden" name="ref" value="<%= appointment.ref %>">
-            <input type="hidden" name="status" value="<%= appointment.status %>">
+            <input type="hidden"  name="doc_id" value="<%= consult.doc_id %>">
+            <input type="hidden" name="ref" value="<%= consult.ref %>">
+            <input type="hidden" name="status" value="<%= consult.status %>">
             <input type="submit" value="Submit">
             <% }); %>
         </form>

@@ -585,6 +585,59 @@ app.post('/webview2', upload.single('file'), function (req, res) {
 
 });
 
+app.get('/webview3/:sender_id', function (req, res) {
+  const sender_id = req.params.sender_id;
+  res.render('consultationPendingWebview.ejs', { title: "Booking Update", updateData: updateData2, sender_id: sender_id });
+});
+
+app.post('/webview3', upload.single('file'), function (req, res) {
+  updateData2 = [];
+  let name = req.body.name;
+  let sender = req.body.sender;
+  let doc_id = req.body.doc_id;
+  let created_on = new Date();
+  console.log('REQ:', req.body);
+  console.log('REQ NAME:', name);
+  console.log('REQ MESSAGE:', req.body.message);
+  let data = {
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    gender: req.body.gender,
+    doctor: req.body.doctor,
+    department: req.body.department,
+    date: req.body.date,
+    time: req.body.time,
+    message: req.body.message,    
+    status: req.body.status, 
+    created_on: created_on,   
+    reference: req.body.reference    
+  }
+
+ 
+
+  db.collection('consult').doc(doc_id)
+    .update(data).then(() => {
+      console.log('Update Successful');
+      let text = "Your booking is successfully updated.\n";
+      text += "Name : "+req.body.name +"\n";
+      text += "Doctor : "+req.body.doctor +"\n";
+      text += "Department : "+req.body.department +"\n";
+      text += "Date : "+req.body.date +"\n";
+      text += "Time : "+req.body.time +"\n";
+      text += "Message : "+req.body.message +"\n";
+      text += "Gender : "+req.body.gender +"\n";
+      text += "Phone : "+req.body.phone +"\n";
+      text += "Email : "+req.body.email +"\n";
+      text += "Reference : "+req.body.ref +"\n";
+      showupdatesuccessfulReply(sender, text);
+      
+    }).catch(error => {
+      console.log(error);
+    });
+
+});
+
 
 
 let updateData = [];
@@ -594,7 +647,7 @@ async function isValidBooking(refer, sender_psid) {
     const appointmentsRef = db.collection('appointments');
     const snapshot = await appointmentsRef.where('ref', '==', refer).get();
     if (snapshot.empty) {
-      noDataRegistration(sender_psid);
+      noDataConsultation(sender_psid);
       console.log('DATA:', 'no data');
       return;
     } else {
@@ -861,14 +914,12 @@ const handleMessage = (sender_psid, received_message) => {
     updateReference = received_message.text;
     console.log('Registration: updateReference:', received_message.text);
     selectedRegorCon = "";
-    checkRegistrationReferenceNumber(sender_psid);
-    
+    checkRegistrationReferenceNumber(sender_psid);    
   } else if (selectedRegorCon == "consultation") {
     updateReference = received_message.text;
     selectedRegorCon = "";
     console.log('Consultation: updateReference:', received_message.text);
-    checkConsultationReferenceNumber(sender_psid);
-    
+    checkConsultationReferenceNumber(sender_psid);    
   }
   else {
 
@@ -2041,6 +2092,49 @@ const checkRegistrationReferenceNumber = (sender_psid) =>{
   console.log("checkRegistrationReferenceNumber");
 }
 
+const checkConsultationReferenceNumber = (sender_psid) =>{
+  isValidBooking2(updateReference, sender_psid);
+  console.log("checkConsultationReferenceNumber");
+}
+
+let updateData2 = [];
+async function isValidBooking2(refer, sender_psid) {
+  try {
+    
+    const consultRef = db.collection('consult');
+    const snapshot = await consultRef.where('reference', '==', refer).get();
+    if (snapshot.empty) {
+      noDataRegistration(sender_psid);
+      console.log('DATA:', 'no data');
+      return;
+    } else {
+      snapshot.forEach(doc => {
+        let consult = {};
+        consult = doc.data();
+        consult.doc_id = doc.id;
+
+        updateData2.push(consult);
+
+      });
+      console.log('DATA:', updateData);
+      updateData2.forEach(function (consult) {
+        if (consult.status == 'confirm') {
+          console.log('consult.status:', consult.status);
+          registrationConfirmReply(sender_psid);
+          return;
+        } else {
+          console.log('consult.status:', consult.status);
+          registrationPending(sender_psid);
+          //res.render('editappointments.ejs', { data: data });
+          return;
+        }
+      });
+    }   
+    return updateData2;
+  } catch (err) {
+    throw err;
+  }
+}
 
 
 
