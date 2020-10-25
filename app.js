@@ -543,7 +543,7 @@ app.post('/webviewupdatebooking', function (req, res) {
   console.log('/webviewupdatebooking ---- updateName:', name);
   console.log('/webviewupdatebooking ---- updateReference:', refer);
   const appointmentsRef = db.collection('appointments');
-  const snapshot = await appointmentsRef.where('ref','==',ref).get();
+  const snapshot = await appointmentsRef.where('ref','==',refer).get();
 
   let data = [];
   if (snapshot.empty) {
