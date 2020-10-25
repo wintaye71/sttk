@@ -564,7 +564,9 @@ app.post('/webview2', upload.single('file'), function (req, res) {
     .update(data).then(() => {
       console.log('Update Successful');
       updatesuccessful(sender);
-    }).catch((err) => console.log('ERROR:', error));
+    }).catch(error => {
+      console.log(error);
+    });
 
 });
 
