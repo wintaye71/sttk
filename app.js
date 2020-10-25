@@ -504,7 +504,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
   let status = "pending";
   let created_on = new Date();
   //data.created_on = new Date();
-
+  console.log("NAME:", name);
   console.log("REQ FILE:", req.file);
 
   let file = req.file;
