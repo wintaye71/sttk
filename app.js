@@ -283,6 +283,40 @@ app.post('/admin/updateappointment', function (req, res) {
 
 });
 
+let updateData = [];
+app.get('/admin/checkReferenceReg', async function (req, res) {
+
+  const appointmentsRef = db.collection('appointments');
+  const snapshot = await appointmentsRef.where('ref','==',updateReference).get();
+
+  let data = [];
+  if (snapshot.empty) {
+    noDataRegistration(sender_psid);
+    console.log('DATA:', 'no data');
+  } else {
+    snapshot.forEach(doc => {
+      let appointment = {};
+      appointment = doc.data();
+      appointment.doc_id = doc.id;
+
+      data.push(appointment);
+
+    });
+    console.log('DATA:', data);
+    data.forEach(function (appointment) {
+      if (appointment.status == 'confirm') {
+        console.log('appointment.status:', appointment.status);
+        registrationConfirm(sender_psid);
+      } else {
+        console.log('appointment.status:', appointment.status);
+        res.render('editappointments.ejs', { data: data });
+      }
+    });
+  }
+
+});
+
+
 /*********************************************
 Consultations
 **********************************************/
