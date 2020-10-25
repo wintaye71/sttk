@@ -539,6 +539,8 @@ app.get('/webviewRegistrationPending/:sender_id', function (req, res) {
 
 app.post('/webviewRegistrationPending', function (req, res) {
   console.log('REQ:', req.body);
+  console.log('REQ NAME:', req.body.name);
+  console.log('REQ DOC_ID:', req.body.doc_id);
   let data = {
     name: req.body.name,
     phone: req.body.phone,
