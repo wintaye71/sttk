@@ -534,14 +534,14 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 app.get('/webviewupdatebooking/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
-  res.render('webviewupdateReg.ejs', { title: "Registration###", sender_id: sender_id });
+  res.render('webviewupdateReg.ejs', { title: "Registration", sender_id: sender_id });
 });
 
 app.post('/webviewupdatebooking', function (req, res) {
   let name = req.body.name;
   let refer = req.body.refer;
-  console.log('/webviewupdatebooking ---- updateName:', name);
-  console.log('/webviewupdatebooking ---- updateReference:', refer);
+  console.log('/webviewupdatebooking ---- updateName:', req.body.name);
+  console.log('/webviewupdatebooking ---- updateReference:', req.body.refer);
   isValidBooking(name, refer);
 
 
