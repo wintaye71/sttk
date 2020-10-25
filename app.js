@@ -619,7 +619,7 @@ app.post('/webviewRegistrationPending', function (req, res) {
 
 
 let updateData = [];
-async function isValidBooking(refer) {
+async function isValidBooking(refer, sender_psid) {
   try {
     
     const appointmentsRef = db.collection('appointments');
@@ -2050,7 +2050,7 @@ const saveAppointment = (arg, sender_psid) => {
 }
 
 const checkRegistrationReferenceNumber = (sender_psid) =>{
-  isValidBooking(updateReference);
+  isValidBooking(updateReference, sender_psid);
   console.log("checkRegistrationReferenceNumber");
 }
 
