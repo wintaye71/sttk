@@ -548,7 +548,7 @@ app.post('/webviewupdatebooking', function (req, res) {
 });
 
 let updateData = [];
-async function isValidBooking(name, refer) {
+async function isValidBooking(refer) {
   try {
     const appointmentsRef = db.collection('appointments');
     const snapshot = await appointmentsRef.where('ref', '==', refer).get();
@@ -728,8 +728,8 @@ function handleQuickReply(sender_psid, received_message) {
     console.log("Selected Regor Con", selectedRegorCon);
     switch (regcon) {
       case "registration":
-        //enterRegistrationReference(sender_psid);
-        checkRegistrationReference(sender_psid);
+        enterRegistrationReference(sender_psid);
+        //checkRegistrationReference(sender_psid);
         break;
       case "consultation":
         enterConsultationReference(sender_psid);
@@ -1980,7 +1980,10 @@ const saveAppointment = (arg, sender_psid) => {
   });
 }
 
-let dataUpdate = [];
+const checkRegistrationReferenceNumber = (sender_psid) =>{
+  isValidBooking(updateReference);
+  console.log("checkRegistrationReferenceNumber");
+}
 /*
 async function getMultiple(db) {
   // [START get_multiple]
@@ -2023,50 +2026,10 @@ app.get('/', async function (req, res) {
 });
 
 
-const checkRegistrationReferenceNumber = (sender_psid) => {
-  /*
-  const appointmentsRef = db.collection('appointments');
-  const snapshot = appointmentsRef.where('ref', '==', updateReference).get();
-  //db.collection('appointments').where('ref', '==', updateReference).get();
-
-  let data = [];
-  if (snapshot.empty) {
-    noDataRegistration(sender_psid);
-    console.log('DATA:', 'no data');
-  } else {
-    snapshot.forEach(doc => {
-      let appointment = {};
-      appointment = doc.data();
-      appointment.doc_id = doc.id;
-
-      data.push(appointment);
-
-    });
-    console.log('DATA:', data);
-    data.forEach(function (appointment) {
-      if (appointment.status == 'confirm') {
-        console.log('appointment.status:', appointment.status);
-        registrationConfirm(sender_psid);
-      } else {
-        console.log('appointment.status:', appointment.status);
-      }
-    });
-  }
 
 
 
-  res.render('appointments.ejs', { data: data });
-  */
 
-  dataUpdate.forEach(function (appointment) {
-    if (appointment.status == 'confirm') {
-      console.log('appointment.status:', appointment.status);
-      registrationConfirm(sender_psid);
-    } else {
-      console.log('appointment.status:', appointment.status);
-    }
-  });
-}
 
 /**************
 end hospital
