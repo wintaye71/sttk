@@ -532,46 +532,61 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 });
 
-app.get('/webviewupdatebooking/:sender_id',function (req, res) {
+app.get('/webviewupdatebooking/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
   res.render('webviewupdateReg.ejs', { title: "Registration", sender_id: sender_id });
 });
 
-app.post('/webviewupdatebooking',async function (req, res) {
+app.post('/webviewupdatebooking', function (req, res) {
   let name = req.body.name;
   let refer = req.body.refer;
   console.log('/webviewupdatebooking ---- updateName:', name);
   console.log('/webviewupdatebooking ---- updateReference:', refer);
-  const appointmentsRef = db.collection('appointments');
-  const snapshot = await appointmentsRef.where('ref','==',refer).get();
+  isValidBooking(name, refer);
 
-  let data = [];
-  if (snapshot.empty) {
-    noDataRegistration(sender_psid);
-    console.log('DATA:', 'no data');
-  } else {
-    snapshot.forEach(doc => {
-      let appointment = {};
-      appointment = doc.data();
-      appointment.doc_id = doc.id;
-
-      data.push(appointment);
-
-    });
-    console.log('DATA:', data);
-    data.forEach(function (appointment) {
-      if (appointment.status == 'confirm') {
-        console.log('appointment.status:', appointment.status);
-        registrationConfirm(sender_psid);
-      } else {
-        console.log('appointment.status:', appointment.status);
-        res.render('editappointments.ejs', { data: data });
-      }
-    });
-  }
-  
 
 });
+
+let updateData = [];
+async function isValidBooking(name, refer) {
+  try {
+    const appointmentsRef = db.collection('appointments');
+    const snapshot = await appointmentsRef.where('ref', '==', refer).get();
+    if (snapshot.empty) {
+      noDataRegistration(sender_psid);
+      console.log('DATA:', 'no data');
+      return;
+    } else {
+      snapshot.forEach(doc => {
+        let appointment = {};
+        appointment = doc.data();
+        appointment.doc_id = doc.id;
+
+        updateData.push(appointment);
+
+      });
+      console.log('DATA:', updateData);
+      data.forEach(function (appointment) {
+        if (appointment.status == 'confirm') {
+          console.log('appointment.status:', appointment.status);
+          registrationConfirm(sender_psid);
+        } else {
+          console.log('appointment.status:', appointment.status);
+          res.render('editappointments.ejs', { data: data });
+        }
+      });
+    }
+
+    console.log('DATA:', updateData);
+
+    //res.render('consultations.ejs', { data: data });
+    return updateData;
+  } catch (err) {
+    throw err;
+  }
+}
+
+
 
 const showConsultationReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
@@ -710,7 +725,7 @@ function handleQuickReply(sender_psid, received_message) {
   } else if (received_message.startsWith("update:")) {
     let regcon = received_message.slice(7);
     selectedRegorCon = regcon;
-    console.log("Selected Regor Con",selectedRegorCon);
+    console.log("Selected Regor Con", selectedRegorCon);
     switch (regcon) {
       case "registration":
         //enterRegistrationReference(sender_psid);
@@ -792,11 +807,11 @@ const handleMessage = (sender_psid, received_message) => {
     userInputs[user_id].message = received_message.text;
     current_question = '';
     confirmAppointment(sender_psid);
-  } else if (selectedRegorCon == "registration") {    
+  } else if (selectedRegorCon == "registration") {
     updateReference = received_message.text;
     console.log('Registration: updateReference:', received_message.text);
     checkRegistrationReferenceNumber(sender_psid);
-  } else if (selectedRegorCon == "consultation") {    
+  } else if (selectedRegorCon == "consultation") {
     updateReference = received_message.text;
     console.log('Consultation: updateReference:', received_message.text);
     checkConsultationReferenceNumber(sender_psid);
@@ -2042,15 +2057,15 @@ const checkRegistrationReferenceNumber = (sender_psid) => {
 
   res.render('appointments.ejs', { data: data });
   */
- 
- dataUpdate.forEach(function (appointment) {
-  if (appointment.status == 'confirm') {
-    console.log('appointment.status:', appointment.status);
-    registrationConfirm(sender_psid);
-  } else {
-    console.log('appointment.status:', appointment.status);
-  }
-});
+
+  dataUpdate.forEach(function (appointment) {
+    if (appointment.status == 'confirm') {
+      console.log('appointment.status:', appointment.status);
+      registrationConfirm(sender_psid);
+    } else {
+      console.log('appointment.status:', appointment.status);
+    }
+  });
 }
 
 /**************
