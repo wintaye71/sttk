@@ -545,7 +545,7 @@ app.post('/webview2', upload.single('file'), function (req, res) {
   let created_on = new Date();
   console.log('REQ:', req.body);
   console.log('REQ NAME:', name);
-  console.log('REQ DOC_ID:', req.body.doc_id);
+  console.log('REQ MESSAGE:', req.body.message);
   let data = {
     name: req.body.name,
     phone: req.body.phone,
@@ -601,10 +601,12 @@ async function isValidBooking(refer, sender_psid) {
         if (appointment.status == 'confirm') {
           console.log('appointment.status:', appointment.status);
           registrationConfirm(sender_psid);
+          return;
         } else {
           console.log('appointment.status:', appointment.status);
           registrationPending(sender_psid);
           //res.render('editappointments.ejs', { data: data });
+          return;
         }
       });
     }   
