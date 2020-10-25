@@ -62,9 +62,9 @@
             </div>
             <div class="w3-session">
                 Gender <br>
-                <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(appointment.gender == "Male"){%> <%="checked"%> <%}%>>
+                <input type="radio" class="w3-radio" id="male" name="gender" value="Male" <%if(appointment.gender == "male"){%> <%="checked"%> <%}%>>
           <label for="male">Male</label>
-          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(appointment.gender == "Female"){%> <%="checked"%> <%}%>>
+          <input type="radio" class="w3-radio" id="female" name="gender" value="Female" <%if(appointment.gender == "female"){%> <%="checked"%> <%}%>>
           <label for="female">Female</label><br>  <br>
             </div>
             <div class="w3-session">
@@ -78,7 +78,7 @@
             </div>
             <div class="w3-session">
                 <label for="name">Message</label>
-                <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= appointment.email %></textarea><br>
+                <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= appointment.message %></textarea><br>
 
             </div>
             
