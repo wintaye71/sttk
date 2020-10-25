@@ -40,13 +40,14 @@
 
         <form id="form" enctype="multipart/form-data" method="post" action="https://sttk.herokuapp.com/webviewupdatebooking/">
             <div class="w3-session">
-                <label for="name">Name</label>
-                <input type="text" class="w3-input w3-border" name="name" value="" ><br>
+                <label for="name">Full Name</label>
+                <input type="text" class="w3-input w3-border" id="name" name="name" placeholder="Enter your full name."><br>
             </div>
             <div class="w3-session">
                 <label for="name">Reference Number</label>
-                <input type="text" class="w3-input w3-border" id="ref" name="reference" value="" ><br>
-            </div>            
+                <input type="text" class="w3-input w3-border" id="refer" name="refer" placeholder="Enter your reference number."><br>
+            </div>      
+                      
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>"><br>
             <input type="submit" value="Check">
         </form>

@@ -539,9 +539,9 @@ app.get('/webviewupdatebooking/:sender_id', function (req, res) {
 
 app.post('/webviewupdatebooking', function (req, res) {
   let name = req.body.name;
-  let ref = req.body.ref;
-  console.log('updateName:', name);
-  console.log('updateReference:', ref);
+  let refer = req.body.refer;
+  console.log('/webviewupdatebooking ---- updateName:', name);
+  console.log('/webviewupdatebooking ---- updateReference:', refer);
   const appointmentsRef = db.collection('appointments');
   const snapshot = await appointmentsRef.where('ref','==',ref).get();
 
