@@ -541,7 +541,8 @@ app.post('/webview2', upload.single('file'), function (req, res) {
   updateData = [];
   let name = req.body.name;
   let sender = req.body.sender_psid;
-  let doc_id = req.body.doc_id
+  let doc_id = req.body.doc_id;
+  let created_on = new Date();
   console.log('REQ:', req.body);
   console.log('REQ NAME:', name);
   console.log('REQ DOC_ID:', req.body.doc_id);
@@ -555,8 +556,8 @@ app.post('/webview2', upload.single('file'), function (req, res) {
     date: req.body.date,
     time: req.body.time,
     message: req.body.message,    
-    status: req.body.status,
-    doc_id: req.body.doc_id,
+    status: req.body.status, 
+    created_on: created_on,   
     ref: req.body.ref    
   }
 
