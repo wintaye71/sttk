@@ -448,12 +448,12 @@ END Gallery Page
 **********************************************/
 
 //webview test
-app.get('/webview/:sender_id', function (req, res) {
+app.get('/webviewAAA/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
   res.render('consultationwebview.ejs', { title: "Consultation", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
 });
 
-app.post('/webview', upload.single('file'), function (req, res) {
+app.post('/webviewAAA', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
   let department = selectedDept;
   let selecteddate = req.body.date;
@@ -532,12 +532,12 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 });
 
-app.get('/webviewRegistrationPending/:sender_id', function (req, res) {
+app.get('/webview/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
   res.render('registrationPendingWebview.ejs', { title: "Booking Update", updateData: updateData, sender_id: sender_id });
 });
 
-app.post('/webviewRegistrationPending', function (req, res) {
+app.post('/webview', function (req, res) {
   console.log('REQ:', req.body);
   console.log('REQ NAME:', req.body.name);
   console.log('REQ DOC_ID:', req.body.doc_id);
@@ -1898,7 +1898,7 @@ const registrationPending = (sender_psid) => {
             {
               "type": "web_url",
               "title": "Update",
-              "url": APP_URL + "webviewRegistrationPending/" + sender_psid,
+              "url": APP_URL + "webview/" + sender_psid,
               "webview_height_ratio": "full",
               "messenger_extensions": true,
             },
