@@ -540,7 +540,7 @@ app.get('/webview2/:sender_id', function (req, res) {
 app.post('/webview2', upload.single('file'), function (req, res) {
   updateData = [];
   let name = req.body.name;
-  let sender = req.body.sender_psid;
+  let sender = req.body.sender;
   let doc_id = req.body.doc_id;
   let created_on = new Date();
   console.log('REQ:', req.body);
