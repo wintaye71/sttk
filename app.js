@@ -532,7 +532,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 });
 
-app.get('/webviewupdatebooking/:sender_id', function (req, res) {
+app.get('/webviewupdatebooking/:sender_id',async function (req, res) {
   const sender_id = req.params.sender_id;
   res.render('webviewupdateReg.ejs', { title: "Registration", sender_id: sender_id });
 });
