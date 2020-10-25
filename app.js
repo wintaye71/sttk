@@ -282,42 +282,7 @@ app.post('/admin/updateappointment', function (req, res) {
     }).catch((err) => console.log('ERROR:', error));
 
 });
-
-let updateData = [];
-app.post('/admin/checkReferenceReg', async function (req, res) {
-  let name = req.body.name;
-  let ref = req.body.ref;
-  console.log('updateName:', name);
-  console.log('updateReference:', ref);
-  const appointmentsRef = db.collection('appointments');
-  const snapshot = await appointmentsRef.where('ref','==',ref).get();
-
-  let data = [];
-  if (snapshot.empty) {
-    noDataRegistration(sender_psid);
-    console.log('DATA:', 'no data');
-  } else {
-    snapshot.forEach(doc => {
-      let appointment = {};
-      appointment = doc.data();
-      appointment.doc_id = doc.id;
-
-      data.push(appointment);
-
-    });
-    console.log('DATA:', data);
-    data.forEach(function (appointment) {
-      if (appointment.status == 'confirm') {
-        console.log('appointment.status:', appointment.status);
-        registrationConfirm(sender_psid);
-      } else {
-        console.log('appointment.status:', appointment.status);
-        res.render('editappointments.ejs', { data: data });
-      }
-    });
-  }
-
-});
+s
 
 
 /*********************************************
@@ -569,85 +534,42 @@ app.post('/webview', upload.single('file'), function (req, res) {
 
 app.get('/webviewupdatebooking/:sender_id', function (req, res) {
   const sender_id = req.params.sender_id;
-  res.render('webviewupdateReg.ejs', { title: "Registration", doctor: selectedDoc, dept: selectedDept, sender_id: sender_id });
+  res.render('webviewupdateReg.ejs', { title: "Registration", sender_id: sender_id });
 });
 
-app.post('/webviewupdatebooking', upload.single('file'), function (req, res) {
-  let doctor = selectedDoc;
-  let department = selectedDept;
-  let selecteddate = req.body.date;
-  let selectedtime = req.body.time;
+app.post('/webviewupdatebooking', function (req, res) {
   let name = req.body.name;
-  let gender = req.body.gender;
-  let phone = req.body.phone;
-  let email = req.body.email;
-  let message = req.body.message;
-  let img_url = "";
-  let sender = req.body.sender;
-  let reference = generateRandom(6);
-  let status = "pending";
-  let created_on = new Date();
-  //data.created_on = new Date();
+  let ref = req.body.ref;
+  console.log('updateName:', name);
+  console.log('updateReference:', ref);
+  const appointmentsRef = db.collection('appointments');
+  const snapshot = await appointmentsRef.where('ref','==',ref).get();
 
-  console.log("REQ FILE:", req.file);
-
-  let file = req.file;
-  if (file) {
-    uploadImageToStorage(file).then((img_url) => {
-      db.collection('consult').add({
-        name: name,
-        gender: gender,
-        phone: phone,
-        email: email,
-        doctor: doctor,
-        department: department,
-        date: selecteddate,
-        time: selectedtime,
-        message: message,
-        image: img_url,
-        created_on: created_on,
-        reference: reference,
-        status: status
-      }).then(success => {
-        console.log('DATA SAVED', success);
-        let text = "Thank you. We have received your message to consult." + "\u000A";
-        text += "We wil reply you to confirm soon" + "\u000A";
-        text += "Your booking reference number is: " + reference;
-        //let response = { "text": text };
-        //callSend(sender, response);
-        showConsultationReply(sender, text);
-      }).catch(error => {
-        console.log(error);
-      });
-    }).catch((error) => {
-      console.error(error);
-    });
+  let data = [];
+  if (snapshot.empty) {
+    noDataRegistration(sender_psid);
+    console.log('DATA:', 'no data');
   } else {
-    db.collection('consult').add({
-      name: name,
-      gender: gender,
-      phone: phone,
-      email: email,
-      doctor: doctor,
-      department: department,
-      date: selecteddate,
-      time: selectedtime,
-      message: message,
-      image: img_url,
-      created_on: created_on,
-      reference: reference,
-      status: status
-    }).then(success => {
-      console.log('DATA SAVED', success);
-      let text = "Thank you. We have received your message to consult." + "\u000A";
-      text += "We wil reply you to confirm soon" + "\u000A";
-      text += "Your booking reference number is: " + reference;
-      showConsultationReply(sender, text);
-    }).catch(error => {
-      console.log(error);
-    });
+    snapshot.forEach(doc => {
+      let appointment = {};
+      appointment = doc.data();
+      appointment.doc_id = doc.id;
 
+      data.push(appointment);
+
+    });
+    console.log('DATA:', data);
+    data.forEach(function (appointment) {
+      if (appointment.status == 'confirm') {
+        console.log('appointment.status:', appointment.status);
+        registrationConfirm(sender_psid);
+      } else {
+        console.log('appointment.status:', appointment.status);
+        res.render('editappointments.ejs', { data: data });
+      }
+    });
   }
+  
 
 });
 
