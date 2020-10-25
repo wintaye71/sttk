@@ -80,11 +80,7 @@
                 <label for="name">Message</label>
                 <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= appointment.message %></textarea><br>
             </div>
-            <div class="w3-session">
-                <label for="name">Message</label>
-                <textarea class="w3-input w3-border" name="message" rows="4" cols="50"><%= appointment.message %></textarea>                  
-            </div>
-            
+                        
             <input type="hidden" id="sender" name="sender" value="<%= sender_id %>"><br>
             <input type="hidden"  name="doc_id" value="<%= appointment.doc_id %>">
             <input type="hidden" name="ref" value="<%= appointment.ref %>">

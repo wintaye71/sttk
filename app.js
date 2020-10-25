@@ -610,7 +610,7 @@ async function isValidBooking(refer, sender_psid) {
         }
       });
     }   
-    //return updateData;
+    return updateData;
   } catch (err) {
     throw err;
   }
