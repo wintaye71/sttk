@@ -566,7 +566,17 @@ app.post('/webview2', upload.single('file'), function (req, res) {
   db.collection('appointments').doc(doc_id)
     .update(data).then(() => {
       console.log('Update Successful');
-      let text = "Your booking is successfully updated."
+      let text = "Your booking is successfully updated.\n";
+      text += "Name : "+req.body.name +"\n";
+      text += "Doctor : "+req.body.doctor +"\n";
+      text += "Department : "+req.body.department +"\n";
+      text += "Date : "+req.body.date +"\n";
+      text += "Time : "+req.body.time +"\n";
+      text += "Message : "+req.body.message +"\n";
+      text += "Gender : "+req.body.gender +"\n";
+      text += "Phone : "+req.body.phone +"\n";
+      text += "Email : "+req.body.email +"\n";
+      text += "Reference : "+req.body.ref +"\n";
       showupdatesuccessfulReply(sender, text);
       
     }).catch(error => {
@@ -600,7 +610,7 @@ async function isValidBooking(refer, sender_psid) {
       updateData.forEach(function (appointment) {
         if (appointment.status == 'confirm') {
           console.log('appointment.status:', appointment.status);
-          registrationConfirm(sender_psid);
+          registrationConfirmReply(sender_psid);
           return;
         } else {
           console.log('appointment.status:', appointment.status);
@@ -616,7 +626,15 @@ async function isValidBooking(refer, sender_psid) {
   }
 }
 
+const  registrationConfirmReply = (sender_psid) => {
+  let response = { "text": "Your reference number is already confirm. Therefore you cannot update your booking." };
+  callSend(sender_psid, response);
+}
 
+const  noDataRegistration = (sender_psid) => {
+  let response = { "text": "Your reference number is not in the appointment list." };
+  callSend(sender_psid, response);
+}
 
 const showConsultationReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
