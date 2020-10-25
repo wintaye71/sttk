@@ -1997,6 +1997,32 @@ const registrationPending = (sender_psid) => {
   callSendAPI(sender_psid, response);
 }
 
+const consultationPending = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Update your booking data.",
+          "buttons": [
+            {
+              "type": "web_url",
+              "title": "Update",
+              "url": APP_URL + "webview3/" + sender_psid,
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+
+          ],
+        }]
+      }
+    }
+  }
+  callSendAPI(sender_psid, response);
+}
+
 const botQuestions = (current_question, sender_psid) => {
   if (current_question == 'q1') {
     let response = { "text": bot_questions.q1 };
@@ -2124,7 +2150,7 @@ async function isValidBooking2(refer, sender_psid) {
           return;
         } else {
           console.log('consult.status:', consult.status);
-          registrationPending(sender_psid);
+          consultationPending(sender_psid);
           //res.render('editappointments.ejs', { data: data });
           return;
         }
