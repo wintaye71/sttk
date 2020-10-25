@@ -541,6 +541,7 @@ app.post('/webview2', upload.single('file'), function (req, res) {
   updateData = [];
   let name = req.body.name;
   let sender = req.body.sender_psid;
+  let doc_id = req.body.doc_id
   console.log('REQ:', req.body);
   console.log('REQ NAME:', name);
   console.log('REQ DOC_ID:', req.body.doc_id);
@@ -561,7 +562,7 @@ app.post('/webview2', upload.single('file'), function (req, res) {
 
  
 
-  db.collection('appointment').doc(req.body.doc_id)
+  db.collection('appointments').doc(doc_id)
     .update(data).then(() => {
       console.log('Update Successful');
       updatesuccessful(sender);
