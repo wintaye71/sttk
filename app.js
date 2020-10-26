@@ -1173,7 +1173,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Update Booking",
           "subtitle": "You can update your booking.",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121528981_126778709174469_1863127189882769269_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEJpzFOAPyJnxu8d7lyp-2GUyjZ5VAgUN9TKNnlUCBQ35ViVXYmukjiFhYzdnhSzlSMfoI3lJUViwfZR0nXQlZ1&_nc_ohc=f806KAJ7w8MAX_oiJy1&_nc_ht=scontent.fmdl5-1.fna&oh=0088a5345035384ced05c33a3cff9a92&oe=5FAA8B88",
+          "image_url": "updatebooking.jpg",
           "buttons": [
             {
               "type": "postback",
