@@ -611,7 +611,8 @@ app.post('/webview3', upload.single('file'), function (req, res) {
     message: req.body.message,    
     status: req.body.status, 
     created_on: created_on,   
-    reference: req.body.reference    
+    reference: req.body.reference,
+    image: req.body.image    
   }
 
  
