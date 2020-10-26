@@ -630,7 +630,7 @@ app.post('/webview3', upload.single('file'), function (req, res) {
       text += "Gender : "+req.body.gender +"\n";
       text += "Phone : "+req.body.phone +"\n";
       text += "Email : "+req.body.email +"\n";
-      text += "Reference : "+req.body.ref +"\n";
+      text += "Reference : "+req.body.reference +"\n";
       showupdatesuccessfulReply(sender, text);
       
     }).catch(error => {
@@ -2064,16 +2064,16 @@ const botQuestions = (current_question, sender_psid) => {
 
 const confirmAppointment = (sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
-  let summery = "department:" + userInputs[user_id].department + "\u000A";
-  summery += "doctor:" + userInputs[user_id].doctor + "\u000A";
-  summery += "visit:" + userInputs[user_id].visit + "\u000A";
-  summery += "date:" + userInputs[user_id].date + "\u000A";
-  summery += "time:" + userInputs[user_id].time + "\u000A";
-  summery += "name:" + userInputs[user_id].name + "\u000A";
-  summery += "gender:" + userInputs[user_id].gender + "\u000A";
-  summery += "phone:" + userInputs[user_id].phone + "\u000A";
-  summery += "email:" + userInputs[user_id].email + "\u000A";
-  summery += "message:" + userInputs[user_id].message + "\u000A";
+  let summery = "Department: " + userInputs[user_id].department + "\u000A";
+  summery += "Doctor: " + userInputs[user_id].doctor + "\u000A";
+  summery += "Visit: " + userInputs[user_id].visit + "\u000A";
+  summery += "Date: " + userInputs[user_id].date + "\u000A";
+  summery += "Time: " + userInputs[user_id].time + "\u000A";
+  summery += "Name: " + userInputs[user_id].name + "\u000A";
+  summery += "Gender: " + userInputs[user_id].gender + "\u000A";
+  summery += "Phone: " + userInputs[user_id].phone + "\u000A";
+  summery += "Email: " + userInputs[user_id].email + "\u000A";
+  summery += "Message: " + userInputs[user_id].message + "\u000A";
 
   let response1 = { "text": summery };
 
