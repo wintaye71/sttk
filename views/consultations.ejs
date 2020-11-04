@@ -94,13 +94,12 @@
                 <tr>
                     <th>Name</th>
                     <th>Gender</th>
+                    <th>Age</th>
                     <th>Phone</th>
-                    <th>EMail</th>
+                    <th>Email</th>
                     <th>Doctor</th>
-                    <th>Department</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Message</th>
+                    <th>Department</th>                    
+                    <th>Questions</th>
                     <th>File</th>
                     <th>Reference</th>
                     <th>Status</th>
@@ -113,17 +112,16 @@
 
                     <td><%= consultation.name %></td>
                     <td><%= consultation.gender %></td>
+                    <td><%= consultation.age %></td>
                     <td><%= consultation.phone %></td>
                     <td><%= consultation.email %></td>
                     <td><%= consultation.doctor %></td>
-                    <td><%= consultation.department %></td>
-                    <td><%= consultation.date %></td>
-                    <td><%= consultation.time %></td>
+                    <td><%= consultation.department %></td>                    
                     <td><%= consultation.message %></td>
                     <td><%= consultation.image %></td>
                     <td><%= consultation.reference %></td>
                     <td><%= consultation.status %></td>
-                    <td><a href="updateconsultation/<%= consultation.doc_id %>">Edit</a> | Delete</td>
+                    <td><a href="updateconsultation/<%= consultation.doc_id %>">Answer</a> | Delete</td>
                 </tr>
                 <% }); %>
 
