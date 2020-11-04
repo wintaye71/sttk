@@ -455,11 +455,10 @@ app.get('/webview/:sender_id', function (req, res) {
 
 app.post('/webview', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
-  let department = selectedDept;
-  let selecteddate = req.body.date;
-  let selectedtime = req.body.time;
+  let department = selectedDept;  
   let name = req.body.name;
   let gender = req.body.gender;
+  let age = req.body.age;
   let phone = req.body.phone;
   let email = req.body.email;
   let message = req.body.message;
@@ -475,15 +474,14 @@ app.post('/webview', upload.single('file'), function (req, res) {
   let file = req.file;
   if (file) {
     uploadImageToStorage(file).then((img_url) => {
-      db.collection('consult').add({
+      db.collection('consult').doc(reference).set({
         name: name,
         gender: gender,
+        age: age,
         phone: phone,
         email: email,
         doctor: doctor,
-        department: department,
-        date: selecteddate,
-        time: selectedtime,
+        department: department,        
         message: message,
         image: img_url,
         created_on: created_on,
@@ -491,7 +489,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
         status: status
       }).then(success => {
         console.log('DATA SAVED', success);
-        let text = "Thank you. We have received your message to consult." + "\u000A";
+        let text = "Thank you. We have received your questions to consult." + "\u000A";
         text += "We wil reply you to confirm soon" + "\u000A";
         text += "Your booking reference number is: " + reference;
         //let response = { "text": text };
@@ -504,15 +502,14 @@ app.post('/webview', upload.single('file'), function (req, res) {
       console.error(error);
     });
   } else {
-    db.collection('consult').add({
+    db.collection('consult').doc(reference).set({
       name: name,
       gender: gender,
+      age: age,
       phone: phone,
       email: email,
       doctor: doctor,
       department: department,
-      date: selecteddate,
-      time: selectedtime,
       message: message,
       image: img_url,
       created_on: created_on,
@@ -520,7 +517,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
       status: status
     }).then(success => {
       console.log('DATA SAVED', success);
-      let text = "Thank you. We have received your message to consult." + "\u000A";
+      let text = "Thank you. We have received your questions to consult." + "\u000A";
       text += "We wil reply you to confirm soon" + "\u000A";
       text += "Your booking reference number is: " + reference;
       showConsultationReply(sender, text);
