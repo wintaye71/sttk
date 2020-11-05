@@ -2314,6 +2314,7 @@ async function isValidBooking3(refer, sender_psid) {
           //registrationConfirmReply(sender_psid);
           let replytext = "Questions:\n" + consult.message + "\nAnswers:\n" + consult.answers;
           consultationsResultReply(sender_psid, replytext);
+          replytext = "";
           return;
         } else {
           console.log('consult.status:', consult.status);          
