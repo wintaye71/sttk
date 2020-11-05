@@ -1287,7 +1287,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Consultations Results",
           "subtitle": "You can view your consultations results.",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/122387890_133853371800336_8355160971460791922_o.jpg?_nc_cat=110&ccb=2&_nc_sid=730e14&_nc_eui2=AeHsYAN35KVCI1e0_OEv57pMfmGiahTyxWF-YaJqFPLFYXygGaKqA9TVgjUD29B_Ny_CbRKa_8Bkz6a1pm4Ihytw&_nc_ohc=yS2irM5oDBgAX87H3km&_nc_oc=AQm_1jZo78E-SMxuJqyhna5sc2RrL5_8ZMszNpkDS1NhwqbVYBUFUrbpW5Kpbl2rW2o&_nc_ht=scontent.fmdl5-1.fna&oh=ce252bbfa31cc447ac7d4a99ac93b243&oe=5FBB132D",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/123336386_137768374742169_8378515622542521940_o.jpg?_nc_cat=101&ccb=2&_nc_sid=730e14&_nc_ohc=RI8e0kmyyOQAX8qj6re&_nc_ht=scontent.fmdl5-1.fna&oh=3f0a0fdb65989c5e77a92bf6e0888573&oe=5FC9B71D",
           "buttons": [
             {
               "type": "postback",
