@@ -2293,6 +2293,7 @@ const checkConsultationReferenceNumber3 = (sender_psid) => {
 let updateData3 = [];
 async function isValidBooking3(refer, sender_psid) {
   try {
+    let replytext = "";
     const consultRef = db.collection('consult');
     const snapshot = await consultRef.where('reference', '==', refer).get();
     if (snapshot.empty) {
@@ -2313,9 +2314,9 @@ async function isValidBooking3(refer, sender_psid) {
         if (consult.status == 'confirm') {
           console.log('consult.status:', consult.status);
           //registrationConfirmReply(sender_psid);
-          let replytext = "Questions:\n" + consult.message + "\nAnswers:\n" + consult.answers;
+          replytext = "Questions:\n" + consult.message + "\nAnswers:\n" + consult.answers;
           consultationsResultReply(sender_psid, replytext);
-          replytext = "";
+          //replytext = "";
           return;
         } else {
           console.log('consult.status:', consult.status);          
