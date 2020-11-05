@@ -2295,7 +2295,7 @@ async function isValidBooking3(refer, sender_psid) {
     const consultRef = db.collection('consult');
     const snapshot = await consultRef.where('reference', '==', refer).get();
     if (snapshot.empty) {
-      noDataRegistration(sender_psid);
+      noDataResults(sender_psid);
       console.log('DATA:', 'no data');
       return;
     } else {
@@ -2347,6 +2347,11 @@ const noDataRegistration = (sender_psid) => {
 
 const noDataConsultation = (sender_psid) => {
   let response = { "text": "Your reference number is not in the appointment consultation." };
+  callSend(sender_psid, response);
+}
+
+const noDataResults = (sender_psid) => {
+  let response = { "text": "Your reference number is not in the consultation lists." };
   callSend(sender_psid, response);
 }
 
