@@ -193,15 +193,15 @@ app.post('/login', function (req, res) {
     sess.username = 'admin';
     sess.login = true;
     res.render('home.ejs');
-  }else if (username == 'Dr. Phyu Sin Win' && password == 'Doc001') {
+  } else if (username == 'Dr. Phyu Sin Win' && password == 'Doc001') {
     sess.username = 'Dr. Phyu Sin Win';
     sess.login = true;
-    res.render('homeDoc.ejs',{ doctor: username});
+    res.render('homeDoc.ejs', { doctor: username });
   } else if (username == 'Dr. Cho Nwe Zin' && password == 'Doc002') {
     sess.username = 'Dr. Cho Nwe Zin';
     sess.login = true;
     res.render('homeDoc.ejs',);
-  } 
+  }
 
   else {
     res.send('login failed');
@@ -355,7 +355,7 @@ app.post('/admin/updateconsultation', function (req, res) {
     gender: req.body.gender,
     age: req.body.age,
     doctor: req.body.doctor,
-    department: req.body.department,    
+    department: req.body.department,
     message: req.body.message,
     answers: req.body.answers,
     image: req.body.image,
@@ -377,10 +377,10 @@ app.post('/admin/updateconsultation', function (req, res) {
 Consultations Doctor View
 **********************************************/
 app.get('/doctor/consultations', async function (req, res) {
- 
+
   let doctor = sess.username;
   const consultRef = db.collection('consult');
-  const snapshot = await consultRef.where('doctor','==', doctor).get();
+  const snapshot = await consultRef.where('doctor', '==', doctor).get();
 
   if (snapshot.empty) {
     res.send('no data');
@@ -431,7 +431,7 @@ app.post('/doctor/updateconsultation', function (req, res) {
     gender: req.body.gender,
     age: req.body.age,
     doctor: req.body.doctor,
-    department: req.body.department,    
+    department: req.body.department,
     message: req.body.message,
     answers: req.body.answers,
     image: req.body.image,
@@ -545,7 +545,7 @@ app.get('/webview/:sender_id', function (req, res) {
 
 app.post('/webview', upload.single('file'), function (req, res) {
   let doctor = selectedDoc;
-  let department = selectedDept;  
+  let department = selectedDept;
   let name = req.body.name;
   let gender = req.body.gender;
   let age = req.body.age;
@@ -571,7 +571,7 @@ app.post('/webview', upload.single('file'), function (req, res) {
         phone: phone,
         email: email,
         doctor: doctor,
-        department: department,        
+        department: department,
         message: message,
         image: img_url,
         created_on: created_on,
@@ -642,30 +642,30 @@ app.post('/webview2', upload.single('file'), function (req, res) {
     department: req.body.department,
     date: req.body.date,
     time: req.body.time,
-    message: req.body.message,    
-    status: req.body.status, 
-    created_on: created_on,   
-    ref: req.body.ref    
+    message: req.body.message,
+    status: req.body.status,
+    created_on: created_on,
+    ref: req.body.ref
   }
 
- 
+
 
   db.collection('appointments').doc(doc_id)
     .update(data).then(() => {
       console.log('Update Successful');
       let text = "Your booking is successfully updated.\n";
-      text += "Name : "+req.body.name +"\n";
-      text += "Doctor : "+req.body.doctor +"\n";
-      text += "Department : "+req.body.department +"\n";
-      text += "Date : "+req.body.date +"\n";
-      text += "Time : "+req.body.time +"\n";
-      text += "Message : "+req.body.message +"\n";
-      text += "Gender : "+req.body.gender +"\n";
-      text += "Phone : "+req.body.phone +"\n";
-      text += "Email : "+req.body.email +"\n";
-      text += "Reference : "+req.body.ref +"\n";
+      text += "Name : " + req.body.name + "\n";
+      text += "Doctor : " + req.body.doctor + "\n";
+      text += "Department : " + req.body.department + "\n";
+      text += "Date : " + req.body.date + "\n";
+      text += "Time : " + req.body.time + "\n";
+      text += "Message : " + req.body.message + "\n";
+      text += "Gender : " + req.body.gender + "\n";
+      text += "Phone : " + req.body.phone + "\n";
+      text += "Email : " + req.body.email + "\n";
+      text += "Reference : " + req.body.ref + "\n";
       showupdatesuccessfulReply(sender, text);
-      
+
     }).catch(error => {
       console.log(error);
     });
@@ -695,31 +695,31 @@ app.post('/webview3', upload.single('file'), function (req, res) {
     department: req.body.department,
     date: req.body.date,
     time: req.body.time,
-    message: req.body.message,    
-    status: req.body.status, 
-    created_on: created_on,   
+    message: req.body.message,
+    status: req.body.status,
+    created_on: created_on,
     reference: req.body.reference,
-    image: req.body.image    
+    image: req.body.image
   }
 
- 
+
 
   db.collection('consult').doc(doc_id)
     .update(data).then(() => {
       console.log('Update Successful');
       let text = "Your booking is successfully updated.\n";
-      text += "Name : "+req.body.name +"\n";
-      text += "Doctor : "+req.body.doctor +"\n";
-      text += "Department : "+req.body.department +"\n";
-      text += "Date : "+req.body.date +"\n";
-      text += "Time : "+req.body.time +"\n";
-      text += "Message : "+req.body.message +"\n";
-      text += "Gender : "+req.body.gender +"\n";
-      text += "Phone : "+req.body.phone +"\n";
-      text += "Email : "+req.body.email +"\n";
-      text += "Reference : "+req.body.reference +"\n";
+      text += "Name : " + req.body.name + "\n";
+      text += "Doctor : " + req.body.doctor + "\n";
+      text += "Department : " + req.body.department + "\n";
+      text += "Date : " + req.body.date + "\n";
+      text += "Time : " + req.body.time + "\n";
+      text += "Message : " + req.body.message + "\n";
+      text += "Gender : " + req.body.gender + "\n";
+      text += "Phone : " + req.body.phone + "\n";
+      text += "Email : " + req.body.email + "\n";
+      text += "Reference : " + req.body.reference + "\n";
       showupdatesuccessfulReply(sender, text);
-      
+
     }).catch(error => {
       console.log(error);
     });
@@ -731,7 +731,7 @@ app.post('/webview3', upload.single('file'), function (req, res) {
 let updateData = [];
 async function isValidBooking(refer, sender_psid) {
   try {
-    
+
     const appointmentsRef = db.collection('appointments');
     const snapshot = await appointmentsRef.where('ref', '==', refer).get();
     if (snapshot.empty) {
@@ -760,19 +760,27 @@ async function isValidBooking(refer, sender_psid) {
           return;
         }
       });
-    }   
+    }
     return updateData;
   } catch (err) {
     throw err;
   }
 }
 
-const  registrationConfirmReply = (sender_psid) => {
+const registrationConfirmReply = (sender_psid) => {
   let response = { "text": "Your reference number is already confirm. Therefore you cannot update your booking." };
   callSend(sender_psid, response);
 }
 
+const consultationsPendingReply = (sender_psid) => {
+  let response = { "text": "Your reference number is in process. Please recheck later." };
+  callSend(sender_psid, response);
+}
 
+const consultationsResultsReply = (sender_psid, replyText) => {
+  let response = { "text": replyText };
+  callSend(sender_psid, response);
+}
 
 const showConsultationReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
@@ -1002,12 +1010,17 @@ const handleMessage = (sender_psid, received_message) => {
     updateReference = received_message.text;
     console.log('Registration: updateReference:', received_message.text);
     selectedRegorCon = "";
-    checkRegistrationReferenceNumber(sender_psid);    
+    checkRegistrationReferenceNumber(sender_psid);
   } else if (selectedRegorCon == "consultation") {
     updateReference = received_message.text;
     selectedRegorCon = "";
     console.log('Consultation: updateReference:', received_message.text);
-    checkConsultationReferenceNumber(sender_psid);    
+    checkConsultationReferenceNumber(sender_psid);
+  } else if (viewReference == "consultations") {
+    updateReference = received_message.text;
+    selectedRegorCon = "";
+    console.log('VIEW REFERENCE: updateReference:', received_message.text);
+    checkConsultationReferenceNumber(sender_psid);
   }
   else {
 
@@ -1107,6 +1120,9 @@ const handlePostback = (sender_psid, received_postback) => {
         break;
       case "Update Booking":
         updateBooking(sender_psid);
+        break;
+      case "View Results":
+        viewResults(sender_psid);
         break;
       case "Reception":
         receptionPhoneNo(sender_psid);
@@ -1269,6 +1285,18 @@ const userChoice = (sender_psid) => {
             },
           ],
         }, {
+          "title": "Consultations Results",
+          "subtitle": "You can update your booking.",
+          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/122387890_133853371800336_8355160971460791922_o.jpg?_nc_cat=110&ccb=2&_nc_sid=730e14&_nc_eui2=AeHsYAN35KVCI1e0_OEv57pMfmGiahTyxWF-YaJqFPLFYXygGaKqA9TVgjUD29B_Ny_CbRKa_8Bkz6a1pm4Ihytw&_nc_ohc=yS2irM5oDBgAX87H3km&_nc_oc=AQm_1jZo78E-SMxuJqyhna5sc2RrL5_8ZMszNpkDS1NhwqbVYBUFUrbpW5Kpbl2rW2o&_nc_ht=scontent.fmdl5-1.fna&oh=ce252bbfa31cc447ac7d4a99ac93b243&oe=5FBB132D",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "View Results",
+              "payload": "choice:View Results",
+            },
+          ],
+        },
+        {
           "title": "Reception Desk",
           "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
           "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121093629_126910549161285_647069814399212966_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeEiO3JG8YiR9IbHBak-8RPOso8rNEjKNyiyjys0SMo3KDQ-0lcKOf7merGqs0vFytjGpZUL4gL7c9H4IuggX2wq&_nc_ohc=FYTze-sIKqgAX-aMNPg&_nc_ht=scontent.fmdl5-1.fna&oh=957c30b47df0fa3ccdf8e774d1d5a1bc&oe=5FAACB39",
@@ -1998,6 +2026,13 @@ const enterConsultationReference = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
+let viewReference = "";
+const viewResults = (sender_psid) => {
+  viewReference = "consultations"
+  let response = { "text": "Enter your booking reference number you want to see the results." };
+  callSend(sender_psid, response);
+}
+
 const receptionPhoneNo = (sender_psid) => {
   let response = { "text": "You can contact STTK's Reception Desk.\r\nReception Phone No: 09111222333" };
   callSend(sender_psid, response);
@@ -2201,19 +2236,19 @@ const saveAppointment = (arg, sender_psid) => {
   });
 }
 
-const checkRegistrationReferenceNumber = (sender_psid) =>{
+const checkRegistrationReferenceNumber = (sender_psid) => {
   isValidBooking(updateReference, sender_psid);
   console.log("checkRegistrationReferenceNumber");
 }
 
-const checkConsultationReferenceNumber = (sender_psid) =>{
+const checkConsultationReferenceNumber = (sender_psid) => {
   isValidBooking2(updateReference, sender_psid);
   console.log("checkConsultationReferenceNumber");
 }
 
 let updateData2 = [];
 async function isValidBooking2(refer, sender_psid) {
-  try {   
+  try {
     const consultRef = db.collection('consult');
     const snapshot = await consultRef.where('reference', '==', refer).get();
     if (snapshot.empty) {
@@ -2238,18 +2273,60 @@ async function isValidBooking2(refer, sender_psid) {
         } else {
           console.log('consult.status:', consult.status);
           consultationPending(sender_psid);
-          
+
           return;
         }
       });
-    }   
+    }
     return updateData2;
   } catch (err) {
     throw err;
   }
 }
 
+const checkConsultationReferenceNumber3 = (sender_psid) => {
+  isValidBooking3(updateReference, sender_psid);
+  console.log("checkConsultationReferenceNumber3");
+}
 
+let updateData3 = [];
+async function isValidBooking3(refer, sender_psid) {
+  try {
+    const consultRef = db.collection('consult');
+    const snapshot = await consultRef.where('reference', '==', refer).get();
+    if (snapshot.empty) {
+      noDataRegistration(sender_psid);
+      console.log('DATA:', 'no data');
+      return;
+    } else {
+      snapshot.forEach(doc => {
+        let consult = {};
+        consult = doc.data();
+        consult.doc_id = doc.id;
+
+        updateData3.push(consult);
+
+      });
+      console.log('DATA:', updateData3);
+      updateData3.forEach(function (consult) {
+        if (consult.status == 'confirm') {
+          console.log('consult.status:', consult.status);
+          //registrationConfirmReply(sender_psid);
+          let replytext = "Questions:\n" + consult.message + "\nAnswers:\n" + consult.answers;
+          consultationsResultReply(sender_psid, replytext);
+          return;
+        } else {
+          console.log('consult.status:', consult.status);          
+          consultationsPendingReply(sender_psid);
+          return;
+        }
+      });
+    }
+    return updateData3;
+  } catch (err) {
+    throw err;
+  }
+}
 
 
 
