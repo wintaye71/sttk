@@ -407,7 +407,7 @@ app.get('/doctor/updateconsultation/:doc_id', async function (req, res) {
   let doc_id = req.params.doc_id;
   let doctor = sess.username;
   const consultRef = db.collection('consult').doc(doc_id);
-  const doc = await consultRef.where('doctor','==', doctor).get();
+  const doc = await consultRef.get();
   if (!doc.exists) {
     console.log('No such document!');
   } else {
