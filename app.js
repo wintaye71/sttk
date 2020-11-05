@@ -1018,7 +1018,7 @@ const handleMessage = (sender_psid, received_message) => {
     checkConsultationReferenceNumber(sender_psid);
   } else if (viewReference == "consultations") {
     updateReference = received_message.text;
-    selectedRegorCon = "";
+    viewReference = "";
     console.log('VIEW REFERENCE: updateReference:', received_message.text);
     checkConsultationReferenceNumber3(sender_psid);
   }
@@ -1286,7 +1286,7 @@ const userChoice = (sender_psid) => {
           ],
         }, {
           "title": "Consultations Results",
-          "subtitle": "You can update your booking.",
+          "subtitle": "You can view your consultations results.",
           "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/122387890_133853371800336_8355160971460791922_o.jpg?_nc_cat=110&ccb=2&_nc_sid=730e14&_nc_eui2=AeHsYAN35KVCI1e0_OEv57pMfmGiahTyxWF-YaJqFPLFYXygGaKqA9TVgjUD29B_Ny_CbRKa_8Bkz6a1pm4Ihytw&_nc_ohc=yS2irM5oDBgAX87H3km&_nc_oc=AQm_1jZo78E-SMxuJqyhna5sc2RrL5_8ZMszNpkDS1NhwqbVYBUFUrbpW5Kpbl2rW2o&_nc_ht=scontent.fmdl5-1.fna&oh=ce252bbfa31cc447ac7d4a99ac93b243&oe=5FBB132D",
           "buttons": [
             {
