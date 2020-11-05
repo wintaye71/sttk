@@ -443,7 +443,7 @@ app.post('/doctor/updateconsultation', function (req, res) {
 
   db.collection('consult').doc(req.body.doc_id)
     .update(data).then(() => {
-      res.redirect('/admin/consultations');
+      res.redirect('/doctor/consultations');
     }).catch((err) => console.log('ERROR:', error));
 
 });
