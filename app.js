@@ -193,8 +193,17 @@ app.post('/login', function (req, res) {
     sess.username = 'admin';
     sess.login = true;
     res.render('home.ejs');
+  }else if (username == 'Dr. Phyu Sin Win' && password == 'Doc001') {
+    sess.username = 'Dr. Phyu Sin Win';
+    sess.login = true;
+    res.render('homeDoc.ejs', { doctor: username });
+  } else if (username == 'Dr. Cho Nwe Zin' && password == 'Doc002') {
+    sess.username = 'Dr. Cho Nwe Zin';
+    sess.login = true;
+    res.render('homeDoc.ejs', { doctor: username });
+  } 
 
-  } else {
+  else {
     res.send('login failed');
   }
 });
@@ -358,6 +367,84 @@ app.post('/admin/updateconsultation', function (req, res) {
     }).catch((err) => console.log('ERROR:', error));
 
 });
+
+
+/*********************************************
+Consultations Doctor View
+**********************************************/
+app.get('/admin/consultationsDoctor', async function (req, res) {
+
+  const consultRef = db.collection('consult').orderBy('created_on', 'desc');
+  const snapshot = await consultRef.where('doctor','==',).get();
+
+  
+
+  if (snapshot.empty) {
+    res.send('no data');
+  }
+
+  let data = [];
+
+  snapshot.forEach(doc => {
+    let consult = {};
+    consult = doc.data();
+    consult.doc_id = doc.id;
+
+    data.push(consult);
+
+  });
+
+  console.log('DATA:', data);
+
+  res.render('consultations.ejs', { data: data });
+
+});
+
+app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
+  let doc_id = req.params.doc_id;
+
+  const consultRef = db.collection('consult').doc(doc_id);
+  const doc = await consultRef.get();
+  if (!doc.exists) {
+    console.log('No such document!');
+  } else {
+    console.log('Document data:', doc.data());
+    let data = doc.data();
+    data.doc_id = doc.id;
+
+    console.log('Document data:', data);
+    res.render('editconsultations.ejs', { data: data });
+  }
+
+});
+
+
+app.post('/admin/updateconsultation', function (req, res) {
+  console.log('REQ:', req.body);
+  let data = {
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    gender: req.body.gender,
+    age: req.body.age,
+    doctor: req.body.doctor,
+    department: req.body.department,    
+    message: req.body.message,
+    answers: req.body.answers,
+    image: req.body.image,
+    status: req.body.status,
+    doc_id: req.body.doc_id,
+    reference: req.body.reference,
+    comment: req.body.comment
+  }
+
+  db.collection('consult').doc(req.body.doc_id)
+    .update(data).then(() => {
+      res.redirect('/admin/consultations');
+    }).catch((err) => console.log('ERROR:', error));
+
+});
+
 
 
 /*********************************************
