@@ -377,9 +377,10 @@ app.post('/admin/updateconsultation', function (req, res) {
 Consultations Doctor View
 **********************************************/
 app.get('/doctor/consultations', async function (req, res) {
-
+ 
+  let doctor = sess.username;
   const consultRef = db.collection('consult');
-  const snapshot = await consultRef.where('doctor','==', req.body.doctor).get();
+  const snapshot = await consultRef.where('doctor','==', doctor).get();
 
   if (snapshot.empty) {
     res.send('no data');
