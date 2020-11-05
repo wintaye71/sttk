@@ -216,6 +216,10 @@ app.get('/home', function (req, res) {
   res.render('home.ejs');
 });
 
+app.get('/homedoctor', function (req, res) {
+  res.render('homeDoc.ejs');
+});
+
 
 
 
@@ -372,12 +376,10 @@ app.post('/admin/updateconsultation', function (req, res) {
 /*********************************************
 Consultations Doctor View
 **********************************************/
-app.get('/admin/consultationsDoctor', async function (req, res) {
+app.get('/doctor/consultations', async function (req, res) {
 
   const consultRef = db.collection('consult').orderBy('created_on', 'desc');
   const snapshot = await consultRef.where('doctor','==','Dr. Phyu Sin Win').get();
-
-  
 
   if (snapshot.empty) {
     res.send('no data');
@@ -400,7 +402,7 @@ app.get('/admin/consultationsDoctor', async function (req, res) {
 
 });
 
-app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
+app.get('/doctor/updateconsultation/:doc_id', async function (req, res) {
   let doc_id = req.params.doc_id;
 
   const consultRef = db.collection('consult').doc(doc_id);
@@ -419,7 +421,7 @@ app.get('/admin/updateconsultation/:doc_id', async function (req, res) {
 });
 
 
-app.post('/admin/updateconsultation', function (req, res) {
+app.post('/doctor/updateconsultation', function (req, res) {
   console.log('REQ:', req.body);
   let data = {
     name: req.body.name,
