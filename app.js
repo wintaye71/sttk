@@ -379,7 +379,7 @@ Consultations Doctor View
 app.get('/doctor/consultations', async function (req, res) {
 
   const consultRef = db.collection('consult');
-  const snapshot = await consultRef.where('doctor','==','Dr. Phyu Sin Win').get();
+  const snapshot = await consultRef.where('doctor','==', doctor).get();
 
   if (snapshot.empty) {
     res.send('no data');

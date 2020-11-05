@@ -58,11 +58,9 @@
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i>
-                HOME</a>
-            <a href="https://sttk.herokuapp.com/admin/appointments" class="w3-bar-item w3-button w3-hide-small"><i
-                    class="fa fa-user"></i> REGISTRATION</a>
-            <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button w3-hide-small"><i
+            <a href="https://sttk.herokuapp.com/homedoctor" class="w3-bar-item w3-button"><i class="fa fa-home"></i>
+                HOME</a>            
+            <a href="https://sttk.herokuapp.com/doctor/consultations" class="w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-user"></i> CONSULTATION</a>
             <a href="https://sttk.herokuapp.com/logout" class="w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-envelope"></i> LOGOUT</a>
@@ -72,11 +70,10 @@
 
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button"
+            <a href="https://sttk.herokuapp.com/homedoctor" class="w3-bar-item w3-button"
                 onclick="toggleFunction()">HOME</a>
-            <a href="https://sttk.herokuapp.com/admin/appointments" class="w3-bar-item w3-button"
-                onclick="toggleFunction()">REGISTRATION</a>
-            <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button"
+            
+            <a href="https://sttk.herokuapp.com/doctor/consultations" class="w3-bar-item w3-button"
                 onclick="toggleFunction()">CONSULTATION</a>
             <a href="https://sttk.herokuapp.com/logout" class="w3-bar-item w3-button" onclick="toggleFunction()">LOGOUT</a>
 
@@ -96,8 +93,7 @@
                     <th>Gender</th>
                     <th>Age</th>
                     <th>Phone</th>
-                    <th>Email</th>
-                    <th>Doctor</th>
+                    <th>Email</th>                    
                     <th>Department</th>                    
                     <th>Questions</th>
                     <th>Answers</th>
@@ -115,8 +111,7 @@
                     <td><%= consultation.gender %></td>
                     <td><%= consultation.age %></td>
                     <td><%= consultation.phone %></td>
-                    <td><%= consultation.email %></td>
-                    <td><%= consultation.doctor %></td>
+                    <td><%= consultation.email %></td>                    
                     <td><%= consultation.department %></td>                    
                     <td><%= consultation.message %></td>
                     <td><%= consultation.answers %></td>
