@@ -1033,7 +1033,8 @@ const handleMessage = (sender_psid, received_message) => {
         userChoice(sender_psid);
         break;
       case "hospital":
-        hospitalAppointment(sender_psid);
+        //hospitalAppointment(sender_psid);
+        userChoice(sender_psid);
         break;
       case "text":
         textReply(sender_psid);
@@ -1051,7 +1052,7 @@ const handleMessage = (sender_psid, received_message) => {
         showImages(sender_psid)
         break;
       default:
-        defaultReply(sender_psid);
+        userChoice(sender_psid);
     }
 
 
