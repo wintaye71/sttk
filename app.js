@@ -196,7 +196,7 @@ app.post('/login', function (req, res) {
   }else if (username == 'Dr. Phyu Sin Win' && password == 'Doc001') {
     sess.username = 'Dr. Phyu Sin Win';
     sess.login = true;
-    res.render('home.ejs');
+    res.render('homeDoc.ejs');
   } else if (username == 'Dr. Cho Nwe Zin' && password == 'Doc002') {
     sess.username = 'Dr. Cho Nwe Zin';
     sess.login = true;

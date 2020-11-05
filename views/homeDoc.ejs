@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<title>STTK Hospital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body,
+    html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+  
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+ 
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top w3-center">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i>
+                HOME</a>
+            <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button w3-hide-small"><i
+                    class="fa fa-user"></i> CONSULTATION</a>
+            <a href="https://sttk.herokuapp.com/logout" class="w3-bar-item w3-button w3-hide-small"><i
+                    class="fa fa-envelope"></i> LOGOUT</a>
+
+            </a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="https://sttk.herokuapp.com/home" class="w3-bar-item w3-button"
+                onclick="toggleFunction()">HOME</a>
+            <a href="https://sttk.herokuapp.com/admin/appointments" class="w3-bar-item w3-button"
+                onclick="toggleFunction()">REGISTRATION</a>
+            <a href="https://sttk.herokuapp.com/admin/consultations" class="w3-bar-item w3-button"
+                onclick="toggleFunction()">CONSULTATION</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">LOGOUT</a>
+
+        </div>
+    </div>
+
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">Registration and Consultation for STTK Hospital</h3>
+        <p class="w3-center"><em>@ Pyin Oo Lwin</em></p>
+        <p>Pyin Oo Lwin is also known as a city of flowers with various types of flowers.
+            STTK hospital is located at No. (110), Shwe Bo Street, Quarter (7), Pyin Oo Lwin township, Mandalay
+            division.
+            STTK hospital is (50) bedded. STTK hospital was established since 2000.
+            The hospital provides clinicians with a variety of specialists, diagnoses, facilities,
+            and caring care, and provides (24) hours of service to meet patient expectations and satisfaction.
+        </p>
+
+
+    </div>
+
+    <!-- Container (Portfolio Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="portfolio">
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col m3">
+                <img src="1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                    alt="">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <p>Developed by Wint Nandar Aye</a></p>
+    </footer>
+
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
