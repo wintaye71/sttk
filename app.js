@@ -416,7 +416,7 @@ app.get('/doctor/updateconsultation/:doc_id', async function (req, res) {
     data.doc_id = doc.id;
 
     console.log('Document data:', data);
-    res.render('editconsultations.ejs', { data: data });
+    res.render('editconsultationsByDoctor.ejs', { data: data });
   }
 
 });
