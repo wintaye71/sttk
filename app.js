@@ -1020,7 +1020,7 @@ const handleMessage = (sender_psid, received_message) => {
     updateReference = received_message.text;
     selectedRegorCon = "";
     console.log('VIEW REFERENCE: updateReference:', received_message.text);
-    checkConsultationReferenceNumber(sender_psid);
+    checkConsultationReferenceNumber3(sender_psid);
   }
   else {
 
