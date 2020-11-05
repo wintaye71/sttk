@@ -777,7 +777,7 @@ const consultationsPendingReply = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const consultationsResultsReply = (sender_psid, replyText) => {
+const consultationsResultReply = (sender_psid, replyText) => {
   let response = { "text": replyText };
   callSend(sender_psid, response);
 }
