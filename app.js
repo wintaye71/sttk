@@ -2293,6 +2293,7 @@ const checkConsultationReferenceNumber3 = (sender_psid) => {
 let updateData3 = [];
 async function isValidBooking3(refer, sender_psid) {
   try {
+    updateData3 = [];
     let replytext = "";
     const consultRef = db.collection('consult');
     const snapshot = await consultRef.where('reference', '==', refer).get();
