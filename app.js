@@ -205,7 +205,7 @@ app.post('/login', function (req, res) {
     sess.username = 'Dr. Kyaw Thu';
     sess.login = true;
     res.render('homeDoc.ejs', { doctor: username });
-  } else if (username == 'Dr. Kyaw Thu' && password == 'Doc003') {
+  } else if (username == 'Dr. Kyaw Thu' && password == 'Doc004') {
     sess.username = 'Dr. Maung Oo';
     sess.login = true;
     res.render('homeDoc.ejs', { doctor: username });
