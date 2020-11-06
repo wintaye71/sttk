@@ -200,7 +200,15 @@ app.post('/login', function (req, res) {
   } else if (username == 'Dr. Cho Nwe Zin' && password == 'Doc002') {
     sess.username = 'Dr. Cho Nwe Zin';
     sess.login = true;
-    res.render('homeDoc.ejs',);
+    res.render('homeDoc.ejs', { doctor: username });
+  } else if (username == 'Dr. Kyaw Thu' && password == 'Doc003') {
+    sess.username = 'Dr. Kyaw Thu';
+    sess.login = true;
+    res.render('homeDoc.ejs', { doctor: username });
+  } else if (username == 'Dr. Kyaw Thu' && password == 'Doc003') {
+    sess.username = 'Dr. Maung Oo';
+    sess.login = true;
+    res.render('homeDoc.ejs', { doctor: username });
   }
 
   else {
