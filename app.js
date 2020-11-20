@@ -1470,7 +1470,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Khin Mg Htwe",
           "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121078844_127539629098377_5968833237798495569_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeGTQDVPDD5kfrCdAach037wR5RUQxIclqhHlFRDEhyWqOpqZ7eOFSj6oPJzAa_4zLaVQXvH4Ebnri-xLYk7F35Y&_nc_ohc=PS-LO3uJu5MAX_fYWMs&_nc_ht=scontent.fmdl5-1.fna&oh=d3da5df8725117fa8add1a4c732a44d2&oe=5FABC74E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/cardiacsurgery.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1481,7 +1481,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Wunna Tun",
           "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121078844_127539629098377_5968833237798495569_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeGTQDVPDD5kfrCdAach037wR5RUQxIclqhHlFRDEhyWqOpqZ7eOFSj6oPJzAa_4zLaVQXvH4Ebnri-xLYk7F35Y&_nc_ohc=PS-LO3uJu5MAX_fYWMs&_nc_ht=scontent.fmdl5-1.fna&oh=d3da5df8725117fa8add1a4c732a44d2&oe=5FABC74E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/cardiacsurgery.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1492,7 +1492,7 @@ const showCardiacSurgeryDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Soe Min",
           "subtitle": "M.B.B.S., M.Med.Sc(Surgery)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121078844_127539629098377_5968833237798495569_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeGTQDVPDD5kfrCdAach037wR5RUQxIclqhHlFRDEhyWqOpqZ7eOFSj6oPJzAa_4zLaVQXvH4Ebnri-xLYk7F35Y&_nc_ohc=PS-LO3uJu5MAX_fYWMs&_nc_ht=scontent.fmdl5-1.fna&oh=d3da5df8725117fa8add1a4c732a44d2&oe=5FABC74E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/cardiacsurgery.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1520,7 +1520,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Khin Khin Phyu",
           "subtitle": "M.B.B.S., M.Med.Sc(ORL)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/earnosethroat.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1531,7 +1531,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Moe Thidar Lin",
           "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/earnosethroat.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1542,7 +1542,7 @@ const showEarNoseThroatDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Cho Mar Tin",
           "subtitle": "M.B.B.S., M.Med.Sc(ENT)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121600006_127539662431707_4761687188381827989_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_eui2=AeG2-WyVur5IsNHmKvELiPEdunEa4g3chtq6cRriDdyG2gYAzQPvpRIj2m-8ld4baYnsyRPHDXwQwt4zx49lt7jb&_nc_ohc=Ctq9efBgHE4AX8m3shm&_nc_ht=scontent.fmdl5-1.fna&oh=47634a7a05ab45c282f1b6d4f419c40a&oe=5FAC2249",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/earnosethroat.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1568,7 +1568,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Ma Ma Gyi",
           "subtitle": "M.B.B.S., MRCP(UK), FRCP(Edin), FACTM(Aus)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/generalmedicine.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1579,7 +1579,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
         }, {
           "title": "Dr. U Myat Chit",
           "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), DTM&H (Landon)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/generalmedicine.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1590,7 +1590,7 @@ const showGeneralMedicineDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Tin Htut",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/generalmedicine.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1616,7 +1616,7 @@ const showHepatologyDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Thandar Tun",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK), FRCP(Edin), Dr. Med.Sc (Hepatology)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121685741_127539692431704_5412188264697829369_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeFrTPiTAh2rfzrLwzv45u4izD_pzN-VAD_MP-nM35UAP4Ej6OYAEh_BHGGt-W-DN-nHd5sRJ3n0MRkNtpQ7DfCI&_nc_ohc=UiPTsPRJfkoAX8XfPW5&_nc_ht=scontent.fmdl5-1.fna&oh=ad2ba84db218723aa42ef2a746651e42&oe=5FACBCE0",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/hepatology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1627,7 +1627,7 @@ const showHepatologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Kyaw Thet Tun",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121685741_127539692431704_5412188264697829369_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeFrTPiTAh2rfzrLwzv45u4izD_pzN-VAD_MP-nM35UAP4Ej6OYAEh_BHGGt-W-DN-nHd5sRJ3n0MRkNtpQ7DfCI&_nc_ohc=UiPTsPRJfkoAX8XfPW5&_nc_ht=scontent.fmdl5-1.fna&oh=ad2ba84db218723aa42ef2a746651e42&oe=5FACBCE0",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/hepatology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1638,7 +1638,7 @@ const showHepatologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Win Ei Ei",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121685741_127539692431704_5412188264697829369_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeFrTPiTAh2rfzrLwzv45u4izD_pzN-VAD_MP-nM35UAP4Ej6OYAEh_BHGGt-W-DN-nHd5sRJ3n0MRkNtpQ7DfCI&_nc_ohc=UiPTsPRJfkoAX8XfPW5&_nc_ht=scontent.fmdl5-1.fna&oh=ad2ba84db218723aa42ef2a746651e42&oe=5FACBCE0",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/hepatology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1665,7 +1665,7 @@ const showNeurologyDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Myint Oo",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK), FRCP",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/neurology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1676,7 +1676,7 @@ const showNeurologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Moe Moe Zaw",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK), Dr. Med.Sc (Neurology)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/neurology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1687,7 +1687,7 @@ const showNeurologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Kyi Kyi Maw",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int:Med), MRCP (UK)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121577322_127539712431702_3948157535861077957_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeFAoXPjR3kDWRwOZ5aV5_Q7zzvLi1qZp9HPO8uLWpmn0dlYg_k25UT0qLWy-LCnM2II8DMLyKTPG2plQaxzjQ1h&_nc_ohc=Fos1dVya96gAX9fvbhc&_nc_ht=scontent.fmdl5-1.fna&oh=697209bb43b34d79784708675479b2d8&oe=5FAD8E4E",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/neurology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1713,7 +1713,7 @@ const showObstetricsDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Myint Myint Aye",
           "subtitle": "M.B.,B.S. M.Med.Sc (OG), MRCOG (UK)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/obstetric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1724,7 +1724,7 @@ const showObstetricsDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Myint Thet Mon",
           "subtitle": "M.B.,B.S. M.Med.Sc (OG), Dip. Med.Sc(OG) Dr. Med.Sc (OG)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/obstetric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1735,7 +1735,7 @@ const showObstetricsDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Kyi Kyi Myint",
           "subtitle": "M.B.,B.S. M.Med.Sc (OG)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121475923_127539739098366_3481507233754383841_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeE20eqaAS1SD-M12gQj-voGw4jVLEU54SDDiNUsRTnhIBHkXjUY6yX1dZTINmhpvdDq6jVVdMulv7oXEHKxdgXn&_nc_ohc=X68TCrRubssAX99Vazb&_nc_ht=scontent.fmdl5-1.fna&oh=bd41689e9d09b414491dbc4b527fa006&oe=5FAC5C29",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/obstetric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1761,7 +1761,7 @@ const showOphthalmologyDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Thin Kyu Aye",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ophth), D.C.E.H (London), F.L.C.S (Ophth), F.A.C.S (USA)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/ophthalmology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1772,7 +1772,7 @@ const showOphthalmologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Sandar Myint",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ophth)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/ophthalmology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1783,7 +1783,7 @@ const showOphthalmologyDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Amy Aung",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ophth)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121668375_127539795765027_8850965238203415595_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGQJE8UL_H1BvTSnSNhd0pV06REU4O5yujTpERTg7nK6LLOMaujc4qRfKYftzF09uKZnRqvinhf4Uqv0GRPtBdT&_nc_ohc=GcuvsqhZV2QAX_g78om&_nc_ht=scontent.fmdl5-1.fna&oh=dcd6786fc6488d88c26040505f75c74e&oe=5FAE627B",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/ophthalmology.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1809,7 +1809,7 @@ const showOrthopedicDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Khaing Soe Tun",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ortho)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/orthopedic.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1820,7 +1820,7 @@ const showOrthopedicDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Nay Myo Tun",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ortho), Dr. Med. Sc, F.I.C.S (Ortho)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/orthopedic.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1831,7 +1831,7 @@ const showOrthopedicDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Nay Tun",
           "subtitle": "M.B.,B.S. M.Med.Sc (Ortho)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121149530_127539812431692_9073582133278660982_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeG6BL2BAkfGZfR9Sx9pBkjhkrTpXo2PBmaStOlejY8GZlI7Ra1k8pEYvEEBy8H9yA6MrO8-ZdgLY8CXO23GxV1B&_nc_ohc=_jLCKifPw2cAX_qUCx2&_nc_ht=scontent.fmdl5-1.fna&oh=3c1a143b43b53a7abd3b2e63d3ac80fd&oe=5FABA196",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/orthopedic.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1857,7 +1857,7 @@ const showPaediatricsDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Thida",
           "subtitle": "M.B.,B.S. M.Med.Sc (Paed;), MRCP (UK), FRCP (CH), Dr. Med. Sc (Paed;), Dip. Med. Ed",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/paediatric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1868,7 +1868,7 @@ const showPaediatricsDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Nwet Nwet Tin",
           "subtitle": "M.B.,B.S. M.Med.Sc (Paed;)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/paediatric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1879,7 +1879,7 @@ const showPaediatricsDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Moh Moh Thwe",
           "subtitle": "M.B.,B.S. M.Med.Sc (Paed;), MRCPCH (UK)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121199963_127539849098355_4246886633058820103_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_eui2=AeEImk6YhDVddKGkOZnn3FnFJjxRHLRXHDcmPFEctFccN6mwN3ZQO_4RksQwotveewILZ6z2_sV8cv3GfWL9ebaC&_nc_ohc=ENjG7z3UwaMAX8K32cF&_nc_ht=scontent.fmdl5-1.fna&oh=c7a0bf074c08480a9c42e1ebf6c9ec93&oe=5FAAEC25",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/paediatric.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1905,7 +1905,7 @@ const showRespiratoryDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Aye Win Satt",
           "subtitle": "M.B.,B.S. MRCP (UK), FRCP(Edin), Dr. Med. Sc(Respiratory Medicine), FCCP (USA)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/respiratory.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1916,7 +1916,7 @@ const showRespiratoryDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Yin Mon Thant",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int: Med), MRCP, FRCP, Dr. Med. Sc (Respiratory Medicine)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/respiratory.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1927,7 +1927,7 @@ const showRespiratoryDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Twe Tar Oo",
           "subtitle": "M.B.,B.S. M.Med.Sc (Int: Med), Dr. Med. Sc (Respiratory Medicine)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121119629_127539869098353_66035643310691110_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeF1iJAm6hBcFmfQ0iLxbYuxvIj0hGVjt0y8iPSEZWO3TAOy98QKZJ6TayrLGSMY2VuJWxIUTnyWH-dIOCw8jZnM&_nc_ohc=8tpBBXx_uWUAX81jPiX&_nc_ht=scontent.fmdl5-1.fna&oh=0b7ccfae5360b92c76e50f59c120dc81&oe=5FAB4CDC",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/respiratory.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1953,7 +1953,7 @@ const showPsychiatryDoctor = (sender_psid) => {
         "elements": [{
           "title": "Dr. Phyu Sin Win",
           "subtitle": "M.B.B.S., M.Med.Sc(Mental Health)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121175169_127539895765017_5222472204305763753_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_eui2=AeEEwLc2ht843K3wLgtEstCCXajrfRKauaJdqOt9Epq5ohsNYEzSw4TeC2VdX-0lWWqzeJAbWC2nIpwQN-tA9PGa&_nc_ohc=q5YaFWn0NDAAX-jS54e&_nc_ht=scontent.fmdl5-1.fna&oh=753d41a065f6fb78742a3c198475914c&oe=5FAB3427",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/psychaitry.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1964,7 +1964,7 @@ const showPsychiatryDoctor = (sender_psid) => {
         }, {
           "title": "Dr. Cho Nwe Zin",
           "subtitle": "M.B.B.S., M.Med.Sc(Psy)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121175169_127539895765017_5222472204305763753_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_eui2=AeEEwLc2ht843K3wLgtEstCCXajrfRKauaJdqOt9Epq5ohsNYEzSw4TeC2VdX-0lWWqzeJAbWC2nIpwQN-tA9PGa&_nc_ohc=q5YaFWn0NDAAX-jS54e&_nc_ht=scontent.fmdl5-1.fna&oh=753d41a065f6fb78742a3c198475914c&oe=5FAB3427",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/psychaitry.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1994,7 +1994,7 @@ const showGMDoctorConsult = (sender_psid) => {
         "elements": [{
           "title": "Dr. Kyaw Thu",
           "subtitle": "M.B.B.S., M.Med.Sc(Int:Med), MRCP(UK)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/generalmedicine.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -2005,7 +2005,7 @@ const showGMDoctorConsult = (sender_psid) => {
         }, {
           "title": "Dr. Maung Oo",
           "subtitle": "M.B.B.S., M.Med.Sc(Int:Med)",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121177903_127539645765042_1444459315656650248_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_eui2=AeGo9XBHIYtgkawv_NsnwuwFmR4G-g2NzhaZHgb6DY3OFi6w3MBfwoJTWcBR_0OeVhGRN9D_VG8AegudmMC_m75b&_nc_ohc=zFX8buheU3oAX_hze_1&_nc_ht=scontent.fmdl5-1.fna&oh=c9398fd4e3365056f23b956b03e3a46d&oe=5FAC542F",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/generalmedicine.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
