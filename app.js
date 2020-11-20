@@ -1263,7 +1263,7 @@ const userChoice = (sender_psid) => {
         "elements": [{
           "title": "Appointment Registration",
           "subtitle": "Make your appointment",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121036098_126778739174466_5835875011183166003_o.jpg?_nc_cat=103&_nc_sid=730e14&_nc_eui2=AeGJLJ-dr1_C0GfqoXUjGIuQZ2JXc21xcDxnYldzbXFwPM3BjMDilL7cgJUMK2JX1EhrvvGfNsXtRGtPVfK8C_eg&_nc_ohc=mMPMl3CDXEIAX8ezfqs&_nc_ht=scontent.fmdl5-1.fna&oh=d6521d654d25628d65cdac6399c00922&oe=5FAB47C2",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/1.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
