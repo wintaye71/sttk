@@ -1263,7 +1263,7 @@ const userChoice = (sender_psid) => {
         "elements": [{
           "title": "Appointment Registration",
           "subtitle": "Make your appointment",
-          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/1.jpg?raw=true",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/appointment.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1274,7 +1274,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Consultation",
           "subtitle": "Consult your doctor while you stay safe at home",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121528981_126778709174469_1863127189882769269_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEJpzFOAPyJnxu8d7lyp-2GUyjZ5VAgUN9TKNnlUCBQ35ViVXYmukjiFhYzdnhSzlSMfoI3lJUViwfZR0nXQlZ1&_nc_ohc=f806KAJ7w8MAX_oiJy1&_nc_ht=scontent.fmdl5-1.fna&oh=0088a5345035384ced05c33a3cff9a92&oe=5FAA8B88",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/consultation.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1285,7 +1285,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Update Booking",
           "subtitle": "You can update your booking.",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/122387890_133853371800336_8355160971460791922_o.jpg?_nc_cat=110&ccb=2&_nc_sid=730e14&_nc_eui2=AeHsYAN35KVCI1e0_OEv57pMfmGiahTyxWF-YaJqFPLFYXygGaKqA9TVgjUD29B_Ny_CbRKa_8Bkz6a1pm4Ihytw&_nc_ohc=yS2irM5oDBgAX87H3km&_nc_oc=AQm_1jZo78E-SMxuJqyhna5sc2RrL5_8ZMszNpkDS1NhwqbVYBUFUrbpW5Kpbl2rW2o&_nc_ht=scontent.fmdl5-1.fna&oh=ce252bbfa31cc447ac7d4a99ac93b243&oe=5FBB132D",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/updatebooking.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1296,7 +1296,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Consultations Results",
           "subtitle": "You can view your consultations results.",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/123336386_137768374742169_8378515622542521940_o.jpg?_nc_cat=101&ccb=2&_nc_sid=730e14&_nc_ohc=RI8e0kmyyOQAX8qj6re&_nc_ht=scontent.fmdl5-1.fna&oh=3f0a0fdb65989c5e77a92bf6e0888573&oe=5FC9B71D",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/consultationResult.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1308,7 +1308,7 @@ const userChoice = (sender_psid) => {
         {
           "title": "Reception Desk",
           "subtitle": "Communicating in a positive and confident manner with those over the phone, call me",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121093629_126910549161285_647069814399212966_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeEiO3JG8YiR9IbHBak-8RPOso8rNEjKNyiyjys0SMo3KDQ-0lcKOf7merGqs0vFytjGpZUL4gL7c9H4IuggX2wq&_nc_ohc=FYTze-sIKqgAX-aMNPg&_nc_ht=scontent.fmdl5-1.fna&oh=957c30b47df0fa3ccdf8e774d1d5a1bc&oe=5FAACB39",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/reception.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1319,7 +1319,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Ambulance Service",
           "subtitle": "Ambulance Service saving lives in emergency",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121484185_126778755841131_7970236345950236603_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_eui2=AeGjl9jHjLiJ6mucv2f0z0Qt-hh2skjCVIn6GHaySMJUiY8Ic_cgdUpKztft_jpiR7EganvEBKwxFhviU2pe0pzq&_nc_ohc=zsuEne1xD9AAX8meKkI&_nc_ht=scontent.fmdl5-1.fna&oh=b735ab8e9b9921dd887ebf06f36dae1f&oe=5FA8FCFF",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/ambulance.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1330,7 +1330,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Emergency Phone No",
           "subtitle": "If someone is seriously ill or injuried, call this phone no.",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121156660_126778782507795_5830426397101751088_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_eui2=AeH-mRw-NnQ_-M1yol6uKmULbMv1LhSsXUZsy_UuFKxdRqL_1R-Qj5ufkxKnWW1A2ez9sNB4xstnnHJKGCr77BCX&_nc_ohc=nZ1We7ESsIwAX_9i81i&_nc_ht=scontent.fmdl5-1.fna&oh=1300fb851c8d7219ccb4989629412ac3&oe=5FA989B4",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/emergency.jpg?raw=true",
           "buttons": [
             {
               "type": "postback",
@@ -1341,7 +1341,7 @@ const userChoice = (sender_psid) => {
         }, {
           "title": "Locate @",
           "subtitle": "Location of STTK hospital",
-          "image_url": "https://scontent.fmdl5-1.fna.fbcdn.net/v/t1.0-9/121061542_126778809174459_4622794888164854258_o.jpg?_nc_cat=100&_nc_sid=730e14&_nc_eui2=AeGJcHUXigj1Dp9cUmiuW4q81-bISxA0827X5shLEDTzbohn5yRT4A8LR4npiwwDsCbRq965JyYwiSInC_UHHpcX&_nc_ohc=2WQE-NbxqscAX9hWL4P&_nc_ht=scontent.fmdl5-1.fna&oh=3633736016b9405684802c2aa9663d19&oe=5FA879E9",
+          "image_url": "https://github.com/wintaye71/sttk/blob/master/images/location.jpg?raw=true",
           "default_action": {
             "type": "web_url",
             "url": "https://www.google.com/maps/place/Sitta+Thukha/@22.0235931,96.4621906,18.62z/data=!4m5!3m4!1s0x30cc9e9b3d092cdf:0xb1bac5f6278b5b8c!8m2!3d22.0238096!4d96.4622194",
